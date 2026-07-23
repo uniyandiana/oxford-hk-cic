@@ -1,0 +1,21 @@
+# System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Backups
+*.bak
+.git/
+
+# Keep Event Highlights but exclude originals
+Event Highlights/20*.JPG
+Event Highlights/Lunar*.jpeg
+
+# Exclude all Past Events folder (archive only)
+Past Events TN/
+
+# Local development
+node_modules/
+.env.local
