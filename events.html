@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events 活動 | Oxford Hongkongers CIC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Noto+Serif+TC:wght@700;900&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+TC:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="LOGO/Oxford Hongkongers Logo (W).png" alt="Oxford Hongkongers" class="logo-img" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home 主頁</a></li>
+      <li><a href="events.html" class="active">Events 活動</a></li>
+      <li><a href="resources.html">Resources 資源</a></li>
+      <li><a href="membership.html">會員計劃 Membership</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <h1>Events 活動</h1>
+    <p class="sub">Community events for Hongkongers in Oxfordshire</p>
+  </div>
+
+  <!-- UPCOMING: Luma embed -->
+  <div class="section-title">
+    <div class="eyebrow">Live Calendar</div>
+    <h2>Upcoming Events 即將舉行</h2>
+    <p class="sub">Live from our Luma organiser page</p>
+  </div>
+
+  <div class="luma-section">
+    <iframe
+      src="https://luma.com/embed/calendar/cal-Bcr3APOgbGjhDgA/events"
+      style="width:100%;max-width:600px;height:450px;border:1px solid #bfcbda88;border-radius:10px;display:block;margin:0 auto;"
+      frameborder="0"
+      allowfullscreen
+      aria-hidden="false"
+      tabindex="0">
+    </iframe>
+  </div>
+
+  <!-- EVENT HIGHLIGHTS (photo gallery) -->
+  <div class="section-title" style="margin-bottom:6px;">
+    <div class="eyebrow">Moments</div>
+    <h2>活動花絮 Event Highlights</h2>
+    <p class="sub">A look back at our community in photos</p>
+  </div>
+
+  <div class="highlights-scroll">
+    <div class="highlight-item" onclick="openHighlight('Event Highlights/highlight-1.jpg', 'midautumn-25')">
+      <span class="ph-icon">📷</span>
+      <img src="Event Highlights/highlight-1.jpg" alt="Mid-Autumn Festival" loading="lazy" onload="this.style.opacity=1" onerror="this.style.opacity=0" />
+    </div>
+    <div class="highlight-item" onclick="openHighlight('Event Highlights/highlight-2.jpg', 'movie-crime-25')">
+      <span class="ph-icon">📷</span>
+      <img src="Event Highlights/highlight-2.jpg" alt="Movie Screening" loading="lazy" onload="this.style.opacity=1" onerror="this.style.opacity=0" />
+    </div>
+    <div class="highlight-item" onclick="openHighlight('Event Highlights/highlight-3.jpg', 'lny-gather-26')">
+      <span class="ph-icon">📷</span>
+      <img src="Event Highlights/highlight-3.jpg" alt="Lunar New Year Market" loading="lazy" onload="this.style.opacity=1" onerror="this.style.opacity=0" />
+    </div>
+    <div class="highlight-item" onclick="openHighlight('Event Highlights/highlight-4.jpg', 'boardgame-night-26')">
+      <span class="ph-icon">📷</span>
+      <img src="Event Highlights/highlight-4.jpg" alt="Boardgame Night" loading="lazy" onload="this.style.opacity=1" onerror="this.style.opacity=0" />
+    </div>
+  </div>
+
+  <!-- Highlight Lightbox -->
+  <div id="highlightModal" class="event-modal" onclick="closeHighlight(event)">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <span class="close-btn" onclick="closeHighlight()">&times;</span>
+      <img id="highlightImg" src="" alt="Event highlight" />
+      <div id="highlightDesc"></div>
+    </div>
+  </div>
+
+  <!-- PAST EVENTS (collapsible) -->
+  <section class="past-events-section">
+    <div class="section-title" style="padding-top:0; margin-bottom:10px;">
+      <h2>Past Events 往年活動</h2>
+      <p class="sub">A record of our previous community gatherings</p>
+    </div>
+
+    <div style="text-align:center;">
+      <button class="collapsible-toggle" id="pastToggle" onclick="togglePast()">
+        Show past events 顯示往年活動 <span class="arrow">▼</span>
+      </button>
+    </div>
+
+    <div id="pastEvents" style="display:none;">
+      <div class="events-grid" style="padding: 0 0 20px;">
+
+        <div class="event-card" onclick="openEventModal('mind-matters-26')">
+          <img class="card-img" src="LOGO/events/mind-matters-26.avif" alt="Mind Matters Workshop" />
+          <div class="card-body">
+            <div class="card-date">25 March 2026</div>
+            <h3>Mind Matters Workshop<br /><small style="color:#888">日常心理自理小工具</small></h3>
+            <p>Mental health self-care webinar for Hongkongers adapting to life in the UK.</p>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="openEventModal('film-another-26')">
+          <img class="card-img" src="LOGO/events/film-another-26.avif" alt="Another World film screening" />
+          <div class="card-body">
+            <div class="card-date">16 March 2026</div>
+            <h3>Film Screening: Another World<br /><small style="color:#888">【世外】電影放映會</small></h3>
+            <p>Oxford's only screening of the Hong Kong fantasy animation, at The Ultimate Picture Palace.</p>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="openEventModal('cv-workshop-26')">
+          <img class="card-img" src="LOGO/events/cv-workshop-26.avif" alt="CV Workshop" />
+          <div class="card-body">
+            <div class="card-date">9 March 2026</div>
+            <h3>CV Workshop<br /><small style="color:#888">英國CV工作坊｜求職</small></h3>
+            <p>A 60-minute webinar on fixing your UK-style CV, with a take-home template.</p>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="openEventModal('sleep-seminar-26')">
+          <img class="card-img" src="LOGO/events/sleep-seminar-26.avif" alt="Sleep Seminar" />
+          <div class="card-body">
+            <div class="card-date">4 March 2026</div>
+            <h3>Sleep Seminar<br /><small style="color:#888">好睡好起：優質睡眠講座</small></h3>
+            <p>A webinar on improving sleep quality, presented by Dr Forrest Cheung.</p>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="openEventModal('lny-craft-26')">
+          <img class="card-img" src="LOGO/events/lny-craft-26.avif" alt="Lunar New Year Cultural Craft" />
+          <div class="card-body">
+            <div class="card-date">14 February 2026</div>
+            <h3>Lunar New Year Cultural Craft<br /><small style="color:#888">新春手作活動</small></h3>
+            <p>Free cultural activities celebrating Lunar New Year with traditional crafts and calligraphy.</p>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="openEventModal('lny-gather-26')">
+          <img class="card-img" src="LOGO/events/lny-gather-26.avif" alt="香港人聚會 Community Gathering" />
+          <div class="card-body">
+            <div class="card-date">14 February 2026</div>
+            <h3>Community Gathering<br /><small style="color:#888">香港人聚會｜牛津年宵延伸活動</small></h3>
+            <p>Themed timeslot meetups extending the Oxford Lunar New Year Market, including a parents' breakfast.</p>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="openEventModal('boardgame-night-26')">
+          <img class="card-img" src="LOGO/events/boardgame-night-26.avif" alt="Boardgame Night" />
+          <div class="card-body">
+            <div class="card-date">January 2026</div>
+            <h3>Boardgame Night<br /><small style="color:#888">牛津桌遊聚</small></h3>
+            <p>A social boardgame gathering, with a Mahjong table for those who like it traditional.</p>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="openEventModal('christmas-25')" style="opacity:0.7;">
+          <img class="card-img" src="LOGO/events/christmas-25.avif" alt="Christmas Celebration" style="filter:grayscale(40%);" />
+          <div class="card-body">
+            <div class="card-date">6 December 2025 <span style="color:#e55; font-size:0.78rem;">(Cancelled)</span></div>
+            <h3>Christmas Celebration<br /><small style="color:#888">聖誕聯歡 2025</small></h3>
+            <p>Christmas community celebration planned in Botley. (Event cancelled.)</p>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="openEventModal('cv-workshop2-25')">
+          <img class="card-img" src="LOGO/events/cv-workshop2-25.avif" alt="CV Workshop with The Career Club" />
+          <div class="card-body">
+            <div class="card-date">24 November 2025</div>
+            <h3>CV Workshop<br /><small style="color:#888">英國CV工作坊 x The Career Club</small></h3>
+            <p>A one-hour CV clinic run with The Career Club — decode job ads and leave with a ready-to-use template.</p>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="openEventModal('movie-crime-25')">
+          <img class="card-img" src="LOGO/events/movie-crime-25.avif" alt="Valley of the Shadow of Death" />
+          <div class="card-body">
+            <div class="card-date">15 November 2025</div>
+            <h3>Movie Screening: Valley of the Shadow of Death<br /><small style="color:#888">【不赦之罪】電影放映及分享會</small></h3>
+            <p>Oxford's exclusive screening of the Hong Kong crime thriller, at Oxford High School.</p>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="openEventModal('planting-25')">
+          <img class="card-img" src="LOGO/events/planting-25.avif" alt="魚翅瓜試食會 x 種植講座" />
+          <div class="card-body">
+            <div class="card-date">9 November 2025</div>
+            <h3>Fish-Maw Melon Tasting x Planting Talk<br /><small style="color:#888">魚翅瓜試食會 x 種植講座</small></h3>
+            <p>A tasting and growing workshop with Guru Kitchen and AuLaw Organic Farm UK at Seacourt Hall.</p>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="openEventModal('startup-talk-25')">
+          <img class="card-img" src="LOGO/events/startup-talk-25.avif" alt="Business Startup Talk" />
+          <div class="card-body">
+            <div class="card-date">6 November 2025</div>
+            <h3>Business Startup Talk<br /><small style="color:#888">移英開鋪實務講座</small></h3>
+            <p>Practical guidance on setting up a shop in the UK — companies, leases, licences and safety rules.</p>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="openEventModal('welcome-day-25')">
+          <img class="card-img" src="LOGO/events/welcome-day-25.avif" alt="Community Welcome Day" />
+          <div class="card-body">
+            <div class="card-date">19 October 2025</div>
+            <h3>Community Welcome Day<br /><small style="color:#888">牛津港人迎新日</small></h3>
+            <p>Orientation and welcome event for newcomers to Oxfordshire.</p>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="openEventModal('midautumn-25')">
+          <img class="card-img" src="LOGO/events/midautumn-25.avif" alt="Mid-Autumn Festival" />
+          <div class="card-body">
+            <div class="card-date">6 October 2025</div>
+            <h3>Mid-Autumn Festival<br /><small style="color:#888">牛津郡香港人中秋團圓節</small></h3>
+            <p>Mid-Autumn Festival reunion dinner, on the day of the festival itself.</p>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="openEventModal('witney-meal-25')">
+          <img class="card-img" src="LOGO/events/witney-meal-25.avif" alt="Witney Thai dinner" />
+          <div class="card-body">
+            <div class="card-date">13 September 2025</div>
+            <h3>Witney Thai Dinner<br /><small style="color:#888">【雀局散・飯局聚】Witney 泰國餐廳晚餐</small></h3>
+            <p>A relaxed dinner gathering at a Thai restaurant in Witney.</p>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="openEventModal('oxford-dinner-25')">
+          <img class="card-img" src="LOGO/events/oxford-dinner-25.avif" alt="牛津郡飯聚 Oxford dining gathering" />
+          <div class="card-body">
+            <div class="card-date">13 August 2025</div>
+            <h3>Oxfordshire Dinner Gathering<br /><small style="color:#888">牛津郡飯聚 @ Meal Plus</small></h3>
+            <p>Part of our regular dining series rotating around Oxfordshire — this one at Meal Plus, Oxford.</p>
+          </div>
+        </div>
+
+        <div class="event-card" onclick="openEventModal('teaching-workshop-25')">
+          <img class="card-img" src="LOGO/events/teaching-workshop-25.avif" alt="教乜乜做乜乜 special seminar" />
+          <div class="card-body">
+            <div class="card-date">2025 <span style="color:#888; font-size:0.78rem;">(date on file)</span></div>
+            <h3>《教乜乜做乜乜》特別講座<br /><small style="color:#888">Ben Sir x Banky UK Tour</small></h3>
+            <p>A touring talk on language, drama and family communication with Ben Sir and Banky, at St John's College.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Event Detail Modal -->
+    <div id="eventModal" class="event-modal" onclick="closeEventModal(event)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeEventModal()">&times;</span>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">
+      Oxford Hongkongers CIC
+      <span class="zh">牛津香港人</span>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/oxford.hk" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5.5" /><circle cx="12" cy="12" r="4.2" /><circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none" /></svg>
+        @oxford.hk
+      </a>
+    </div>
+    <div class="footer-email">
+      <a href="mailto:oxford.hker@gmail.com">oxford.hker@gmail.com</a>
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy &amp; Data Protection Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+    </div>
+    <div class="footer-copy">Copyright &copy; 2025 Oxford Hongkongers CIC. All rights reserved.</div>
+  </footer>
+
+  <script>
+    function togglePast() {
+      const el = document.getElementById('pastEvents');
+      const btn = document.getElementById('pastToggle');
+      const isOpen = el.style.display !== 'none';
+      el.style.display = isOpen ? 'none' : 'block';
+      btn.classList.toggle('open', !isOpen);
+      btn.querySelector('.arrow').textContent = isOpen ? '▼' : '▲';
+    }
+
+    function openHighlight(src, eventId) {
+      document.getElementById('highlightImg').src = src;
+
+      const descDiv = document.getElementById('highlightDesc');
+      if (eventId && eventDetails[eventId]) {
+        const event = eventDetails[eventId];
+        descDiv.innerHTML = `
+          <div style="padding:20px; text-align:center;">
+            <h3>${event.title}</h3>
+            <p style="color:#666; font-size:0.95rem; margin:10px 0;">${event.subtitle}</p>
+            <p style="font-size:0.9rem; margin:15px 0; line-height:1.5;">${event.description.substring(0, 200)}...</p>
+            <button onclick="openEventModal('${eventId}'); document.getElementById('highlightModal').classList.remove('show');" style="margin-top:15px; padding:10px 20px; background:#222; color:#fff; border:none; border-radius:5px; cursor:pointer; font-size:0.95rem;">View Full Event Details</button>
+          </div>
+        `;
+      } else {
+        descDiv.innerHTML = '';
+      }
+
+      document.getElementById('highlightModal').classList.add('show');
+    }
+
+    function closeHighlight(event) {
+      if (event && event.target.id !== 'highlightModal') return;
+      document.getElementById('highlightModal').classList.remove('show');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeHighlight();
+    });
+
+    const eventDetails = {
+      'mind-matters-26': {
+        title: 'Mind Matters Workshop',
+        subtitle: '日常心理自理小工具',
+        date: 'Wed 25 March 2026 | 19:00 – 20:00 (UK time)',
+        location: 'Webinar',
+        description: `面對轉變，不只適應，而是學懂照顧自己。<br><br>移居英國後，我們都在面對不同層面的轉變——工作文化差異、語言壓力、家庭角色改變、社交圈重建、身份認同掙扎，甚至對未來的不確定感。這些挑戰未必驚天動地，但長期累積，卻容易令人疲憊與迷失。<br><br><strong>工作坊分為兩個部分：</strong><br>🔹 首半小時：實用心理小工具分享 — Tiffany 會介紹幾個簡單而可即時應用的自我調節方法，幫助大家在壓力或情緒波動時穩定自己，減少內耗，提升心理韌性。<br>🔹 後半小時：生活難題個案分享與討論 — 透過移英常見情境作分析（職場、家庭、社交及個人定位等），參加者亦可事先或即場匿名提交自己的困擾，並獲得回應與分享。<br><br><strong>關於講者：Tiffany Yip</strong><br>牛津大學畢業，主力研究點樣用 AI 科技改善心理健康。現時擔任 HKSPI 創新主管，帶領香港首個以創新科技推行嘅中學心理健康計劃，並創辦咗 Komorebi AI。<br><br>📍 對象：正在適應英國生活、面對壓力或迷惘的香港人<br>💬 語言：廣東話為主（附英文重點）<br>💰 費用：免費`
+      },
+      'film-another-26': {
+        title: 'Film Screening: Another World',
+        subtitle: '【世外】電影放映會',
+        date: 'Mon 16 March 2026 | 20:00 – 22:00',
+        location: 'The Ultimate Picture Palace, Jeune St, Cowley Rd, Oxford OX4 1BN, UK',
+        description: `《世外》（Another World）為香港奇幻動畫，分為2019年短片版及2025年電影版，改編自西條奈加2012年所著的《千年鬼》。<br><br>🇬🇧 小鬼真係要嚟英國喇！Gudo is coming to the UK — 終於嚟到牛津啦，暫時牛津只此一場！<br><br>《世外》穿越世界各地影展，終於要登陸英國大銀幕。Having travelled across festivals worldwide, ANOTHER WORLD is now making its way to UK cinemas.<br><br><strong>✨ 入選 Official Selections：</strong><br>🔸 法國安錫國際動畫影展 2025「午夜特別場」｜Annecy 2025 – Midnight Specials<br>🔸 2025 台北金馬影展｜Taipei Golden Horse Film Festival 2025<br>🔸 第21屆 瑞士蘇黎世電影節｜21st Zurich Film Festival`
+      },
+      'cv-workshop-26': {
+        title: 'CV Workshop',
+        subtitle: '英國CV工作坊｜求職',
+        date: 'Mon 9 March 2026 | 19:30 – 21:00 (UK time)',
+        location: 'Webinar',
+        description: `60 分鐘英式 CV 快修班：解讀 Job Ad｜英式CV規範｜讓CV更亮眼｜即帶走 CV 模板。<br><br>英國求職並非「把經驗羅列就可以」的簡單事；從解讀招聘廣告、英式格式規範、STAR 成果寫法到版面可讀性，每一步都影響 HR 的 10 秒印象。工作坊提供實用技巧，包括：<br><br>💡 解讀 Job Ad —— 抽取 must-have／nice-to-have 關鍵詞，鏡像用語，提升匹配度<br>📏 英式 CV 規範 —— 1–2 頁、每份經驗 3–5 條 bullet points、10 秒掃描可見價值<br>✨ 讓 CV 更亮眼 —— 以 STAR 寫出可量化成果<br>🎁 拿走即用工具 —— CV 模板（回家即改，當晚能投）<br><br>👩🏻‍🏫 講者 Speaker — Diana (@diana.to.inspire / @diana.in.uk)`
+      },
+      'sleep-seminar-26': {
+        title: 'Sleep Seminar',
+        subtitle: '好睡好起：優質睡眠講座',
+        date: 'Wed 4 March 2026 | 19:00 – 20:00 (UK time)',
+        location: 'Webinar',
+        description: `改善睡眠，讓自己睡得更好。<br><br>在移居新環境、生活節奏改變、壓力增加的情況下，不少人都開始出現睡眠質素下降的情況：難以入睡、半夜醒來、淺眠、多夢，甚至長期疲倦、精神難以集中。但其實，睡眠並非「自然就會好」，而是一種可以被理解、被調整、被改善的生理過程。<br><br>《好睡好起：優質睡眠講座》由 <strong>Dr Forrest Cheung</strong> 帶領大家：<br>• 了解睡眠週期與身體機制<br>• 拆解常見失眠原因與迷思<br>...並提供改善睡眠質素的實用方法。`
+      },
+      'lny-craft-26': {
+        title: 'Lunar New Year Cultural Craft',
+        subtitle: '新春手作活動',
+        date: '14 February 2026 | 11:00 – 17:00',
+        location: 'Templars Square, 129 Pound Way, Oxford OX4 3XH, UK',
+        description: `為迎接農曆新年，Oxford Hongkongers CIC 於 Templars Square Shopping Centre 舉辦一系列免費的新春文化活動，透過傳統手作與書寫體驗，讓不同年齡及背景的參加者認識和感受香港及華人新年的文化意義。<br><br>活動設有適合兒童及成人的手作環節，包括新年拓印活動及揮春書寫體驗，參加者可在輕鬆愉快的氛圍中，親身體驗傳統節慶習俗。活動以家庭友善為設計核心，歡迎本地居民、家庭及對華人文化有興趣的市民參加。<br><br>活動以自由參與（drop-in）形式進行，惟由於場地及物資有限，主辦單位建議有興趣的參加者預先登記，以便安排相關資源。`
+      },
+      'lny-gather-26': {
+        title: 'Community Gathering — Oxford LNY Market Extension',
+        subtitle: '香港人聚會｜牛津年宵延伸活動',
+        date: 'Sat 14 February 2026 | 11:00 – 17:00',
+        location: 'Templars Square, 129 Pound Way, Oxford OX4 3XH, UK',
+        description: `透過不同主題時段，讓在英港人能於輕鬆環境下交流生活經驗、分享見聞，建立社區連繫。活動需提前登記以作留位安排。<br><br>📅 日期：2026年2月14日（六）<br>📍 地點：Templars Square 餐廳<br><br>為促進在牛津及周邊地區香港人之交流與連結，本會於牛津市集當日舉辦一系列延伸交流活動，於分時段進行。活動以輕鬆互動為主，適合不同背景人士參與，歡迎市集參加者於各時段加入交流。<br><br><strong>11:30–12:30｜家長早餐會</strong><br>連結家長群體，交流育兒經驗及在英生活點滴。早餐時段請於中午 12 時前到達並完成點餐，價格約 £3–8。`
+      },
+      'boardgame-night-26': {
+        title: 'Oxford Boardgame Gathering',
+        subtitle: '牛津桌遊聚',
+        date: 'January 2026',
+        location: 'Seacourt Hall, 3 Church Way, Botley, Oxford OX2 9TH, UK',
+        description: `Oxford Boardgame Gathering 係一個為牛津及周邊地區香港人而設嘅輕鬆社交活動，透過桌遊拉近人與人之間嘅距離，讓大家喺異地都可以建立連結，享受熟悉又自在嘅相處時光。<br><br>活動提供大量不同類型嘅桌遊，由簡單易玩嘅派對遊戲，到策略性較高嘅桌遊一應俱全，亦特別設有麻雀，畀鍾意傳統港式娛樂嘅朋友可以盡情切磋、打返幾圈。你可以自由選擇遊戲，隨時加入或轉枱，無需任何經驗。<br><br><strong>呢個活動非常適合：</strong><br>• 想識新朋友、擴闊社交圈嘅你<br>• 想同朋友輕鬆聚一聚、唔想太多壓力<br>• 想打麻雀或者試吓新桌遊嘅玩家`
+      },
+      'christmas-25': {
+        title: 'Christmas Celebration',
+        subtitle: '聖誕聯歡 2025',
+        date: '6 December 2025 | 16:30 – 18:30',
+        location: 'Botley, Oxford',
+        description: '<span style="color:#e55;">This event was cancelled.</span><br><br>A Christmas community celebration was planned in Botley to bring together the Oxford Hongkongers community for the festive season.'
+      },
+      'cv-workshop2-25': {
+        title: 'CV Workshop x The Career Club',
+        subtitle: '求職：英國CV工作坊「一小時改好你的英國CV」',
+        date: '24 November 2025 | 19:30 – 20:30',
+        description: `A one-hour CV clinic run in partnership with The Career Club (thecareerclub), covering:<br>• 解讀 Job Ad 關鍵詞<br>• 英式 CV 必知規範<br>• 讓 CV 更亮眼<br>• 帶走即用 CV 模板<br><br>Co-hosted by Oxford Hongkongers CIC and The Career Club, this session helped attendees turn their CV into one that fits British hiring conventions, with a takeaway template.`
+      },
+      'movie-crime-25': {
+        title: 'Movie Screening: Valley of the Shadow of Death',
+        subtitle: '【不赦之罪】電影放映及分享會',
+        date: 'Sat 15 November 2025 | 13:00 – 15:00',
+        location: 'Oxford High School, OX2 6XA',
+        description: '《不赦之罪》牛津獨家場，只此一場 — a 2025 Hong Kong crime-thriller drama, screened exclusively in Oxford followed by a community discussion session.'
+      },
+      'planting-25': {
+        title: 'Fish-Maw Melon Tasting x Planting Talk',
+        subtitle: '魚翅瓜試食會 x 種植講座',
+        date: 'Sun 9 November 2025 | 14:00 – 16:00',
+        location: 'Seacourt Hall, OX2 9TH',
+        description: `A joint tasting-and-growing event, co-hosted by Oxford Hongkongers CIC (牛津香港人社區) with <strong>Guru Kitchen 師父飯堂</strong> (英國支店) and <strong>AuLaw Organic Farm UK 歐羅有機農場英國分部</strong>.<br><br>Participants sampled dishes made with fish-maw melon (魚翅瓜) prepared by Guru Kitchen, and learned practical growing tips from AuLaw Organic Farm's UK team — a hands-on afternoon combining Hong Kong home cooking with UK-grown produce.`
+      },
+      'startup-talk-25': {
+        title: 'Business Startup Talk',
+        subtitle: '移英開鋪實務講座',
+        date: 'Thu 6 November 2025 | 18:30 – 19:30 | Online',
+        description: `英國開業並非「有資金就可以」的簡單事，從成立公司、簽署租約、申請牌照，到裝修安全規範，每一個步驟都需要清楚了解。講座提供實用資訊，包括：<br><br>💡 成立公司基本流程 —— 什麼情況下需要註冊公司？個人自僱與有限公司有何分別？<br>🏠 租舖前須知 —— 用途分類、租約條款、常見陷阱與注意事項<br>📄 牌照與證書申請 —— 餐飲、零售等常見行業的牌照要求及辦理程序<br>🧯 裝修與安全要求 —— 消防、安全、保險等必要規範<br>🥗 餐飲行業重點 —— 食環評級制度與合規準備建議<br><br>由業務拓展顧問<strong>貞貞 (TTYL)</strong>主講。`
+      },
+      'welcome-day-25': {
+        title: 'Community Welcome Day',
+        subtitle: '牛津港人迎新日',
+        date: '19 October 2025 | 15:00 – 17:00',
+        description: 'Orientation and welcome event for newcomers to Oxfordshire. A great opportunity for newly arrived Hongkongers to meet the community, learn about local resources, and connect with established residents over coffee.'
+      },
+      'midautumn-25': {
+        title: 'Mid-Autumn Festival',
+        subtitle: '牛津郡香港人中秋團圓節',
+        date: '6 October 2025 (中秋節正日) | 18:30 – 20:30',
+        description: `無論你係啱啱到埗嘅香港人，定係已經喺英國牛津生活咗一段時間，都誠邀你參加我哋嘅中秋節社區聚會活動，一齊感受久違的節日氣氛與港式人情味。<br><br>活動當日會有經典香港童年小食（需購買）、月餅分享、溫馨嘅賞月燈飾佈置，仲有互動遊戲同輕鬆交流活動，讓大家喺異地都可以建立連結，過一個有笑聲、有溫度的中秋節。<br><br>本活動特別適合家庭、個人、學生及新移英港人參與，係一個認識新朋友、連結社群、共度傳統節日嘅好機會。歡迎大家也帶月餅來同分享（請附帶包裝註明食物成份）。`
+      },
+      'witney-meal-25': {
+        title: 'Witney Thai Dinner',
+        subtitle: '【雀局散・飯局聚】Witney 泰國餐廳晚餐',
+        date: '13 September 2025 | 18:15 – 19:45',
+        location: 'Witney',
+        description: 'A relaxed community dinner at a Thai restaurant in Witney — good food and easy conversation for Hongkongers in and around West Oxfordshire.'
+      },
+      'oxford-dinner-25': {
+        title: 'Oxfordshire Dinner Gathering',
+        subtitle: '牛津郡飯聚 @ Meal Plus',
+        date: '13 August 2025 | 18:00 – 20:00',
+        location: 'Meal Plus, Oxford OX4 1AB (self-funded dining 自費用餐)',
+        description: `「牛津郡飯聚系列」係由 Oxford Hongkongers CIC 主辦的定期社群聚會，旨在為本地港人提供一個輕鬆、無壓力的交流平台。無論你係新到埗，定係已經喺牛津生活咗一段時間，都可以透過飯聚認識新朋友、分享生活點滴、互相支持。<br><br>我哋會輪流喺牛津唔同地區舉辦飯聚，包括 Oxford、Abingdon、Bicester 等，形式以自由聊天、分享資訊為主。有時仲會加插主題小活動，例如生活小貼士、港人故事分享、地區交流等。<br><br><strong>呢個系列特別適合：</strong><br>• 想識朋友、搵連繫的你<br>• 想放鬆下、食個飯嘅你<br><br>希望每一次飯聚都能成為你生活中的一點連結、一種熟悉的港式溫度 💛`
+      },
+      'teaching-workshop-25': {
+        title: '《教乜乜做乜乜》特別講座',
+        subtitle: 'Ben Sir 嘅語言 x UK Tour x 戲劇的 Banky',
+        date: '2025 (exact date on file)',
+        location: "St John's College, Oxford, St Giles, Oxford OX1 3JP",
+        description: `Promo Code: <strong>oxfordhk</strong><br><br><strong>【節目特色】</strong><br>🔹 語言 x 精神健康 x 家庭溝通：<strong>歐陽偉豪 Ben Sir</strong> 將以幽默與專業兼備的風格，帶領大家進行語言創作練習，從「精神雪櫃」出發，拆解家庭溝通的盲點，為港人家庭注入新語言能量與理解力。<br>🔹 戲劇 x 身份探索 x 敘事實踐：<strong>楊秉基 Banky</strong> 結合應用戲劇與敘事治療，讓參加者在互動中重新探索「角色」與「真我」，從身體出發，透過空間、角色、故事，建立更有效的非暴力溝通方式。<br>🔹 地區巡迴 x 社區連結：活動橫跨 London、Kingston、Oxford、Solihull、Nottingham、Salford、Warrington、Manchester 等八個城市，連結當地社區資源，打造屬於港人、屬於每個城市的文化交匯點。`
+      }
+    };
+
+    function openEventModal(eventId) {
+      const event = eventDetails[eventId];
+      if (!event) return;
+
+      const modalBody = document.getElementById('modalBody');
+      let html = `
+        <img class="modal-event-img" src="LOGO/events/${eventId}.avif" alt="${event.title}" />
+        <div class="modal-event-title">${event.title}</div>
+        <div class="modal-event-subtitle">${event.subtitle}</div>
+        <div class="modal-event-date">📅 ${event.date}</div>
+      `;
+
+      if (event.location) {
+        html += `<div class="modal-event-date">📍 ${event.location}</div>`;
+      }
+
+      html += `<div class="modal-event-details">${event.description}</div>`;
+
+      modalBody.innerHTML = html;
+      document.getElementById('eventModal').classList.add('show');
+    }
+
+    function closeEventModal(event) {
+      if (event && event.target.id !== 'eventModal') return;
+      document.getElementById('eventModal').classList.remove('show');
+    }
+
+    // Close modal when pressing Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeEventModal();
+    });
+  </script>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

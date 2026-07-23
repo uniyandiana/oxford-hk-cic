@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benefits 會員優惠 | Oxford Hongkongers CIC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Noto+Serif+TC:wght@700;900&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+TC:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="LOGO/Oxford Hongkongers Logo (W).png" alt="Oxford Hongkongers" class="logo-img" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home 主頁</a></li>
+      <li><a href="events.html">Events 活動</a></li>
+      <li><a href="resources.html">Resources 資源</a></li>
+      <li><a href="membership.html" class="active">會員計劃 Membership</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <h1>會員計劃 Membership Plan</h1>
+    <p class="sub">Exclusive discounts and perks for Oxford Hongkongers members</p>
+  </div>
+
+  <div class="plan-tabs">
+    <a href="membership.html" class="plan-tab">加入會員 Join Us</a>
+    <a href="benefits.html" class="plan-tab active">會員優惠 Benefits</a>
+  </div>
+
+  <div class="section-title">
+    <div class="eyebrow">Members' Perks</div>
+    <h2>合作商戶 Partner Merchants</h2>
+    <p class="sub">Show your membership card to enjoy exclusive discounts</p>
+  </div>
+
+  <div class="benefits-grid">
+
+    <div class="benefit-card" onclick="openBenefitModal('mealplus')">
+      <div class="b-img">🍽️</div>
+      <div class="b-name">Meal Plus</div>
+      <div class="b-tag">Dining 餐飲</div>
+    </div>
+
+    <div class="benefit-card" onclick="openBenefitModal('incha')">
+      <div class="b-img">🧋</div>
+      <div class="b-name">IN CHA</div>
+      <div class="b-tag">Bubble Tea 奶茶</div>
+    </div>
+
+    <div class="benefit-card" onclick="openBenefitModal('tastykitchen')">
+      <div class="b-img">🥡</div>
+      <div class="b-name">Tasty Kitchen</div>
+      <div class="b-tag">Dining 餐飲</div>
+    </div>
+
+    <div class="benefit-card" onclick="openBenefitModal('fantastea')">
+      <div class="b-img">🧋</div>
+      <div class="b-name">Fantastea</div>
+      <div class="b-tag">Bubble Tea 奶茶</div>
+    </div>
+
+    <div class="benefit-card" onclick="openBenefitModal('oxforddogs')">
+      <div class="b-img">🌭</div>
+      <div class="b-name">Oxford Dogs</div>
+      <div class="b-tag">Dining 餐飲</div>
+    </div>
+
+    <div class="benefit-card" onclick="openBenefitModal('papaw')">
+      <div class="b-img">🧋</div>
+      <div class="b-name">PAPAW Bubble Tea</div>
+      <div class="b-tag">Bubble Tea 奶茶</div>
+    </div>
+
+    <div class="benefit-card" onclick="openBenefitModal('jdd')">
+      <div class="b-img">🍢</div>
+      <div class="b-name">JDD</div>
+      <div class="b-tag">HK Snacks 港式小食</div>
+    </div>
+
+    <div class="benefit-card" onclick="openBenefitModal('driedseafood')">
+      <div class="b-img">🐟</div>
+      <div class="b-name">海味英移 UK Dried Seafood</div>
+      <div class="b-tag">Online Shop 網購</div>
+    </div>
+
+    <div class="benefit-card" onclick="openBenefitModal('gurukitchen')">
+      <div class="b-img">🥗</div>
+      <div class="b-name">Guru Kitchen</div>
+      <div class="b-tag">Meal Prep 餐點</div>
+    </div>
+
+    <div class="benefit-card" onclick="openBenefitModal('loyaltyca')">
+      <div class="b-img">📊</div>
+      <div class="b-name">Loyalty Chartered Accountants</div>
+      <div class="b-tag">Professional Services 專業服務</div>
+    </div>
+
+    <div class="benefit-card" onclick="openBenefitModal('heyflash')">
+      <div class="b-img">🎟️</div>
+      <div class="b-name">HeyFlash</div>
+      <div class="b-tag">Vouchers 優惠券</div>
+    </div>
+
+    <div class="benefit-card" onclick="openBenefitModal('ttyl')">
+      <div class="b-img">🛍️</div>
+      <div class="b-name">TTYL</div>
+      <div class="b-tag">HK Products 港貨</div>
+    </div>
+
+  </div>
+
+  <!-- Benefit Detail Modal -->
+  <div id="benefitModal" class="event-modal" onclick="closeBenefitModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-btn" onclick="closeBenefitModal()">&times;</span>
+      <div id="benefitModalBody"></div>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding: 20px 40px 60px;">
+    <p style="color:#888; font-size:0.9rem; margin-bottom:16px;">
+      Not a member yet? Join today to enjoy all these exclusive benefits.<br />
+      尚未成為會員？立即加入享受所有優惠。
+    </p>
+    <a href="membership.html" class="btn-join">Join Now 立即加入</a>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      Oxford Hongkongers CIC
+      <span class="zh">牛津香港人</span>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/oxford.hk" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5.5" /><circle cx="12" cy="12" r="4.2" /><circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none" /></svg>
+        @oxford.hk
+      </a>
+    </div>
+    <div class="footer-email">
+      <a href="mailto:oxford.hker@gmail.com">oxford.hker@gmail.com</a>
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy &amp; Data Protection Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+    </div>
+    <div class="footer-copy">Copyright &copy; 2025 Oxford Hongkongers CIC. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const TERMS_STANDARD = [
+      '此折扣僅適用於本會的會員。',
+      '會員需在下單時及結帳前出示有效的會員卡。',
+      '折扣僅適用於餐點，不包括飲料或其他額外項目。',
+      '此優惠不可與其他優惠或折扣同時使用。',
+      '餐廳保留隨時修改或終止此優惠的權利，恕不另行通知。',
+      '如有任何爭議，餐廳保留最終決定權。'
+    ];
+
+    const benefitDetails = {
+      mealplus: {
+        name: 'Meal Plus',
+        category: '餐廳 Dining',
+        address: "31 St Clement's St, Oxford OX4 1AB",
+        discount: '2人消費Main/Set送一份咖喱魚蛋 (Curry Fishball)；4人消費Main/Set送一份咖喱三寶 (Curry Trio)',
+        howTo: '出示有效會員證',
+        terms: TERMS_STANDARD
+      },
+      incha: {
+        name: 'IN CHA 印茶',
+        category: '茶飲 Bubble Tea',
+        address: '174C Cowley Rd, Oxford OX4 1UE',
+        discount: ['第一杯：可享用£3代金券', '第二杯：消費滿£5，可享用£3代金券', '第三杯：消費滿£5，可享用£4代金券', '第四杯：免費飲品－可從恆常菜單中挑選'],
+        howTo: '使用會員專屬的印茶集點卡（2026年3月31日前）',
+        terms: [
+          '此優惠只限牛津分店。',
+          '如需使用信用卡，最後付款金額必須超過£5。',
+          '此折扣僅適用於本會的會員。',
+          '會員需在下單時/結帳時出示有效的會員卡享用優惠。',
+          '此優惠不可與其他優惠或折扣同時使用。',
+          '餐廳保留隨時修改或終止此優惠的權利，恕不另行通知。',
+          '如有任何爭議，餐廳保留最終決定權。'
+        ]
+      },
+      tastykitchen: {
+        name: 'Tasty Kitchen',
+        category: '餐廳 Dining',
+        address: 'George St, Oxford OX1 2AE',
+        discount: ['單點一個兩餸/三餸飯，送飲品', '一位：消費£12或以上，即享九五折', '四位：消費£45或以上，即多送一餸及享九折'],
+        howTo: '出示有效會員證',
+        terms: TERMS_STANDARD
+      },
+      fantastea: {
+        name: 'Fantastea',
+        category: '茶飲 Bubble Tea',
+        address: '36 High St, Oxford OX1 4AN',
+        discount: ['Free size upgrades on regular bubble teas to large', '10% off all other menu items'],
+        howTo: '出示有效會員證',
+        terms: [
+          '此優惠只限牛津分店。',
+          '優惠有效期至2026年3月31日。',
+          '此折扣僅適用於本會的會員。',
+          '會員需在下單時/結帳時出示有效的會員卡享用優惠。',
+          '此優惠不可與其他優惠或折扣同時使用。',
+          '餐廳保留隨時修改或終止此優惠的權利，恕不另行通知。',
+          '如有任何爭議，餐廳保留最終決定權。'
+        ]
+      },
+      oxforddogs: {
+        name: 'Oxford Dogs (Oxford)',
+        category: '小食－熱狗 Hot Dogs',
+        address: 'Covered Market - Unit 16, Oxford, Oxfordshire OX1 3DZ',
+        discount: '10% off for the order on every product available in our store.',
+        howTo: '出示有效會員證 或 會員優惠碼',
+        terms: [
+          '此折扣僅適用於本會的會員。',
+          '會員需在下單時/結帳時出示有效的會員卡享用優惠。',
+          '此優惠不可與其他優惠或折扣同時使用。',
+          '餐廳保留隨時修改或終止此優惠的權利，恕不另行通知。',
+          '如有任何爭議，餐廳保留最終決定權。'
+        ]
+      },
+      papaw: {
+        name: 'PAPAW Bubble Tea (Oxford)',
+        category: '台式飲品 Taiwanese Drinks',
+        address: '6 Gloucester St, Oxford OX1 2BN',
+        discount: ['10% off drinks for members who present their membership card', '20% off for group orders of 20+ drinks'],
+        howTo: '出示有效會員證',
+        terms: [
+          '此優惠只限牛津分店。',
+          '此折扣僅適用於本會的會員。',
+          '會員需在下單時/結帳時出示有效的會員卡享用優惠。',
+          '此優惠不可與其他優惠或折扣同時使用。',
+          '餐廳保留隨時修改或終止此優惠的權利，恕不另行通知。',
+          '如有任何爭議，餐廳保留最終決定權。'
+        ]
+      },
+      jdd: {
+        name: 'JDD 上弦港台小食',
+        category: '熟食攤檔 Food Stall',
+        address: 'Gloucester Green Outdoor Market, Oxford OX1 2BU',
+        discount: '全台宴 - 台灣滷肉飯 + 蚵仔大腸麵線 送 飲品 (可選汽水或奶茶)',
+        howTo: '出示有效會員證',
+        terms: [
+          '此折扣僅適用於本會的會員。',
+          '會員需在下單時出示有效的會員卡享用優惠。',
+          '折扣僅適用於餐點，不包括飲料或其他額外項目。',
+          '此優惠不可與其他優惠或折扣同時使用。',
+          '餐廳保留隨時修改或終止此優惠的權利，恕不另行通知。',
+          '如有任何爭議，餐廳保留最終決定權。'
+        ]
+      },
+      driedseafood: {
+        name: '海味英移 UK Dried Seafood',
+        category: '線上平台 Online Shop',
+        intro: '憑藉香港經營超過40年海味批發既經驗，為在英港人提供價靚貨真既乾貨海味。',
+        website: 'https://ukdriedseafood.com/',
+        discount: '10% off - entire order for shopping over GBP 60. Effective from today until 28 Feb 2026.',
+        howTo: '請查看迎新電郵／於會員專屬平台利用密碼登入，取得優惠碼',
+        terms: [
+          '此折扣僅適用於本會的會員。',
+          '有效期至2026年2月28日。',
+          '此優惠不可與其他優惠或折扣同時使用。',
+          '平台保留隨時修改或終止此優惠的權利，恕不另行通知。',
+          '如有任何爭議，平台保留最終決定權。'
+        ]
+      },
+      gurukitchen: {
+        name: '師父飯堂 Guru Kitchen',
+        category: '線上平台 Online Shop',
+        intro: '英國師父飯堂暫以預製食品為主，食品將以速遞送達全英國(離島除外)，只需簡單加熱，即可將美味帶入你家中；於牛津或附近地區更可享有新鮮外送服務，只要下單即可享受新鮮熱辣的師父飯堂美食。',
+        website: 'https://guru-kitchen.com/',
+        discount: '實際金額滿£60，輸入優惠碼則額外有沙嗲牛或五香肉丁乙份',
+        howTo: '請查看迎新電郵／於會員專屬平台利用密碼登入，取得優惠碼',
+        terms: [
+          '此折扣僅適用於本會的會員。',
+          '此優惠不可與其他優惠或折扣同時使用。',
+          '平台保留隨時修改或終止此優惠的權利，恕不另行通知。',
+          '如有任何爭議，平台保留最終決定權。'
+        ]
+      },
+      loyaltyca: {
+        name: '致誠(英國)會計師事務所 Loyalty Chartered Accountants',
+        category: '專業服務 Professional Services',
+        intro: '專為香港人服務的廣東話英國會計師樓。',
+        website: 'http://ltca.uk/home',
+        discount: '服務8折',
+        terms: [
+          '此折扣僅適用於本會的會員。',
+          '此優惠不可與其他優惠或折扣同時使用。',
+          '平台保留隨時修改或終止此優惠的權利，恕不另行通知。',
+          '如有任何爭議，平台保留最終決定權。'
+        ]
+      },
+      heyflash: {
+        name: '喜快 HeyFlash',
+        category: '線上平台 Online Shop',
+        intro: '喜快，不僅僅是一部小食車，更是一份為在英港人帶來的鄉愁慰藉。',
+        website: 'https://heyflash.co.uk/',
+        discount: '於喜快網站消費任何金額，免費送得獎香港奶茶茶膽茶包一包（價值£3）。消費時請先把茶包放入購物車，然後輸入discount code，即顯示為免費。',
+        howTo: '請查看迎新電郵／於會員專屬平台利用密碼登入，取得優惠碼',
+        terms: [
+          '此折扣僅適用於本會的會員。',
+          '此優惠不可與其他優惠或折扣同時使用。',
+          '平台保留隨時修改或終止此優惠的權利，恕不另行通知。',
+          '如有任何爭議，平台保留最終決定權。'
+        ]
+      },
+      ttyl: {
+        name: 'TTYL 轉頭再港',
+        category: '線上平台 Online Shop',
+        intro: 'Your Asian Frozen Food Market',
+        website: 'https://thettyl.co.uk/',
+        discount: '消費滿£20可獲92折（每位客戶只能用一次）',
+        howTo: '請查看迎新電郵／於會員專屬平台利用密碼登入，取得優惠碼',
+        terms: [
+          '此折扣僅適用於本會的會員。',
+          '此優惠不可與其他優惠或折扣同時使用（運費優惠除外）。',
+          '平台保留隨時修改或終止此優惠的權利，恕不另行通知。',
+          '如有任何爭議，平台保留最終決定權。'
+        ]
+      }
+    };
+
+    function listToHtml(items) {
+      if (Array.isArray(items)) {
+        return '<ul class="benefit-list">' + items.map(i => `<li>${i}</li>`).join('') + '</ul>';
+      }
+      return `<p>${items}</p>`;
+    }
+
+    function openBenefitModal(id) {
+      const b = benefitDetails[id];
+      if (!b) return;
+
+      let html = `
+        <div class="modal-event-title">${b.name}</div>
+        <div class="modal-event-subtitle">${b.category}</div>
+      `;
+
+      if (b.address) {
+        html += `<div class="modal-event-date">📍 <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.address)}" target="_blank">${b.address}</a></div>`;
+      }
+      if (b.website) {
+        html += `<div class="modal-event-date">🔗 <a href="${b.website}" target="_blank">${b.website}</a></div>`;
+      }
+      if (b.intro) {
+        html += `<div class="modal-event-details">${b.intro}</div>`;
+      }
+
+      html += `<div class="modal-event-details"><span class="modal-section-label">折扣 Discount</span>${listToHtml(b.discount)}</div>`;
+
+      if (b.howTo) {
+        html += `<div class="modal-event-details"><span class="modal-section-label">使用方法 How to Redeem</span><p>${b.howTo}</p></div>`;
+      }
+
+      html += `<div class="modal-event-details"><span class="modal-section-label">條款與細則 Terms &amp; Conditions</span>${listToHtml(b.terms)}</div>`;
+
+      document.getElementById('benefitModalBody').innerHTML = html;
+      document.getElementById('benefitModal').classList.add('show');
+    }
+
+    function closeBenefitModal(event) {
+      if (event && event.target.id !== 'benefitModal') return;
+      document.getElementById('benefitModal').classList.remove('show');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeBenefitModal();
+    });
+  </script>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
