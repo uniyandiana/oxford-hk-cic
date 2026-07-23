@@ -180,8 +180,8 @@ nav {
   z-index: 0;
 }
 
-.hero-hills .hill-1 { fill: var(--navy); }
-.hero-hills .hill-2 { fill: var(--navy-light); opacity: 0.55; }
+.hero-hills .hill-1 { fill: var(--navy); display: none; }
+.hero-hills .hill-2 { fill: var(--navy-light); opacity: 0.55; display: none; }
 .hero-hills .hill-3 { fill: var(--gold); opacity: 0.32; }
 
 .hero-content {
