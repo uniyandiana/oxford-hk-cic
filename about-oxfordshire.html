@@ -86,6 +86,21 @@
     <a class="cat-card" href="#tips"><span>💡</span>其他貼士<small>Good to Know</small></a>
   </div>
 
+  <!-- STICKY CATEGORY BAR -->
+  <div class="sticky-categories">
+    <div class="sticky-categories-inner">
+      <span class="sticky-categories-label">Jump to:</span>
+      <a class="sticky-cat-link" href="#districts">地區</a>
+      <a class="sticky-cat-link" href="#jobs">就業</a>
+      <a class="sticky-cat-link" href="#housing">樓價</a>
+      <a class="sticky-cat-link" href="#schools">學校</a>
+      <a class="sticky-cat-link" href="#hospitals">醫院</a>
+      <a class="sticky-cat-link" href="#living">消費</a>
+      <a class="sticky-cat-link" href="#transport">交通</a>
+      <a class="sticky-cat-link" href="#tips">貼士</a>
+    </div>
+  </div>
+
   <!-- DISTRICTS -->
   <section class="resource-section" id="districts">
     <div class="section-title" style="padding-top:0;">
@@ -525,6 +540,9 @@
     </div>
   </div>
 
+  <!-- FLOATING NAV -->
+  <a class="floating-nav" href="#" onclick="scrollToCategories(event)" title="Back to Categories">↑</a>
+
   <footer>
     <div class="footer-logo">
       Oxford Hongkongers CIC
@@ -546,6 +564,29 @@
     <div class="footer-copy">Copyright &copy; 2025 Oxford Hongkongers CIC. All rights reserved.</div>
   </footer>
 
+  <script>
+    function scrollToCategories(e) {
+      e.preventDefault();
+      const catGrid = document.querySelector('.cat-grid');
+      if (catGrid) {
+        catGrid.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Show/hide floating nav based on scroll
+    const floatingNav = document.querySelector('.floating-nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        floatingNav.style.opacity = '1';
+        floatingNav.style.pointerEvents = 'auto';
+      } else {
+        floatingNav.style.opacity = '0.3';
+        floatingNav.style.pointerEvents = 'none';
+      }
+    });
+    floatingNav.style.opacity = '0.3';
+    floatingNav.style.transition = 'opacity 0.3s ease';
+  </script>
   <script src="scripts.js"></script>
 </body>
 </html>

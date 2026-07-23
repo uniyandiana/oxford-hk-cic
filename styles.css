@@ -1577,3 +1577,110 @@ footer {
     margin: -24px -24px 20px;
   }
 }
+
+/* ── FLOATING NAVIGATION ── */
+.floating-nav {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  background: var(--navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(24,42,77,0.25);
+  transition: all 0.3s ease;
+  z-index: 99;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.4rem;
+}
+
+.floating-nav:hover {
+  background: var(--gold);
+  color: var(--navy);
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(227,168,62,0.35);
+}
+
+@media (max-width: 768px) {
+  .floating-nav {
+    bottom: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+  }
+}
+
+/* ── STICKY CATEGORY BAR ── */
+.sticky-categories {
+  position: sticky;
+  top: 0;
+  background: var(--paper);
+  border-bottom: 2px solid var(--stone-2);
+  padding: 12px 20px;
+  z-index: 50;
+  box-shadow: 0 2px 8px rgba(24,42,77,0.08);
+  margin: 0;
+}
+
+.sticky-categories-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sticky-categories-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
+.sticky-cat-link {
+  padding: 6px 14px;
+  background: var(--white);
+  border: 1px solid var(--stone-2);
+  border-radius: 20px;
+  font-size: 0.82rem;
+  color: var(--text);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.sticky-cat-link:hover {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+}
+
+@media (max-width: 768px) {
+  .sticky-categories {
+    padding: 10px 16px;
+  }
+
+  .sticky-categories-inner {
+    gap: 8px;
+  }
+
+  .sticky-categories-label {
+    display: none;
+  }
+
+  .sticky-cat-link {
+    padding: 5px 12px;
+    font-size: 0.75rem;
+  }
+}

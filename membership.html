@@ -125,6 +125,9 @@
 
   </section>
 
+  <!-- FLOATING NAV -->
+  <a class="floating-nav" href="#" onclick="scrollToTop(event)" title="Back to Top">↑</a>
+
   <footer>
     <div class="footer-logo">
       Oxford Hongkongers CIC
@@ -146,6 +149,26 @@
     <div class="footer-copy">Copyright &copy; 2025 Oxford Hongkongers CIC. All rights reserved.</div>
   </footer>
 
+  <script>
+    function scrollToTop(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Show/hide floating nav based on scroll
+    const floatingNav = document.querySelector('.floating-nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        floatingNav.style.opacity = '1';
+        floatingNav.style.pointerEvents = 'auto';
+      } else {
+        floatingNav.style.opacity = '0.3';
+        floatingNav.style.pointerEvents = 'none';
+      }
+    });
+    floatingNav.style.opacity = '0.3';
+    floatingNav.style.transition = 'opacity 0.3s ease';
+  </script>
   <script src="scripts.js"></script>
 </body>
 </html>
