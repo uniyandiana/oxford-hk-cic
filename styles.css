@@ -1618,18 +1618,18 @@ footer {
 
 /* ── STICKY CATEGORY BAR ── */
 .sticky-categories {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
   background: var(--paper);
   border-bottom: 3px solid var(--gold);
   padding: 14px 20px;
   z-index: 95;
   box-shadow: 0 4px 12px rgba(24,42,77,0.12);
-  margin: 0;
   width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  will-change: position;
 }
 
 .sticky-categories-inner {
