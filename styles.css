@@ -1619,13 +1619,13 @@ footer {
 /* ── STICKY CATEGORY BAR ── */
 .sticky-categories {
   position: fixed;
-  top: 60px;
+  top: 80px;
   left: 0;
   right: 0;
   background: var(--paper);
   border-bottom: 3px solid var(--gold);
   padding: 14px 20px;
-  z-index: 95;
+  z-index: 99;
   box-shadow: 0 4px 12px rgba(24,42,77,0.12);
   width: 100%;
   overflow-x: auto;
