@@ -567,10 +567,7 @@
   <script>
     function scrollToCategories(e) {
       e.preventDefault();
-      const catGrid = document.querySelector('.cat-grid');
-      if (catGrid) {
-        catGrid.scrollIntoView({ behavior: 'smooth' });
-      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // Show/hide floating nav based on scroll

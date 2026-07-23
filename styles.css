@@ -1621,11 +1621,15 @@ footer {
   position: sticky;
   top: 0;
   background: var(--paper);
-  border-bottom: 2px solid var(--stone-2);
-  padding: 12px 20px;
-  z-index: 50;
-  box-shadow: 0 2px 8px rgba(24,42,77,0.08);
+  border-bottom: 3px solid var(--gold);
+  padding: 14px 20px;
+  z-index: 95;
+  box-shadow: 0 4px 12px rgba(24,42,77,0.12);
   margin: 0;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  will-change: position;
 }
 
 .sticky-categories-inner {
@@ -1636,6 +1640,7 @@ footer {
   gap: 12px;
   flex-wrap: wrap;
   justify-content: center;
+  min-height: 32px;
 }
 
 .sticky-categories-label {
@@ -1646,10 +1651,11 @@ footer {
   letter-spacing: 0.5px;
   margin-right: 8px;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .sticky-cat-link {
-  padding: 6px 14px;
+  padding: 8px 16px;
   background: var(--white);
   border: 1px solid var(--stone-2);
   border-radius: 20px;
@@ -1658,21 +1664,27 @@ footer {
   text-decoration: none;
   transition: all 0.2s ease;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.sticky-cat-link:hover {
+.sticky-cat-link:hover,
+.sticky-cat-link:focus {
   background: var(--navy);
   color: var(--white);
   border-color: var(--navy);
+  outline: none;
 }
 
 @media (max-width: 768px) {
   .sticky-categories {
-    padding: 10px 16px;
+    padding: 12px 12px;
   }
 
   .sticky-categories-inner {
-    gap: 8px;
+    gap: 6px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .sticky-categories-label {
@@ -1680,7 +1692,7 @@ footer {
   }
 
   .sticky-cat-link {
-    padding: 5px 12px;
+    padding: 6px 12px;
     font-size: 0.75rem;
   }
 }
