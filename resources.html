@@ -101,8 +101,6 @@
     </div>
   </div>
 
-  <div style="height: 170px;"></div>
-
   <!-- IMMIGRATION -->
   <section class="resource-section" id="immigration">
     <div class="section-title" style="padding-top:0;">
@@ -421,6 +419,19 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    // Show/hide sticky bar based on scroll (only after cat-grid)
+    const stickyBar = document.querySelector('.sticky-categories');
+    const catGrid = document.querySelector('.cat-grid');
+
+    window.addEventListener('scroll', () => {
+      const catGridBottom = catGrid.offsetTop + catGrid.offsetHeight;
+      if (window.scrollY > catGridBottom + 100) {
+        stickyBar.style.display = 'block';
+      } else {
+        stickyBar.style.display = 'none';
+      }
+    });
+
     // Show/hide floating nav based on scroll
     const floatingNav = document.querySelector('.floating-nav');
     window.addEventListener('scroll', () => {
@@ -429,11 +440,12 @@
         floatingNav.style.pointerEvents = 'auto';
       } else {
         floatingNav.style.opacity = '0.3';
-        floatingNav.style.pointerEvents = 'none';
+        floatingNav.style.pointerPoints = 'none';
       }
     });
     floatingNav.style.opacity = '0.3';
     floatingNav.style.transition = 'opacity 0.3s ease';
+    stickyBar.style.transition = 'all 0.3s ease';
   </script>
   <script src="scripts.js"></script>
 </body>
