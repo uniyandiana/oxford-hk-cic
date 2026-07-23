@@ -1,0 +1,32 @@
+# Robots.txt for Oxford Hongkongers CIC
+# Allow all search engines and AI crawlers
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /.git/
+
+# Sitemap location
+Sitemap: https://oxford-hk.com/sitemap.xml
+
+# Crawl delay (optional - no delay needed for fast servers)
+Crawl-delay: 0
+
+# Specific rules for search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
