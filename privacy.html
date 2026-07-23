@@ -18,17 +18,38 @@
 </head>
 <body>
 
-  <nav>
+    <nav>
     <a href="index.html" class="nav-logo">
       <img src="LOGO/Oxford Hongkongers Logo (W).png" alt="Oxford Hongkongers" class="logo-img" />
     </a>
-    <ul class="nav-links">
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home 主頁</a></li>
       <li><a href="events.html">Events 活動</a></li>
       <li><a href="resources.html">Resources 資源</a></li>
       <li><a href="membership.html">會員計劃 Membership</a></li>
     </ul>
   </nav>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+
 
   <div class="page-hero">
     <h1>Privacy Policy 私隱政策</h1>

@@ -15,13 +15,33 @@
     <a href="index.html" class="nav-logo">
       <img src="LOGO/Oxford Hongkongers Logo (W).png" alt="Oxford Hongkongers" class="logo-img" />
     </a>
-    <ul class="nav-links">
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home 主頁</a></li>
       <li><a href="events.html" class="active">Events 活動</a></li>
       <li><a href="resources.html">Resources 資源</a></li>
       <li><a href="membership.html">會員計劃 Membership</a></li>
     </ul>
   </nav>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
 
   <div class="page-hero">
     <h1>Events 活動</h1>
@@ -54,30 +74,21 @@
   </div>
 
   <div class="highlights-scroll">
-    <div class="highlight-item" onclick="openHighlight('Event Highlights/highlight-1.jpg', 'midautumn-25')">
+    <div class="highlight-item">
       <span class="ph-icon">📷</span>
-      <img src="Event Highlights/highlight-1.jpg" alt="Mid-Autumn Festival" loading="lazy" onload="this.style.opacity=1" onerror="this.style.opacity=0" />
+      <img src="Event Highlights/highlight-1.jpg" alt="Mid-Autumn Festival" loading="lazy" onload="this.style.opacity=1" onerror="this.style.opacity=0" oncontextmenu="return false" draggable="false" />
     </div>
-    <div class="highlight-item" onclick="openHighlight('Event Highlights/highlight-2.jpg', 'movie-crime-25')">
+    <div class="highlight-item">
       <span class="ph-icon">📷</span>
-      <img src="Event Highlights/highlight-2.jpg" alt="Movie Screening" loading="lazy" onload="this.style.opacity=1" onerror="this.style.opacity=0" />
+      <img src="Event Highlights/highlight-2.jpg" alt="Movie Screening" loading="lazy" onload="this.style.opacity=1" onerror="this.style.opacity=0" oncontextmenu="return false" draggable="false" />
     </div>
-    <div class="highlight-item" onclick="openHighlight('Event Highlights/highlight-3.jpg', 'lny-gather-26')">
+    <div class="highlight-item">
       <span class="ph-icon">📷</span>
-      <img src="Event Highlights/highlight-3.jpg" alt="Lunar New Year Market" loading="lazy" onload="this.style.opacity=1" onerror="this.style.opacity=0" />
+      <img src="Event Highlights/highlight-3.jpg" alt="Lunar New Year Market" loading="lazy" onload="this.style.opacity=1" onerror="this.style.opacity=0" oncontextmenu="return false" draggable="false" />
     </div>
-    <div class="highlight-item" onclick="openHighlight('Event Highlights/highlight-4.jpg', 'boardgame-night-26')">
+    <div class="highlight-item">
       <span class="ph-icon">📷</span>
-      <img src="Event Highlights/highlight-4.jpg" alt="Boardgame Night" loading="lazy" onload="this.style.opacity=1" onerror="this.style.opacity=0" />
-    </div>
-  </div>
-
-  <!-- Highlight Lightbox -->
-  <div id="highlightModal" class="event-modal" onclick="closeHighlight(event)">
-    <div class="lightbox-content" onclick="event.stopPropagation()">
-      <span class="close-btn" onclick="closeHighlight()">&times;</span>
-      <img id="highlightImg" src="" alt="Event highlight" />
-      <div id="highlightDesc"></div>
+      <img src="Event Highlights/highlight-4.jpg" alt="Boardgame Night" loading="lazy" onload="this.style.opacity=1" onerror="this.style.opacity=0" oncontextmenu="return false" draggable="false" />
     </div>
   </div>
 
@@ -293,35 +304,6 @@
       btn.querySelector('.arrow').textContent = isOpen ? '▼' : '▲';
     }
 
-    function openHighlight(src, eventId) {
-      document.getElementById('highlightImg').src = src;
-
-      const descDiv = document.getElementById('highlightDesc');
-      if (eventId && eventDetails[eventId]) {
-        const event = eventDetails[eventId];
-        descDiv.innerHTML = `
-          <div style="padding:20px; text-align:center;">
-            <h3>${event.title}</h3>
-            <p style="color:#666; font-size:0.95rem; margin:10px 0;">${event.subtitle}</p>
-            <p style="font-size:0.9rem; margin:15px 0; line-height:1.5;">${event.description.substring(0, 200)}...</p>
-            <button onclick="openEventModal('${eventId}'); document.getElementById('highlightModal').classList.remove('show');" style="margin-top:15px; padding:10px 20px; background:#222; color:#fff; border:none; border-radius:5px; cursor:pointer; font-size:0.95rem;">View Full Event Details</button>
-          </div>
-        `;
-      } else {
-        descDiv.innerHTML = '';
-      }
-
-      document.getElementById('highlightModal').classList.add('show');
-    }
-
-    function closeHighlight(event) {
-      if (event && event.target.id !== 'highlightModal') return;
-      document.getElementById('highlightModal').classList.remove('show');
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeHighlight();
-    });
 
     const eventDetails = {
       'mind-matters-26': {
