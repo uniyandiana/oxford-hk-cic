@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/lny27-gg",
+      "destination": "/lunar-new-year-market.html",
+      "permanent": false
+    },
+    {
+      "source": "/lny27-wg",
+      "destination": "/lunar-new-year-westgate.html",
+      "permanent": false
+    }
+  ]
+}
