@@ -9,6 +9,16 @@
       "source": "/lny27-wg",
       "destination": "/lunar-new-year-westgate.html",
       "permanent": false
+    },
+    {
+      "source": "/tours",
+      "destination": "/walking-tours.html",
+      "permanent": false
+    },
+    {
+      "source": "/delegations",
+      "destination": "/delegations.html",
+      "permanent": false
     }
   ]
 }
