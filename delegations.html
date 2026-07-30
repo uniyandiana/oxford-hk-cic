@@ -224,9 +224,53 @@
       margin-bottom: 6px;
     }
     .lead-note p { font-size: 0.92rem; line-height: 1.7; opacity: 0.92; }
+    /* ---- Photos ---- */
+    .photo-strip {
+      max-width: 900px;
+      margin: 26px auto 0;
+      display: grid;
+      gap: 16px;
+    }
+    .photo-card {
+      margin: 0;
+      background: var(--paper);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 1px 8px rgba(24,42,77,0.06);
+    }
+    .photo-card img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 7;
+      object-fit: cover;
+    }
+    .photo-card figcaption {
+      padding: 12px 20px 14px;
+      font-size: 0.83rem;
+      line-height: 1.6;
+      color: var(--gray);
+    }
+    .photo-card figcaption .zh { color: var(--text); }
+    .photo-single {
+      max-width: 460px;
+      margin: 26px auto 0;
+      background: var(--paper);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 1px 8px rgba(24,42,77,0.06);
+    }
+    .photo-single img { width: 100%; display: block; }
+    .photo-single figcaption {
+      padding: 12px 20px 14px;
+      font-size: 0.83rem;
+      line-height: 1.6;
+      color: var(--gray);
+    }
+    .photo-single figcaption .zh { color: var(--text); }
     @media (max-width: 768px) {
       .step { padding-left: 42px; margin-left: 14px; }
       .step .s-dot { width: 30px; height: 30px; left: -16px; font-size: 0.85rem; }
+      .photo-card img { aspect-ratio: 16 / 9; }
     }
   </style>
 </head>
@@ -441,6 +485,18 @@
 
   </div>
 
+  <figure class="photo-single">
+    <picture>
+      <source srcset="Event Highlights/delegation-workshop.avif" type="image/avif" />
+      <img src="Event Highlights/delegation-workshop.jpg" loading="lazy"
+           alt="A career workshop for a visiting student group, held in a wood-panelled Oxford college room" />
+    </picture>
+    <figcaption>
+      <span class="zh">職業規劃工作坊，於牛津學院場地舉行。</span><br />
+      A career workshop for a visiting group, held in an Oxford college room.
+    </figcaption>
+  </figure>
+
   <!-- SAMPLE PROGRAMME -->
   <div class="section-title">
     <div class="eyebrow">Sample Programme</div>
@@ -501,6 +557,53 @@
     Longer visits can add a second workshop, university museums, punting, or a trip to
     Blenheim Palace and the Cotswolds. Coaches for destinations outside Oxford must be
     arranged by your own travel agent.
+  </div>
+
+  <!-- TOUR PHOTOS -->
+  <div class="section-title">
+    <div class="eyebrow">Past Visits</div>
+    <h2>行程實況 On the Day</h2>
+    <p class="sub">Photographs from groups we have hosted in Oxford</p>
+  </div>
+
+  <div class="photo-strip">
+
+    <figure class="photo-card">
+      <picture>
+        <source srcset="Event Highlights/delegation-hall.avif" type="image/avif" />
+        <img src="Event Highlights/delegation-hall.jpg" loading="lazy"
+             alt="A visiting student group being shown the Great Hall at Christ Church, Oxford" />
+      </picture>
+      <figcaption>
+        <span class="zh">學院參觀：基督堂學院大堂。</span><br />
+        College tour — the Great Hall at Christ Church.
+      </figcaption>
+    </figure>
+
+    <figure class="photo-card">
+      <picture>
+        <source srcset="Event Highlights/delegation-cathedral.avif" type="image/avif" />
+        <img src="Event Highlights/delegation-cathedral.jpg" loading="lazy"
+             alt="A guide briefing a visiting group at the cathedral entrance inside Christ Church, Oxford" />
+      </picture>
+      <figcaption>
+        <span class="zh">導賞途中的講解環節，全程以廣東話或普通話進行。</span><br />
+        A briefing stop on the tour, delivered in Cantonese or Mandarin.
+      </figcaption>
+    </figure>
+
+    <figure class="photo-card">
+      <picture>
+        <source srcset="Event Highlights/delegation-quad.avif" type="image/avif" />
+        <img src="Event Highlights/delegation-quad.jpg" loading="lazy"
+             alt="A visiting group listening to their guide in Tom Quad at Christ Church, Oxford" />
+      </picture>
+      <figcaption>
+        <span class="zh">Tom Quad 的戶外講解，為學院參觀的一部分。</span><br />
+        Outdoor briefing in Tom Quad, part of the college tour.
+      </figcaption>
+    </figure>
+
   </div>
 
   <!-- HOW IT WORKS -->
