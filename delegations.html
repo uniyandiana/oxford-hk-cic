@@ -226,9 +226,10 @@
     .lead-note p { font-size: 0.92rem; line-height: 1.7; opacity: 0.92; }
     /* ---- Photos ---- */
     .photo-strip {
-      max-width: 900px;
+      max-width: 1080px;
       margin: 26px auto 0;
       display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 16px;
     }
     .photo-card {
@@ -241,13 +242,13 @@
     .photo-card img {
       width: 100%;
       display: block;
-      aspect-ratio: 16 / 7;
+      aspect-ratio: 4 / 3;
       object-fit: cover;
     }
     .photo-card figcaption {
-      padding: 12px 20px 14px;
-      font-size: 0.83rem;
-      line-height: 1.6;
+      padding: 10px 14px 12px;
+      font-size: 0.76rem;
+      line-height: 1.55;
       color: var(--gray);
     }
     .photo-card figcaption .zh { color: var(--text); }
@@ -267,10 +268,41 @@
       color: var(--gray);
     }
     .photo-single figcaption .zh { color: var(--text); }
+
+    /* ---- Workshop themes: image left, cards right ---- */
+    .workshop-split {
+      max-width: 1100px;
+      margin: 24px auto 0;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+    .workshop-split .photo-single {
+      max-width: none;
+      margin: 0;
+      position: sticky;
+      top: 96px;
+    }
+    .workshop-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 16px;
+    }
+    @media (max-width: 900px) {
+      .workshop-split { grid-template-columns: 1fr; }
+      .workshop-split .photo-single {
+        position: static;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+    }
     @media (max-width: 768px) {
       .step { padding-left: 42px; margin-left: 14px; }
       .step .s-dot { width: 30px; height: 30px; left: -16px; font-size: 0.85rem; }
+      .photo-strip { grid-template-columns: 1fr; }
       .photo-card img { aspect-ratio: 16 / 9; }
+      .photo-card figcaption { font-size: 0.82rem; padding: 12px 18px 14px; }
     }
   </style>
 </head>
@@ -424,7 +456,21 @@
     <p class="sub">Themes we can run in an Oxford college or university venue</p>
   </div>
 
-  <div class="district-grid">
+  <div class="workshop-split">
+
+    <figure class="photo-single">
+      <picture>
+        <source srcset="Event Highlights/delegation-workshop.avif" type="image/avif" />
+        <img src="Event Highlights/delegation-workshop.jpg" loading="lazy"
+             alt="A career workshop for a visiting student group, held in a wood-panelled Oxford college room" />
+      </picture>
+      <figcaption>
+        <span class="zh">職業規劃工作坊，於牛津學院場地舉行。</span><br />
+        A career workshop for a visiting group, held in an Oxford college room.
+      </figcaption>
+    </figure>
+
+    <div class="workshop-cards">
 
     <div class="district-card">
       <span class="d-tag">Careers 職業</span>
@@ -483,19 +529,9 @@
         Sessions run about two hours in lecture, workshop or discussion format.</p>
     </div>
 
-  </div>
+    </div><!-- /workshop-cards -->
 
-  <figure class="photo-single">
-    <picture>
-      <source srcset="Event Highlights/delegation-workshop.avif" type="image/avif" />
-      <img src="Event Highlights/delegation-workshop.jpg" loading="lazy"
-           alt="A career workshop for a visiting student group, held in a wood-panelled Oxford college room" />
-    </picture>
-    <figcaption>
-      <span class="zh">職業規劃工作坊，於牛津學院場地舉行。</span><br />
-      A career workshop for a visiting group, held in an Oxford college room.
-    </figcaption>
-  </figure>
+  </div><!-- /workshop-split -->
 
   <!-- SAMPLE PROGRAMME -->
   <div class="section-title">
@@ -587,8 +623,8 @@
              alt="A guide briefing a visiting group at the cathedral entrance inside Christ Church, Oxford" />
       </picture>
       <figcaption>
-        <span class="zh">導賞途中的講解環節，全程以廣東話或普通話進行。</span><br />
-        A briefing stop on the tour, delivered in Cantonese or Mandarin.
+        <span class="zh">導賞途中的講解環節，全程以英語、廣東話或普通話進行。</span><br />
+        A briefing stop on the tour, delivered in English, Cantonese or Mandarin.
       </figcaption>
     </figure>
 
