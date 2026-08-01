@@ -19,6 +19,11 @@
       "source": "/delegations",
       "destination": "/delegations.html",
       "permanent": false
+    },
+    {
+      "source": "/guide",
+      "destination": "/guide.html",
+      "permanent": false
     }
   ]
 }

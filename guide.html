@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>牛津導賞全書 · The Oxford Field Companion</title>
+<meta name="robots" content="noindex, nofollow" />
+
+<!--
+  ═══════════════════════════════════════════════════════════════
+  想加自己影嘅相？
+  喺下面 STOPS 資料入面，任何一站加一行： photo: "相片檔名.jpg",
+  例如   photo: "radcliffe.jpg",
+  然後將相片放喺同呢個 HTML 檔一樣嘅資料夾入面就得。
+  無加相嘅站會自動用手繪插圖。
+  ═══════════════════════════════════════════════════════════════
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ground:#E7EBE6;      /* 洪水期草地嘅冷灰綠 */
+  --ground-2:#DDE2DC;
+  --card:#F4F0E5;        /* Headington 石灰岩暖白 */
+  --card-2:#EBE5D6;
+  --ink:#141920;
+  --ink-2:#4B535C;
+  --ink-3:#7A838C;
+  --oxford:#002147;      /* Oxford Blue，大學正色 */
+  --oxford-2:#123A66;
+  --lichen:#6C8244;      /* 石上地衣綠 */
+  --ribbon:#8C1F2F;      /* 博士袍緄邊紅 */
+  --flood:#9DB0B8;
+  --rule:#C9C2AF;
+  --sh:0 1px 0 rgba(20,25,32,.05), 0 10px 30px -18px rgba(0,33,71,.45);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:88px}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:"Noto Sans TC","Inter",system-ui,sans-serif;
+  font-weight:400; line-height:1.85; font-size:16.5px;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:"Fraunces","Noto Serif TC",Georgia,serif; font-weight:700; line-height:1.25; margin:0}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums}
+a{color:var(--oxford)}
+
+/* ─────────── 頂欄 ─────────── */
+.topbar{
+  position:sticky; top:0; z-index:60; background:rgba(0,33,71,.97);
+  backdrop-filter:blur(8px); border-bottom:1px solid rgba(255,255,255,.14);
+}
+.topbar-in{max-width:1180px; margin:0 auto; padding:9px 20px; display:flex; gap:14px; align-items:center; flex-wrap:wrap}
+.brand{color:#fff; font-family:"Fraunces","Noto Serif TC",serif; font-weight:700; font-size:15px; letter-spacing:.02em; white-space:nowrap}
+.brand span{color:var(--flood); font-weight:300}
+.chapnav{display:flex; gap:2px; flex-wrap:wrap; margin-left:auto}
+.chapnav a{
+  color:rgba(255,255,255,.7); text-decoration:none; font-size:12.5px; padding:5px 9px;
+  border-radius:3px; white-space:nowrap; font-family:"IBM Plex Mono",monospace;
+}
+.chapnav a:hover{color:#fff; background:rgba(255,255,255,.11)}
+.rehearse{
+  margin-left:6px; border:1px solid rgba(255,255,255,.4); background:transparent; color:#fff;
+  font-family:"IBM Plex Mono",monospace; font-size:12px; padding:5px 11px; border-radius:3px; cursor:pointer;
+}
+.rehearse:hover{background:#fff; color:var(--oxford)}
+.rehearse.on{background:var(--lichen); border-color:var(--lichen)}
+
+/* ─────────── 封面 ─────────── */
+.hero{background:var(--oxford); color:#fff; position:relative; overflow:hidden}
+.hero-in{max-width:1180px; margin:0 auto; padding:64px 20px 0}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--flood); margin-bottom:22px;
+}
+.hero h1{font-size:clamp(38px,7vw,76px); letter-spacing:-.02em; font-family:"Noto Serif TC",serif; font-weight:900}
+.hero h1 em{
+  display:block; font-family:"Fraunces",serif; font-style:normal; font-weight:300;
+  font-size:clamp(17px,2.4vw,27px); color:var(--flood); letter-spacing:.05em; margin-top:12px;
+}
+.hero p.lede{max-width:640px; margin:26px 0 0; color:rgba(255,255,255,.84); font-weight:300; font-size:17px}
+.stats{display:flex; gap:34px; flex-wrap:wrap; margin:38px 0 0; padding:0; list-style:none}
+.stats li{border-left:2px solid var(--lichen); padding-left:13px}
+.stats b{display:block; font-family:"Fraunces",serif; font-size:31px; font-weight:700; line-height:1}
+.stats small{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.13em; color:var(--flood); text-transform:uppercase}
+.hero-sky{display:block; width:100%; height:auto; margin-top:34px}
+
+/* ─────────── 用法說明 ─────────── */
+.howto{background:var(--ground-2); border-bottom:1px solid var(--rule)}
+.howto-in{max-width:1180px; margin:0 auto; padding:28px 20px; display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.howto h4{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--lichen); font-weight:500; margin-bottom:5px}
+.howto p{margin:0; font-size:14.5px; color:var(--ink-2); line-height:1.7}
+
+/* ─────────── 篩選 ─────────── */
+.filters{position:sticky; top:47px; z-index:50; background:var(--ground); border-bottom:1px solid var(--rule)}
+.filters-in{max-width:1180px; margin:0 auto; padding:11px 20px; display:flex; gap:7px; flex-wrap:wrap; align-items:center}
+.flabel{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin-right:4px}
+.fbtn{
+  border:1px solid var(--rule); background:transparent; color:var(--ink-2); cursor:pointer;
+  font-family:"Noto Sans TC",sans-serif; font-size:13px; padding:5px 13px; border-radius:99px;
+}
+.fbtn:hover{border-color:var(--oxford); color:var(--oxford)}
+.fbtn.on{background:var(--oxford); border-color:var(--oxford); color:#fff}
+.count{margin-left:auto; font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--ink-3)}
+
+/* ─────────── 章 ─────────── */
+.wrap{max-width:1180px; margin:0 auto; padding:0 20px 90px}
+.chapter{margin:64px 0 0}
+.chapter-head{border-top:3px solid var(--oxford); padding-top:16px; margin-bottom:30px; display:flex; gap:20px; align-items:baseline; flex-wrap:wrap}
+.chapter-num{font-family:"Fraunces",serif; font-size:54px; font-weight:300; color:var(--flood); line-height:.8}
+.chapter-head h2{font-size:clamp(23px,3.3vw,33px); font-family:"Noto Serif TC",serif; font-weight:900; letter-spacing:-.01em}
+.chapter-head .sub{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--ink-3); letter-spacing:.06em; width:100%; margin-top:4px}
+
+/* ─────────── 站卡 ─────────── */
+.stop{
+  background:var(--card); border:1px solid var(--rule); border-radius:2px;
+  margin-bottom:26px; box-shadow:var(--sh); overflow:hidden;
+  display:grid; grid-template-columns:340px 1fr;
+}
+@media(max-width:840px){ .stop{grid-template-columns:1fr} }
+.stop.hide{display:none}
+
+.plate{background:var(--card-2); border-right:1px solid var(--rule); position:relative; min-height:230px}
+@media(max-width:840px){ .plate{border-right:none; border-bottom:1px solid var(--rule)} }
+.plate svg{display:block; width:100%; height:100%; position:absolute; inset:0}
+.plate img{display:block; width:100%; height:100%; object-fit:cover; position:absolute; inset:0}
+.plate .platecap{
+  position:absolute; left:0; right:0; bottom:0; padding:7px 12px;
+  font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.09em;
+  color:rgba(255,255,255,.9); background:linear-gradient(transparent,rgba(0,33,71,.82));
+}
+
+.body{padding:26px 30px 28px}
+.tagrow{display:flex; gap:7px; flex-wrap:wrap; align-items:center; margin-bottom:13px}
+.no{font-family:"IBM Plex Mono",monospace; font-size:12px; font-weight:500; color:#fff; background:var(--oxford); padding:3px 9px; border-radius:2px; letter-spacing:.05em}
+.tag{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.08em; padding:3px 9px; border-radius:99px; border:1px solid var(--rule); color:var(--ink-2)}
+.tag.free{border-color:var(--lichen); color:#4E6130; background:rgba(108,130,68,.1)}
+.tag.paid{border-color:var(--ribbon); color:var(--ribbon); background:rgba(140,31,47,.07)}
+.tag.view{border-color:var(--oxford); color:var(--oxford); background:rgba(0,33,71,.07)}
+
+.stop h3{font-size:26px; font-family:"Noto Serif TC",serif; font-weight:900; letter-spacing:-.01em}
+.en{font-family:"Fraunces",serif; font-weight:300; font-size:15px; color:var(--ink-3); margin:3px 0 0; letter-spacing:.02em}
+
+.hook{
+  margin:18px 0 0; padding:16px 20px; background:#fff; border-left:3px solid var(--lichen);
+  font-family:"Noto Serif TC",serif; font-weight:700; font-size:18.5px; line-height:1.65; color:var(--oxford);
+}
+.hook::before{content:"開場白"; display:block; font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.2em; color:var(--lichen); font-weight:400; margin-bottom:6px}
+
+.sec{margin-top:20px}
+.sec > h4{
+  font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--ink-3); font-weight:500; margin-bottom:7px; display:flex; align-items:center; gap:9px;
+}
+.sec > h4::after{content:""; flex:1; height:1px; background:var(--rule)}
+.sec p{margin:0 0 11px}
+.sec p:last-child{margin-bottom:0}
+.sec ul{margin:0; padding-left:19px}
+.sec li{margin-bottom:7px}
+.sec li::marker{color:var(--lichen)}
+
+.myth{margin-top:20px; background:rgba(140,31,47,.055); border:1px solid rgba(140,31,47,.22); border-radius:2px; padding:15px 19px}
+.myth h4{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ribbon); font-weight:500; margin-bottom:6px}
+.myth p{margin:0 0 9px; font-size:15px; color:#4A2028}
+.myth p:last-child{margin-bottom:0}
+
+.line{
+  margin-top:20px; padding:15px 19px; background:var(--oxford); color:#fff; border-radius:2px;
+  font-family:"Noto Serif TC",serif; font-size:16.5px; font-weight:500; line-height:1.7;
+}
+.line::before{content:"導賞金句 · SAY THIS"; display:block; font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.2em; color:var(--flood); font-weight:400; margin-bottom:7px}
+
+.prac{margin-top:18px; padding-top:14px; border-top:1px solid var(--rule); display:flex; gap:22px; flex-wrap:wrap}
+.prac div{font-size:13px; color:var(--ink-2); line-height:1.5}
+.prac b{display:block; font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); font-weight:500}
+
+/* 背誦模式：淨係留開場白同金句 */
+body.rehearsing .sec, body.rehearsing .myth, body.rehearsing .prac, body.rehearsing .plate, body.rehearsing .en{display:none}
+body.rehearsing .stop{grid-template-columns:1fr}
+body.rehearsing .body{padding:20px 24px}
+
+/* ─────────── 尾 ─────────── */
+.foot{background:var(--oxford); color:rgba(255,255,255,.8); margin-top:20px}
+.foot-in{max-width:1180px; margin:0 auto; padding:48px 20px 60px}
+.foot h3{color:#fff; font-family:"Noto Serif TC",serif; font-size:23px; font-weight:900; margin-bottom:16px}
+.foot-grid{display:grid; gap:28px; grid-template-columns:repeat(auto-fit,minmax(245px,1fr)); margin-top:26px}
+.foot h5{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--flood); font-weight:500; margin:0 0 8px}
+.foot p, .foot li{font-size:14.5px; line-height:1.75; font-weight:300}
+.foot ul{margin:0; padding-left:18px}
+.foot li::marker{color:var(--lichen)}
+.foot .note{margin-top:34px; padding-top:20px; border-top:1px solid rgba(255,255,255,.18); font-size:13px; color:rgba(255,255,255,.55)}
+
+
+/* ─────────── 序章 PRIMER ─────────── */
+.primer{background:var(--card); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule)}
+.primer-in{max-width:1180px; margin:0 auto; padding:52px 20px 58px}
+.primer-head{border-top:3px solid var(--ribbon); padding-top:16px; margin-bottom:34px; display:flex; gap:20px; align-items:baseline; flex-wrap:wrap}
+.primer-head .chapter-num{color:var(--ribbon); opacity:.45}
+.primer-head h2{font-size:clamp(23px,3.3vw,33px); font-family:"Noto Serif TC",serif; font-weight:900}
+.primer-head .sub{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--ink-3); width:100%; margin-top:4px; letter-spacing:.06em}
+
+.tl{display:flex; gap:0; overflow-x:auto; padding:6px 0 20px; margin-bottom:38px; border-bottom:1px solid var(--rule)}
+.tl-item{min-width:132px; flex:1; padding:0 12px 0 0; position:relative}
+.tl-item::before{content:""; position:absolute; left:0; top:16px; right:0; height:1px; background:var(--rule)}
+.tl-item::after{content:""; position:absolute; left:0; top:12px; width:9px; height:9px; border-radius:50%; background:var(--oxford)}
+.tl-item.hot::after{background:var(--ribbon)}
+.tl-item b{display:block; font-family:"IBM Plex Mono",monospace; font-size:15px; color:var(--oxford); margin-bottom:34px; font-weight:500}
+.tl-item.hot b{color:var(--ribbon)}
+.tl-item span{display:block; font-size:13px; line-height:1.6; color:var(--ink-2); padding-right:8px}
+
+details.pwrap{border-top:1px solid var(--rule)}
+details.pwrap > summary{
+  list-style:none; cursor:pointer; padding:16px 0 18px; display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+  font-family:"IBM Plex Mono",monospace; font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--oxford);
+}
+details.pwrap > summary::-webkit-details-marker{display:none}
+details.pwrap > summary::before{
+  content:"+"; display:inline-flex; align-items:center; justify-content:center;
+  width:22px; height:22px; border:1px solid var(--oxford); border-radius:50%; font-size:14px; line-height:1; flex:none;
+}
+details.pwrap[open] > summary::before{content:"\2013"}
+details.pwrap > summary:hover{color:var(--ribbon)}
+details.pwrap > summary:hover::before{border-color:var(--ribbon)}
+details.pwrap > summary em{font-style:normal; color:var(--ink-3); text-transform:none; letter-spacing:0; font-family:"Noto Sans TC",sans-serif; font-size:13.5px}
+.pgrid{display:grid; gap:22px; grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.pcard{background:#fff; border:1px solid var(--rule); border-radius:2px; padding:24px 26px}
+.pcard.wide{grid-column:1/-1}
+.pcard h4{font-family:"Noto Serif TC",serif; font-size:20px; font-weight:900; margin-bottom:4px; color:var(--oxford)}
+.pcard .k{font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--lichen); font-weight:500; margin-bottom:9px}
+.pcard p{margin:0 0 11px; font-size:15.5px}
+.pcard p:last-child{margin-bottom:0}
+.pcard ul{margin:0 0 11px; padding-left:19px}
+.pcard li{margin-bottom:6px; font-size:15px}
+.pcard li::marker{color:var(--lichen)}
+.pcard .say{margin-top:16px; padding:13px 17px; background:var(--oxford); color:#fff; border-radius:2px; font-family:"Noto Serif TC",serif; font-size:15.5px; line-height:1.7}
+.pcard .say::before{content:"講法 · SAY THIS"; display:block; font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.2em; color:var(--flood); margin-bottom:6px}
+.pcard .verdict{margin-top:14px; padding:13px 17px; background:rgba(140,31,47,.06); border:1px solid rgba(140,31,47,.24); border-radius:2px; font-size:15px; color:#4A2028}
+.pcard .verdict b{color:var(--ribbon)}
+
+.ptable{width:100%; border-collapse:collapse; margin:6px 0 4px; font-size:14.5px}
+.ptable th{text-align:left; font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); font-weight:500; padding:0 12px 7px 0; border-bottom:1px solid var(--rule)}
+.ptable td{padding:8px 12px 8px 0; border-bottom:1px solid #E9E3D2; vertical-align:top}
+.ptable td:first-child{font-family:"IBM Plex Mono",monospace; color:var(--oxford); white-space:nowrap}
+
+@media print{
+  .topbar,.filters,.howto,.rehearse{display:none}
+  body{background:#fff; font-size:11pt}
+  .stop{break-inside:avoid; box-shadow:none; page-break-inside:avoid}
+  .hero{background:#fff; color:#000}
+  .hero h1,.hero p.lede,.stats b{color:#000}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <div class="brand">牛津導賞全書 <span>/ Oxford Field Companion</span></div>
+    <nav class="chapnav" id="chapnav"><a href="#primer">序 · 背景</a></nav>
+    <button class="rehearse" id="rehearseBtn">背誦模式</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-in">
+    <div class="eyebrow">A Walking Guide in 5 Chapters · 30 Stops</div>
+    <h1>落地牛津<em>Thirty ways to read a city of stone</em></h1>
+    <p class="lede">呢個唔係一份景點清單，係一份講故事嘅劇本。每一站有開場白、歷史、要望邊度、一個冷知識、同一句講出口嘅金句。石頭唔識講嘢，講故事嘅係你。</p>
+    <ul class="stats">
+      <li><b>30</b><small>Stops</small></li>
+      <li><b>24</b><small>Free or free to view</small></li>
+      <li><b>6</b><small>Colleges</small></li>
+      <li><b>14</b><small>Viewpoints</small></li>
+      <li><b>1,000+</b><small>Years</small></li>
+    </ul>
+    <svg class="hero-sky" viewBox="0 0 1140 190" preserveAspectRatio="xMidYMax meet" aria-hidden="true"></svg>
+  </div>
+</section>
+
+<section class="howto">
+  <div class="howto-in">
+    <div><h4>點用呢份嘢</h4><p>五章按地理排，由 Radcliffe Square 出發，順時針行完全城。每章大約 45–70 分鐘。可以整章抽出嚟做半日團。</p></div>
+    <div><h4>背誦模式</h4><p>撳右上角「背誦模式」，全部歷史同細節收埋，淨低開場白同金句。行去下一站嗰陣掃一眼，記番條線。</p></div>
+    <div><h4>三段式講法</h4><p>先講一個人，再講佢做咗乜，最後叫團友望一樣實物。抽象嘅年份記唔入腦，一個人同一樣睇得見嘅嘢就記得住。</p></div>
+    <div><h4>入場費同開放時間</h4><p>學院嘅開放時間隨學期、考試、婚禮改動，收費逐年加。出團前一晚上番各學院官網 check 一次，我冇喺度寫死價錢。</p></div>
+  </div>
+</section>
+
+
+<section class="primer" id="primer">
+  <div class="primer-in">
+    <div class="primer-head">
+      <div class="chapter-num">0</div>
+      <h2>序章：出發前，團友一定會問嘅六條問題</h2>
+      <div class="sub">城市／名字／大學點嚟／College 制／Sub fusc／出咗邊啲人 · 約 10 分鐘講完</div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-item"><b>c.727</b><span>聖 Frideswide 喺今日 Christ Church 主教座堂位置建修院。佢係牛津主保聖人。</span></div>
+      <div class="tl-item hot"><b>912</b><span>「Oxenaforda」首次見於《盎格魯撒克遜編年史》：愛德華長者接管倫敦同牛津，設為 burh（設防市鎮）。</span></div>
+      <div class="tl-item"><b>1071</b><span>諾曼人起牛津城堡。St George's Tower 至今仍在，比大學早。</span></div>
+      <div class="tl-item hot"><b>1096</b><span>已有「某種形式嘅教學」喺牛津進行。大學官方口徑只講到呢句，冇成立日。</span></div>
+      <div class="tl-item hot"><b>1167</b><span>亨利二世同 Becket 反面，禁止英格蘭學生去巴黎大學。學者大批回流，牛津起飛。</span></div>
+      <div class="tl-item"><b>1201 / 1231</b><span>出現 Chancellor（1214 正式授銜）；1231 年教師團體獲承認為 universitas（法人）。</span></div>
+      <div class="tl-item"><b>1209</b><span>市民與學生衝突，一批學者出走，喺劍橋另起爐灶。</span></div>
+      <div class="tl-item"><b>1249–1264</b><span>University College／Balliol／Merton 相繼出現，College 制成形。</span></div>
+      <div class="tl-item"><b>1878–1920</b><span>1878–79 首兩間女子學院成立；1920 年女性首次可以正式攞學位。</span></div>
+    </div>
+
+    <details class="pwrap">
+      <summary>展開六條問題 + Fact Check<em>城市／名字／大學起源／College 制／Sub fusc／首相同校友</em></summary>
+    <div class="pgrid">
+
+      <div class="pcard">
+        <div class="k">Question 01</div>
+        <h4>牛津市先，定牛津大學先？</h4>
+        <p><b>城市先，早差唔多兩百年。</b>牛津有記載嘅市鎮身分早到 912 年，大學要到 1096 年先有教學紀錄，而且係「已經有人喺度教書」，唔係「有人開咗間大學」。</p>
+        <p>時間差本身就係全城最重要嘅一條線索。呢個城市唔係為大學而建，大學係搬入咗一個已經運作緊嘅城市入面。所以牛津冇 campus（校園）——冇圍牆、冇校門、冇一塊寫住「University of Oxford」嘅地。學院係逐間插入民居之間嘅。你行 High Street，一間舖、一間學院、一間舖、一間學院。</p>
+        <p>亦因為咁，牛津有七百年嘅 <b>town vs gown</b>（市民對大學）張力：1209 年學者出走劍橋、1355 年 St Scholastica's Day 暴動死六十三人（第 18 站）、以至今日嘅樓價同旅遊爭議，全部係同一條線落嚟。</p>
+        <div class="say">「一個城市住咗大學，唔係一間大學起咗個城市。呢個分別，解釋咗你今日喺牛津見到嘅九成嘢。」</div>
+      </div>
+
+      <div class="pcard">
+        <div class="k">Question 02</div>
+        <h4>點解叫「牛津」？</h4>
+        <p>Oxford 來自古英語 <b>Oxenaforda</b>：<b>oxen</b>（牛）＋ <b>ford</b>（淺灘、可以涉水而過嘅河段）。字面就係「牛過河嘅淺灘」。中文譯「牛津」係少見咁精準嘅直譯——「牛」＋「津」（渡口）。</p>
+        <p>點解呢個位會有城？因為地理：泰晤士河同 Cherwell 河喺呢度交匯，河面分岔變淺，係附近唯一趕得郁牛群過河嘅位。有渡口就有商旅，有商旅就有市集，有市集就有城。</p>
+        <p>牛津市徽同市議會 logo 到今日仍然係一隻牛涉水而過。呢個城市嘅名同紋章，記住嘅唔係大學，係啲牛。</p>
+        <p>順帶一提：泰晤士河流經牛津嗰一段，本地慣稱 <b>the Isis</b>。所以賽艇叫 Isis，Christ Church Meadow 盡頭兩河交匯講嘅係 Isis 同 Cherwell（第 20 站）。</p>
+        <div class="say">「呢個全世界最出名嘅學術城市，個名意思係『牛過河嗰度』。八百年學問，起喺一個趕牛佬嘅捷徑上面。」</div>
+      </div>
+
+      <div class="pcard wide">
+        <div class="k">Question 03</div>
+        <h4>大學係點開始嘅？點解偏偏喺牛津教書？</h4>
+        <p><b>冇成立日期。</b>呢個係最重要嘅一點，亦係最好講嘅一點。大學官方網站嘅講法係：牛津冇明確嘅創校日期，但 1096 年已經有某種形式嘅教學存在。冇特許狀、冇奠基禮、冇創辦人。佢係「長」出嚟，唔係「開」出嚟。</p>
+        <p><b>點解係呢度？</b>幾個條件啱好疊埋：</p>
+        <ul>
+          <li><b>已經有宗教學校。</b>St Frideswide 修院同 Osney 修院已經喺度教緊書。中世紀嘅教育就係教會嘅教育，有修院先有學者。</li>
+          <li><b>交通樞紐。</b>河運加陸路，倫敦同英格蘭中部之間嘅節點。學生同書都要行得到入嚟。</li>
+          <li><b>王室常駐。</b>Beaumont Palace 曾經喺牛津，理查一世同約翰王都喺呢度出世。有王室就有資源同保護。</li>
+          <li><b>1167 年嘅意外。</b>亨利二世同坎特伯雷大主教 Thomas Becket 反面，禁止英格蘭人去巴黎大學讀書。當時歐洲學術重心喺巴黎；一紙禁令，一整代英格蘭學者要搵新地方落腳。佢哋回流到已經有教學傳統嘅牛津。呢一年被好多人視為牛津大學真正嘅起點。</li>
+        </ul>
+        <p>之後嘅制度化好快：1188 年編年史家 Gerald of Wales 喺牛津向一班學者公開朗讀；1190 年首位有紀錄嘅外國學生 Emo of Friesland 到埗（牛津國際化嘅第一日）；1201 年已有 magister scolarum Oxonie 統領，1214 年授予 Chancellor（校監）銜；1231 年教師團體正式獲承認為 universitas——一個法人。到呢一刻，「大學」先算正式存在。</p>
+        <div class="say">「你問我牛津大學幾時成立——冇答案。佢冇開幕日。佢係一班人喺一個渡口城市教書教到成為咗一間大學。西方最古老嘅英語大學，係一件慢慢發生嘅事。」</div>
+      </div>
+
+      <div class="pcard wide">
+        <div class="k">Question 04</div>
+        <h4>College 制到底係咩？點樣入到去？</h4>
+        <p>最容易明嘅講法：<b>大學係一間發學位嘅機構，College 係你住嘅屋企。</b>兩樣同時存在，缺一不可。</p>
+        <table class="ptable">
+          <tr><th>邊個負責</th><th>大學（University）</th><th>學院（College）</th></tr>
+          <tr><td>學位</td><td>頒發學位嘅係大學，唔係學院</td><td>唔發學位</td></tr>
+          <tr><td>教學</td><td>大課（lectures）、實驗室、系／學部</td><td>tutorial 小組導修（1–3 個學生對 1 個老師）</td></tr>
+          <tr><td>考試</td><td>統一出卷、統一評分</td><td>學期初嘅 collections（模擬試）</td></tr>
+          <tr><td>生活</td><td>—</td><td>宿舍、飯堂、圖書館、酒吧、船隊、教牧照顧</td></tr>
+        </table>
+        <p>今日共有 <b>43 間學院</b>（包括幾間 societies 同 permanent private halls）。每一間都係自治法人：自己嘅資產、自己嘅章程、自己揀院士。牛津冇一個「校長辦公室」管到你間學院揀邊個做 fellow。呢個係全世界極罕見嘅制度——大學係由幾十個獨立法人組成嘅聯邦。</p>
+        <p><b>入學點運作：</b></p>
+        <ul>
+          <li>你揀學科（course）先，再揀學院。學科決定一切：入學試、面試形式、競爭程度。</li>
+          <li>報名時你可以指定一間學院，或者交 <b>open application</b>（唔指定，由大學分配）。兩條路攞到嘅學位完全一樣。</li>
+          <li>所有學院簽咗 <b>Common Framework</b>：同一個學科，喺邊間學院嘅收生程序都一樣。</li>
+          <li>有 <b>pooling</b>（統籌調配）機制：如果你夠好但你揀嗰間今年啱好高手太多，你會被送去其他仲有位嘅學院再面試。所以「揀邊間會唔會影響入到入唔到」——基本上唔會。真正決定嘅係學科同面試。</li>
+          <li>大部分學科要考十月／十一月嘅入學試，之後十二月面試。</li>
+        </ul>
+        <p><b>Tutorial 制</b>係牛津教學嘅核心：一個星期交一篇 essay，然後同一到三個同學一齊坐喺導師房入面，逐句被質問。你唔可以匿埋。呢個制度十九世紀成形，亦係牛津學費咁貴、師生比咁低嘅原因。</p>
+        <div class="say">「呢度冇一間叫『牛津大學』嘅樓。你只可以入到某一間學院。學位係大學發嘅，但你嘅記憶、你嘅朋友、你嘅飯堂，全部屬於一間你十八歲揀咗、然後跟你一世嘅細屋。」</div>
+      </div>
+
+      <div class="pcard wide">
+        <div class="k">Question 05</div>
+        <h4>Sub fusc 同學生生活</h4>
+        <p><b>Sub fusc</b> 來自拉丁文 <i>sub fuscus</i>，意思係「深色嘅／暗沉嘅」。佢係穿喺學袍下面嗰套黑白正裝，唔係學袍本身。</p>
+        <p><b>官方要求包括：</b>深色西裝／裙／長褲、白恤衫或白襯衣、黑鞋、煲呔或黑絲帶。有一條規矩特別出名——襪或絲襪必須完全蓋過腳踝，褲腳／裙腳同襪之間唔可以露出任何皮膚。</p>
+        <p><b>幾時著：</b>三個場合——<b>matriculation</b>（入學禮，正式成為大學一員嗰日）、<b>所有大學考試</b>、<b>畢業禮</b>。日常上堂唔使著。</p>
+        <p><b>Mortarboard（四方帽）</b>：考試同入學禮都要帶住，但唔可以戴喺頭上。要等到真係攞到學位嗰日先戴得。呢個係最抵死嘅細節之一。</p>
+        <p><b>康乃馨（carnations）</b>：非官方但幾乎人人做。第一場考試白色、中間所有考試粉紅、最後一場紅色。花通常喺 Covered Market（第 17 站）買。傳統上係由你嘅「college children」買俾你——牛津學院有一套「college family」制度，一年級新生會分到兩個高年級「parents」，畢咗業就輪到你做人哋嘅 parents。Magdalen 讀法律嘅有例外，佢哋 Law Mods 一律戴綠色。</p>
+        <p><b>要唔要廢除？</b>2015 年學生會搞過公投：75.8% 支持繼續強制考試著 sub fusc，78% 支持繼續著袍，投票率 40.6%——對學生會公投嚟講高得誇張。2006 年嗰次係 81%。即係話：要求廢除嘅唔係學生。</p>
+        <p><b>其他你可以順手講嘅學生生活關鍵詞：</b></p>
+        <ul>
+          <li><b>三個學期</b>：Michaelmas（秋）、Hilary（冬）、Trinity（春夏）。每個學期只有八個星期，但強度極高。</li>
+          <li><b>Collections</b>：每個學期開學考嘅模擬試，唔計分，但要見導師。</li>
+          <li><b>Formal Hall</b>：晚上著袍喺學院飯堂食正餐，有拉丁文謝飯禱文。呢個係團友最想見到嘅畫面。</li>
+          <li><b>Bumps racing</b>：河太窄唔夠位並排，啲艇排成一直線出發，鬥追撞前面嗰隻（第 20 站）。</li>
+          <li><b>Encaenia</b>：每年六月嘅榮譽學位典禮，喺 Sheldonian 舉行，全城最華麗嘅一日。</li>
+          <li><b>Norrington Table</b>：學院之間按考試成績排嘅榜。冇官方地位，但每間學院都好在意。</li>
+        </ul>
+        <div class="say">「佢哋考試要著到成個殯儀館咁。而 2015 年公投，四分三學生投票話要繼續著。傳統喺牛津之所以留得低，唔係因為老人家夠惡——係因為後生仔投票留低佢。」</div>
+      </div>
+
+      <div class="pcard wide">
+        <div class="k">Question 06</div>
+        <h4>出咗幾多個首相？有邊啲人一定要 mention？</h4>
+        <p><b>31 位英國首相</b>（大學官方數字）。分佈亦好講得：</p>
+        <ul>
+          <li><b>Christ Church 13 位</b>——單一間學院，比絕大部分國家嘅整個高教系統都多（第 19 站）</li>
+          <li>Balliol 4 位（第 9 站）、Trinity 3 位、Brasenose 2 位</li>
+          <li>其餘各 1 位：Hart Hall（今日 Hertford）、Jesus、Lincoln、Merton、St Edmund Hall、St Hugh's、St John's、Somerville、University College</li>
+        </ul>
+        <p>對比：劍橋 14 位。另外有十一位首相根本冇讀過大學（包括邱吉爾同馬卓安）。</p>
+        <p>其他常引嘅數字（不同機構統計方法唔同，講嘅時候用「超過」會穩陣啲）：大學自己列出 <b>至少 55 位諾貝爾獎得主</b>、<b>至少 30 位外國元首或政府首腦</b>、<b>約 120 位奧運獎牌得主</b>。</p>
+        <p><b>按主題揀人講，唔好報菜名：</b></p>
+        <table class="ptable">
+          <tr><th>主題</th><th>人物</th></tr>
+          <tr><td>文學</td><td>Lewis Carroll（Christ Church）、J. R. R. Tolkien（Exeter → Merton）、C. S. Lewis（Univ → Magdalen）、Oscar Wilde（Magdalen）、Philip Pullman（Exeter）、W. H. Auden、Graham Greene、Aldous Huxley、V. S. Naipaul</td></tr>
+          <tr><td>科學</td><td>Edmond Halley（哈雷彗星，第 5 站）、Robert Hooke、Christopher Wren（天文學教授出身，第 3 站）、Dorothy Hodgkin（1964 年諾貝爾化學獎，英國至今唯一女性科學類諾獎得主）、Tim Berners-Lee（萬維網發明者，Queen's）、Stephen Hawking（本科 Univ）</td></tr>
+          <tr><td>醫學</td><td>Howard Florey 同 Ernst Chain——喺牛津令青黴素由實驗室走向臨床，1945 年諾貝爾醫學獎。牛津亦係 2020 年 Oxford–AstraZeneca 疫苗嘅開發地</td></tr>
+          <tr><td>英國政治</td><td>Margaret Thatcher（Somerville，讀化學）、Tony Blair（St John's，讀法律）、David Cameron（Brasenose，PPE）、Boris Johnson（Balliol，古典學）；PPE 呢個學位本身就係英國政壇嘅暗號</td></tr>
+          <tr><td>國際</td><td>Bill Clinton（Univ，Rhodes Scholar，第 6 站）、Indira Gandhi（Somerville）、Manmohan Singh（Nuffield）、Bob Hawke（Univ，第 6 站）、Aung San Suu Kyi（St Hugh's）、Malala Yousafzai（LMH，PPE，2020 年畢業）</td></tr>
+          <tr><td>其他</td><td>Roger Bannister——1954 年喺牛津 Iffley Road 跑道首次跑入四分鐘一英里；Adam Smith（Balliol，讀得極唔開心，第 9 站）</td></tr>
+        </table>
+        <div class="say">「數字冇意思，除非你揀得好。我通常淨係講兩個：Christ Church 一間學院出咗十三個首相；同埋 Dorothy Hodgkin——佢喺牛津用 X 光解出胰島素同青黴素嘅結構，係英國至今唯一一位攞科學類諾貝爾獎嘅女性。一個講權力，一個講知識。」</div>
+      </div>
+
+      <div class="pcard wide">
+        <div class="k">Fact Check</div>
+        <h4>St Mary 教堂係咪以前全牛津最高？</h4>
+        <p><b>大致啱，而且比傳說更勁——佢唔止「以前」最高，佢到今日仍然係舊城區最高。</b></p>
+        <p>數字（各方略有出入，因為量到塔頂定量到風向雞唔同）：塔身約 90 呎，塔尖約 101 呎，合共約 <b>191 呎（約 58 米）</b>。Nuffield College 官網自己列嘅版本係 St Mary 尖塔 200 呎／61 米。無論用邊個數，佢都排第一。</p>
+        <p>對比：</p>
+        <ul>
+          <li><b>Magdalen Tower</b>（1492–1509）：144 呎／約 44 米</li>
+          <li><b>Nuffield College 塔</b>（1962）：塔頂尖端 160 呎／約 49 米，Nuffield 自己都認第二</li>
+        </ul>
+        <p>塔身 1270 年代由一個 Abingdon 石匠起，塔尖大約 1315–25 年由一位不知名捐助人加建。即係話：<b>七百年嚟，牛津最高嘅嘢一直係同一座塔尖。</b></p>
+        <p>再加一層：Carfax Tower 高 74 呎，而牛津市中心有一條長期沿用嘅不成文規矩，唔起高過 Carfax 嘅樓（第 18 站）；再加上 1962 年開始、2015 年成文嘅「景觀錐」高度管制（第 25 站）。三重機制夾埋，先有你今日見到嗰條天際線。</p>
+        <div class="verdict"><b>要小心嘅一個常見錯誤：</b>坊間（連部分圖片庫同旅遊網）成日話 Magdalen Tower 係「牛津最高建築」。錯。Magdalen 只有 144 呎，矮過 St Mary 同 Nuffield。佢係<b>最高嘅學院建築</b>，亦係東面入城最搶眼嘅地標——但唔係全城最高。呢個講法值得喺團上主動糾正，效果好好。</div>
+        <div class="say">「你面前呢座尖塔，1320 年左右加上去。之後七百年，牛津起過城堡、學院、教堂、鐵路、商場——冇一樣夠膽高過佢。唔係做唔到，係唔准。」</div>
+      </div>
+
+    </div>
+    </details>
+  </div>
+</section>
+
+<div class="filters">
+  <div class="filters-in">
+    <span class="flabel">Filter</span>
+    <button class="fbtn on" data-f="all">全部</button>
+    <button class="fbtn" data-f="free">免費</button>
+    <button class="fbtn" data-f="view">觀景點</button>
+    <button class="fbtn" data-f="college">學院</button>
+    <button class="fbtn" data-f="museum">博物館</button>
+    <button class="fbtn" data-f="story">文學／故事</button>
+    <span class="count" id="count"></span>
+  </div>
+</div>
+
+<main class="wrap" id="main"></main>
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   STOPS — 每一站一個 object。想改文字、加相，直接改呢度。
+   ═══════════════════════════════════════════════════════════════ */
+
+const CHAPTERS = [
+  {n:"I",   short:"心臟地帶",  t:"心臟地帶：Radcliffe Square 與方庭群", sub:"Radcliffe Square → Bodleian → Sheldonian → Bridge of Sighs → New College · 約 70 分鐘"},
+  {n:"II",  short:"火刑與書",  t:"火刑與書：Broad Street 與 St Giles",  sub:"Broad Street → Balliol → Blackwell's → Martyrs' Memorial → Ashmolean · 約 60 分鐘"},
+  {n:"III", short:"High St",  t:"High Street 與南面方庭",              sub:"St Mary's → All Souls → Covered Market → Carfax → Christ Church → Merton · 約 90 分鐘"},
+  {n:"IV",  short:"河與鹿",    t:"河、鹿、同一條天際線",                 sub:"Magdalen → Magdalen Bridge → Botanic Garden → South Park → Headington · 約 90 分鐘"},
+  {n:"V",   short:"城西",      t:"城西的水與骨",                        sub:"Oxford Castle → Port Meadow → 自然史博物館 → Boars Hill · 半日"}
+];
+
+const STOPS = [
+
+/* ══════════════ 第一章 ══════════════ */
+{
+c:0, n:1, id:"radcam", name:"Radcliffe Square 與 Radcliffe Camera", en:"The Radcliffe Camera, 1737–1749",
+tags:["free","view"], badges:[["免費","free"],["最佳觀景","view"]],
+scene:"dome", cap:"Radcliffe Camera · James Gibbs, 1749",
+hook:"喺呢個廣場企定，慢慢轉一個圈。你面前呢座圓樓，係一個醫生用佢一世人賺嘅錢起嘅——而佢一本書都冇留低。",
+history:[
+"故事由一個叫 John Radcliffe 嘅醫生講起。佢係當時全英國最搵得嘅醫生，威廉三世同安妮女王都搵佢睇病。佢做人出名寸嘴、脾氣差，據講安妮女王臨終前搵佢，佢照樣唔肯出診。1714 年佢死嘅時候留低一筆巨款，其中四萬鎊——喺十八世紀初，係一個天文數字——指定用嚟起一間圖書館。",
+"托管人揀建築師揀咗好耐。Wren、Vanbrugh、Hawksmoor、Gibbs 都考慮過。Hawksmoor 甚至做咗個木模型，今日仲收喺 Bodleian。最後贏嘅係蘇格蘭人 James Gibbs，就係設計倫敦特拉法加廣場 St Martin-in-the-Fields 嗰位。1737 年 5 月 17 日動工，起足十二年，1749 年 4 月 13 日開幕，慶祝咗三日。",
+"呢座樓係英國第一座專門為圖書館而起嘅圓形建築。喺當時嘅英國，「圓形嘅圖書館」係一個近乎唔存在嘅建築類型。Gibbs 用 Headington 石起下半截，上半截用 Tayton 石，個穹頂至今仍然係全英國第三大。",
+"最初佢叫 Radcliffe Library，係一間獨立運作嘅科學圖書館，同 Bodleian 冇關係。書雜亂無章，讀者寥寥。1860 年 Bodleian 接手，科學藏書搬去新嘅 Radcliffe Science Library，呢度變成單一閱覽室，先改名叫 Radcliffe Camera。Camera 唔係相機，係拉丁文「房間」。",
+],
+see:[
+"企喺 St Mary 教堂門口嘅石級上望過去：Radcliffe Camera 左手邊係 Brasenose，右手邊係 All Souls，後面係 Bodleian 舊方庭。呢個角度係全牛津最靚嘅框景，而且完全免費。",
+"望穹頂下面一圈嘅欄杆同瓶狀柱（balusters）——Gibbs 講明自己想抗拒當時流行嘅 Palladian 風，結果失敗得好徹底。",
+"廣場地下係中空嘅。1909 年之後喺廣場底挖咗書庫，今日 Bodleian 舊館同 Camera 之間有一條地下通道，學生叫佢 the Glink（Gladstone Link）。你腳下真係有幾十萬本書。"
+],
+myth:{t:"冷知識", b:[
+"Radcliffe Camera 唔對外開放。唯一入到去嘅方法係參加 Bodleian 嘅長版導賞團（90 分鐘嗰個），要提早訂。廣場同外觀係全日免費、24 小時開放。",
+"呢座樓大概係全牛津被影得最多次嘅建築物。你如果只可以帶團友影一張相，就係喺呢度。日落前四十分鐘，西邊嘅光會打正落個穹頂。"
+]},
+line:"「一個從來冇寫過書嘅醫生，用一世人嘅診金，為後世起咗一間圖書館。牛津好多嘢都係咁嚟嘅——唔係計劃出嚟，係一個人死之前嘅一個念頭。」",
+prac:{t:"5–10 分鐘",w:"Radcliffe Square, OX1 3BG",tip:"清晨七點前同黃昏最少人。中午成個廣場都係旅行團。"}
+},
+
+{
+c:0, n:2, id:"bodleian", name:"Bodleian 舊圖書館與五柱塔", en:"Bodleian Library & Tower of the Five Orders",
+tags:["free"], badges:[["方庭免費","free"]],
+scene:"quad", cap:"Old Schools Quadrangle · 1613–1624",
+hook:"呢間圖書館嘅讀者，四百年嚟每一個都要大聲讀一段誓詞先入得去。誓詞入面有一句：唔可以喺館內生火。",
+history:[
+"牛津本來有過一間大學圖書館，係 Duke Humfrey（亨利五世個細佬）十五世紀捐嘅。但宗教改革期間，1550 年愛德華六世嘅專員入嚟清洗「天主教」書籍，將藏書幾乎搬清光，連書架都賣埋。到 1556 年，大學索性將剩低嘅家具都賣咗——圖書館名存實亡。",
+"救番佢嘅係 Thomas Bodley，一個外交官出身嘅學者，娶咗個有錢寡婦，1598 年自己掏錢重建。1602 年重開。1610 年佢同倫敦書業公會（Stationers' Company）簽咗一份協議：全英國每出版一本書，就要交一本俾 Bodleian。呢份協議係今日英國「法定送存」制度嘅祖先。今時今日 Bodleian 仍然收全英國每一本新出版嘅書。",
+"你企緊嘅方庭叫 Old Schools Quadrangle，1613 至 1624 年起。四邊每道門上面都用金字寫住當年喺入面教嘅科目——SCHOLA MORALIS PHILOSOPHIAE（道德哲學堂）、SCHOLA MEDICINAE（醫學堂）如此類推。呢啲門背後真係當年嘅課室。",
+"東邊嗰座塔叫 Tower of the Five Orders，由下而上疊住古典建築五種柱式：Tuscan、Doric、Ionic、Corinthian、Composite。呢座塔本身就係一本教科書——當年學生行過就要識分。塔中間坐住嘅係詹姆斯一世，佢一手遞書俾大學，一手拎住權杖。"
+],
+see:[
+"入方庭係免費嘅，唔使買票。買票係入 Divinity School 同 Duke Humfrey's Library。單係方庭已經值得企十分鐘。",
+"Divinity School（1427–1483）嘅扇形拱頂天花係英國哥德式嘅巔峰之一，共有 455 個雕刻凸飾。Harry Potter 入面嘅醫院廂房同舞蹈課室都喺呢度拍。",
+"Duke Humfrey's Library 就係戲入面 Hogwarts 圖書館。留意啲書仲用鏈鎖住——中世紀書貴過馬。"
+],
+myth:{t:"冷知識 · 那句誓詞", b:[
+"今日新讀者仍然要宣讀 Bodleian 誓詞，可以用一百多種語言宣讀。誓詞內容包括：唔會將書帶離圖書館、唔會損毀書籍，以及唔會喺館內「生火或者燃點火焰」。",
+"呢句唔係玩嘢。喺一間放住無可替代手稿嘅木結構建築入面，明火就係最大殺手。四百年前寫落嘅一句規矩，今日仍然逐字讀出。"
+]},
+line:"「英國每出版一本新書，就有一本要送到呢度。你今年出嘅書、我今年出嘅書，最後都會喺呢座樓入面，靜靜咁排喺一齊。」",
+prac:{t:"10–20 分鐘",w:"Broad Street, OX1 3BG",tip:"方庭免費入，室內要飛。導賞團要網上預訂，旺季會滿。"}
+},
+
+{
+c:0, n:3, id:"sheldonian", name:"Sheldonian Theatre 與皇帝頭像", en:"Sheldonian Theatre, 1664–1669",
+tags:["free","story"], badges:[["外觀免費","free"]],
+scene:"theatre", cap:"The Emperor Heads · Michael Black, 1970–72",
+hook:"呢十三個大鬍鬚石像，冇一個係皇帝。佢哋唔代表任何人。佢哋叫「皇帝頭像」，只係因為一本 1911 年嘅小說咁叫過佢哋一次。",
+history:[
+"1664 年，一個三十出頭、當時仍然係牛津天文學教授嘅後生仔接到一單工程。佢叫 Christopher Wren，未起過聖保羅大教堂，未經歷過倫敦大火。呢座 Sheldonian Theatre 係佢建築生涯第一件重要作品。",
+"起佢嘅原因好實際：以前大學嘅畢業禮喺 St Mary 教堂舉行，但典禮上有一個傳統節目叫 Terrae Filius——由學生扮演嘅「土地之子」，公開講粗口笑話串大學高層。喺教堂做呢啲嘢愈嚟愈失禮。坎特伯雷大主教 Gilbert Sheldon 掏咗一萬四千五百鎊，起一座專門做典禮嘅世俗建築。",
+"Wren 參照咗羅馬嘅 Theatre of Marcellus。古羅馬劇場係露天嘅，因為跨度太大冇辦法起屋頂。Wren 用複雜嘅木桁架解決咗——內部八十呎乘七十呎，冇一條柱。天花畫成一幅畫布嘅樣，畫面上「掀開」露出天空。",
+"1669 年起好之後，Sheldonian 同時做典禮場地同大學印刷所。問題係印刷機好嘈，一有典禮就要停工。1715 年隔籬起咗 Clarendon Building 專門做印刷所，錢係靠賣 Clarendon 伯爵嘅《大叛亂史》版稅嚟。"
+],
+see:[
+"Broad Street 望到嘅其實係 Sheldonian 嘅背面。有人形容佢好似一艘船嘅船尾撞入條街度。正門向南，對住大學核心。",
+"沿住鐵欄一排石柱上面嘅頭像，共十三個喺 Sheldonian，另外四個喺隔籬科學史博物館前面，合共十七個。每一個嘅表情同鬍鬚樣式都唔同，行過逐個望，好好玩。",
+"隔籬座 Clarendon Building 頂上有九個繆斯女神像。當年大學一度拒收，佢哋喺碼頭曬咗兩年先豎起。"
+],
+myth:{t:"拆穿傳說 · 佢哋唔係皇帝", b:[
+"呢啲石像正式名稱係 herms（赫爾墨斯柱），源自羅馬邊界之神 Terminus，功能係界石。當年大學帳目就係叫佢哋做 Terms。",
+"「皇帝」呢個叫法，第一次出現喺 Max Beerbohm 1911 年嘅小說《Zuleika Dobson》。一本小說改咗成組雕塑嘅名，改咗一百年。",
+"今日見到嘅係第三代。Wren 嗰批用咗兩百年，1868 年因風化同污染換過一次；第二批用嘅石唔夠硬，1972 年再換。雕刻家 Michael Black 追查番七個 Wren 原作（五個散落牛津各處），再參照 Loggan 十七世紀嘅版畫重刻。"
+]},
+line:"「一個三十一歲、未起過任何重要建築嘅天文學教授，接咗呢單工。三年後倫敦大火燒咗成個城，全國要搵人重建——佢已經證明咗自己識做。」",
+prac:{t:"5–10 分鐘",w:"Broad Street, OX1 3AZ",tip:"外觀同頭像 24 小時免費睇。入內同上八角燈籠塔要飛，開放時間視乎有冇典禮。"}
+},
+
+{
+c:0, n:4, id:"sighs", name:"嘆息橋（Hertford Bridge）", en:"Hertford Bridge, 1914",
+tags:["free","view"], badges:[["免費","free"],["拍照點","view"]],
+scene:"bridge", cap:"New College Lane · Sir Thomas Jackson",
+hook:"全世界都叫佢威尼斯嘆息橋嘅複製品。佢唔係。佢連個樣都唔似。似嘅係威尼斯另一條橋。",
+history:[
+"Hertford College 十九世紀末喺 Principal Boyd 手上大擴張，但校舍畀 New College Lane 一分為二：舊方庭喺南，新方庭喺北。學院搵咗 Sir Thomas Graham Jackson——當時牛津最忙嘅建築師，Trinity、Brasenose、Hertford 都有佢作品——設計一條空中通道連接兩邊。",
+"New College 反對。佢哋唔想有座橋跨過自己門口條巷。爭拗拖咗好耐，最後 1913 年建成、1914 年 1 月正式啟用。",
+"Jackson 呢個人喺牛津嘅影響力好被低估。維多利亞後期成個城嘅立面幾乎都有佢手影，佢嗰種混合哥德同文藝復興嘅風格，後世索性叫做 Anglo-Jackson。"
+],
+see:[
+"最佳角度：由 Catte Street 轉入 New College Lane 之後，行前十五步再回頭望。橋、後面 Sheldonian 嘅圓頂、同條巷嘅弧線會疊埋一齊。",
+"橋唔對外開放，只有 Hertford 嘅師生行得。你只可以喺下面望。",
+"望橋底：Jackson 喺拱底做咗一組細緻嘅雕飾，九成遊客淨係抬頭影相，冇望過。"
+],
+myth:{t:"拆穿傳說 · 兩個都係假嘅", b:[
+"傳說一：佢係威尼斯嘆息橋嘅複製品。假。威尼斯嘅嘆息橋係封閉監獄通道，Hertford 呢條無論比例、開窗、拱形都更接近威尼斯嘅 Rialto Bridge。",
+"傳說二：以前做過學生健康調查，發現 Hertford 學生最肥，所以學院封橋逼佢哋行樓梯。完全虛構——而且反過來：唔行條橋，實際上要行嘅樓梯級數仲少。",
+"真嘅版本可能係：New College 反對建橋，開咗無數次會，會上嘆咗好多次氣。呢個講法梗係開玩笑，但團友會笑。"
+]},
+line:"「牛津最出名嘅假嘢，可能就係呢條橋嘅名。但你睇——冇人介意。個名喺人心入面，比事實企得穩。」",
+prac:{t:"5 分鐘",w:"New College Lane, OX1 3BL",tip:"早上八點前光線由東邊打入條巷，最靚。中午成條巷都係人。"}
+},
+
+{
+c:0, n:5, id:"halley", name:"New College Lane 與哈雷故居", en:"New College Lane & Halley's Observatory",
+tags:["free","story"], badges:[["免費","free"]],
+scene:"lane", cap:"7 New College Lane · Edmond Halley",
+hook:"你哋而家行緊嘅呢條巷，一千年前係城牆外面。而巷入面呢間屋嘅天台，一個人喺度計出咗一粒彗星幾時會返嚟——佢自己等唔到。",
+history:[
+"呢條窄巷嘅走線，基本上就係中世紀牛津嘅骨架。左右兩邊高牆令佢成為全城最有戲劇感嘅一段路。走過嘅時候唔好講嘢，行到轉角先開口，效果最好。",
+"巷入面 7 號係 Edmond Halley 1703 至 1742 年任 Savilian 幾何學教授期間嘅住所。佢喺屋頂加建咗一個小型觀星台，遺跡今日仲喺度，牆上有藍色紀念牌。",
+"Halley 一生最出名嘅一件事，係喺 1705 年用牛頓嘅萬有引力理論推算：1531、1607、1682 年出現嘅三顆彗星其實係同一顆，週期大約七十六年，並預言佢會喺 1758 年年底再返嚟。",
+"Halley 1742 年死。1758 年聖誕夜，一個德國農夫兼業餘天文學家喺望遠鏡入面搵到佢。彗星從此叫做哈雷彗星。呢個係科學史上第一次，人類成功預言一件天文事件——而做預言嗰個人，冇活到見證。"
+],
+see:[
+"7 號門口牆上嘅藍牌。抬頭望屋頂——嗰個突出嘅細小結構就係觀星台遺跡。",
+"沿條巷再行，右手邊高牆就係 New College 嘅圍牆，你會見到中世紀城牆嘅石同後來加建嘅石顏色唔同。",
+"條巷去到盡頭會轉入 Queen's Lane，再接返 High Street。呢條 S 形嘅路線，係全牛津最好行嘅十分鐘。"
+],
+myth:{t:"冷知識", b:[
+"牛津有超過一百五十塊藍色紀念牌，紀念過嘅人包括 Halley、T. E. Lawrence（阿拉伯的勞倫斯）、Tolkien，同埋 Roger Bannister——第一個喺四分鐘內跑完一英里嘅人，1954 年喺牛津 Iffley Road 跑道做到。",
+"帶團嘅時候，喺呢度講「等待」呢個主題最有效：Halley 等咗五十三年，等一個佢知道自己等唔到嘅答案。"
+]},
+line:"「佢知道自己見唔到。佢照計。呢個就係學術。」",
+prac:{t:"8 分鐘",w:"New College Lane, OX1 3BN",tip:"呢條巷夜晚有街燈但好暗，係全城氣氛最好嘅夜行路段。"}
+},
+
+{
+c:0, n:6, id:"turf", name:"Turf Tavern", en:"The Turf Tavern, c.1381",
+tags:["free","story"], badges:[["免費入","free"]],
+scene:"pub", cap:"St Helen's Passage · 「城牆外」",
+hook:"呢間酒吧特登起喺城牆外面。唔係因為冇位——係因為城牆入面嘅規矩管唔到佢。",
+history:[
+"Turf 嘅前身可以追溯到 1381 年，最初係一間 malt house，服務起城牆嗰班石匠。佢刻意選址喺城牆之外，因為喺牆外，大學同學院嘅管轄權去唔到——換句話講，喺呢度賭錢、飲酒，學院管唔到你。",
+"佢一度叫 the Spotted Cow。1842 年改名做 Turf Tavern，一般認為係想擺脫「非法賭檔」嘅名聲。Turf 本身就係賽馬博彩嘅行話。",
+"要搵到佢唔容易。入口喺 St Helen's Passage——當地人叫佢 Hell's Passage——一條窄到兩個人並排都嫌逼嘅巷。呢個「難搵」本身而家係佢最大賣點。",
+"名人名單長到誇張：Oscar Wilde、C. S. Lewis、Richard Burton 同 Elizabeth Taylor、Stephen Hawking、Margaret Thatcher、Tony Blair。Harry Potter 拍攝期間，成班演員同工作人員收工就嚟呢度。"
+],
+see:[
+"酒吧三邊都係露天庭院，其中一邊直接貼住中世紀城牆嘅真跡。摸得到。",
+"入面幾間細房用低樑連住，前吧枱嗰間係十七世紀加建。",
+"牆上黑板寫住 Bob Hawke 嘅紀錄。留意佢——下面會拆。"
+],
+myth:{t:"拆穿傳說 · 兩個總統級故事", b:[
+"故事一：Bill Clinton 做 Rhodes Scholar 期間喺呢度食大麻但「冇吸入」。呢個講法流傳極廣，酒吧自己都掛住。查唔實，但佢的確係常客。",
+"故事二：1954 年 Bob Hawke（後來嘅澳洲總理）喺呢度十一秒飲完一碼啤酒（約 1.4 公升），入咗健力士世界紀錄。呢個講法有爭議——Hawke 自己喺回憶錄講，紀錄係喺佢自己嘅學院 University College 嘅飯堂做嘅，係一種懲罰儀式。有歷史學者研究過，認為同 Turf 冇關。",
+"點講？兩個都講，然後講埋佢係假嘅。團友最鍾意呢種——你俾咗佢一個故事，又俾咗佢一個「我知道真相」嘅優越感。"
+]},
+line:"「牛津有兩個歷史：一個係檔案入面嘅，一個係酒吧牆上嘅。做導遊嘅工作，就係兩個都講，然後話俾你聽邊個係邊個。」",
+prac:{t:"10 分鐘（或者一杯）",w:"4–5 Bath Place, OX1 3SU",tip:"入口極隱蔽，由 New College Lane 或 Holywell Street 兩邊都入得。細團先入得，大團企唔落。"}
+},
+
+{
+c:0, n:7, id:"newcollege", name:"New College", en:"New College, founded 1379",
+tags:["college","story"], badges:[["收費","paid"],["學院","view"]],
+scene:"cloister", cap:"迴廊與冬青櫟 · Harry Potter 取景地",
+hook:"呢間叫「新學院」嘅學校，1379 年成立。喺牛津，「新」係一個相對嘅概念。",
+history:[
+"創辦人係 William of Wykeham，溫徹斯特主教兼英格蘭大法官。佢出身平民，靠自己爬到權力頂峰，然後將財富投番落教育：先喺溫徹斯特起一間中學，再喺牛津起一間學院接收畢業生。呢個「中學—大學」直通模式，係英國公學制度嘅原型。",
+"當時黑死病啱啱掃過英格蘭，神職人員死咗大量。Wykeham 嘅目標好實際：訓練新一代受過教育嘅神職人員。學院原名 St Mary College of Winchester in Oxford——因為牛津已經有一間 Oriel 用緊 St Mary 呢個名，所以民間就叫佢「新嗰間 St Mary」，叫下叫下變咗 New College。",
+"New College 係牛津第一間由創辦人一次過規劃出完整方庭嘅學院：禮拜堂、飯堂、圖書館、宿舍、迴廊、鐘樓，全部一次過設計。之前嘅學院都係逐間屋買番嚟拼埋。呢個「四邊圍合嘅方庭」模式，之後五百年成為牛津劍橋嘅標準。",
+"仲有一件事好特別：學院起喺城牆邊，當年同市政府簽咗契約，永久負責維修佢範圍內嗰段中世紀城牆。呢份契約至今有效。今日你喺 New College 花園見到嗰段城牆，係全英國保存得最好嘅其中一段——因為有一間學院被合約綁住咗六百年。"
+],
+see:[
+"迴廊（Cloisters）同中間棵巨大嘅冬青櫟。《Harry Potter and the Goblet of Fire》入面 Malfoy 變雪貂嗰場戲喺呢度拍。",
+"禮拜堂入面 Jacob Epstein 1951 年嘅雕塑《Lazarus》。赫魯曉夫參觀過之後話，佢個樣令佢成晚瞓唔著。",
+"花園盡頭嗰段中世紀城牆，同城牆上嘅土丘（mound）。",
+"飯堂嘅橡木屋頂——下面有故事。"
+],
+myth:{t:"拆穿傳說 · 橡木樑嘅故事", b:[
+"流傳版本：十九世紀發現飯堂嘅巨型橡木樑生晒蛀蟲，學院四圍搵唔到咁大條嘅橡木。有人提議問下學院林務官。林務官答：「先生，我哋一直等緊你哋嚟問。」原來建校嗰陣就種咗一片橡樹林，專門留俾將來換飯堂嘅樑，一代傳一代五百年：「嗰啲橡樹唔可以斬，係留俾學院大堂嘅。」",
+"呢個故事由人類學家 Gregory Bateson 講俾 Stewart Brand 聽，寫入《Whole Earth Catalog》，成為「長線思維」嘅經典寓言。",
+"學院官方立場：呢個係傳說。有紀錄可查嘅係：1859 年學生向教職員反映屋頂要維修；1863 年重建；用嘅木來自學院 1441 年先買入嘅林地——即係建校之後七十年。而 1786 年屋頂已經改用過松木，因為當時已經搵唔到咁大條橡木。",
+"點講最好？照講個傳說，講到最靚嗰句「Them's for the College Hall」，然後停一停，先講事實。故事嘅價值唔喺於真假，喺於佢逼你思考：你今日種緊嘅樹，係為邊個種？"
+]},
+line:"「一間叫『新』嘅學院，因為六百年前一份合約，今日仍然要幫呢個城市補城牆。牛津啲承諾，係用世紀計嘅。」",
+prac:{t:"30–45 分鐘",w:"Holywell Street / New College Lane 入口（視乎季節）",tip:"入口會隨季節換，出團前上官網 check。考試期同婚禮期間會閉門。"}
+},
+
+/* ══════════════ 第二章 ══════════════ */
+{
+c:1, n:8, id:"broad", name:"Broad Street 與殉道者十字", en:"Broad Street & the Martyrs' Cross",
+tags:["free","story"], badges:[["免費","free"]],
+scene:"street", cap:"1555 年 10 月 16 日 · 城牆外的溝渠",
+hook:"你哋而家企緊嗰個位——留意地下——係一個石砌十字。呢度以前唔係街。呢度係城牆外面嘅一條溝。1555 年，有兩個人喺呢條溝入面被燒死。",
+history:[
+"1553 年，天主教徒瑪麗一世登基，要推翻父親亨利八世同弟弟愛德華六世嘅新教改革。三個新教高層被押到牛津受審：坎特伯雷大主教 Thomas Cranmer、倫敦主教 Nicholas Ridley、伍斯特主教 Hugh Latimer。Cranmer 同 Latimer 當時都已經六十幾歲。",
+"審訊喺 St Mary the Virgin 大學教堂舉行，結果由頭到尾冇懸念。三人拒絕承認變質論（transubstantiation），全部判為異端。佢哋被囚喺 Cornmarket 北門旁邊嘅 Bocardo 監獄。",
+"1555 年 10 月 16 日，Ridley 同 Latimer 喺城牆外嘅溝渠被綁上火刑柱，背靠背。有人俾咗一小袋火藥掛喺佢哋頸上——當時嘅人視之為仁慈。火燒起嗰陣，Latimer 據記載向 Ridley 喊：今日我哋要喺英格蘭點著一支蠟燭，我信佢永遠唔會熄。",
+"Cranmer 被逼喺 Bocardo 塔上望住成個過程。之後佢寫咗悔過書、撤回新教信仰。1556 年 3 月 21 日，佢被押返 St Mary 教堂公開認錯——但佢當眾推翻自己嘅悔過書，然後被拖出去燒死。傳說佢將簽署悔過書嗰隻右手先伸入火中。",
+"歷史嘅細節有時好荒謬：牛津市嘅執事後來向坎特伯雷大主教區入紙報銷，要求付返照顧三名殉道者嘅開支——單據包括酒、無花果、蠔、牛仔肉同杏仁。"
+],
+see:[
+"路面中央嗰個石砌十字。行人單車日日踩過，九成人唔知係乜。",
+"Balliol College 外牆上一塊細細嘅紀念牌，指明十字嘅意義。",
+"抬頭望：呢條街之所以叫 Broad Street（寬街），就係因為佢原本係城牆外嘅空地同溝渠，唔係規劃出嚟嘅大道。"
+],
+myth:{t:"拆穿傳說 · Balliol 嗰道燒過嘅門", b:[
+"好多導遊會指住 Balliol 嘅一道木門，話上面嘅焦痕係當年火刑燒到嘅。呢個講法企唔穩：門嘅來歷同年代對唔上，位置亦唔啱。",
+"更值得講嘅係：1841 年公開募捐起 Martyrs' Memorial 嗰陣，本來想起喺呢個真正嘅行刑地點，但買唔到 Broad Street 嘅地。當年嘅記載寫得好白：喺 Broad Street 攞地「不可行」。所以紀念碑最後起咗喺兩百米外嘅 St Giles。",
+"即係話：真嘅地點只有一個地上嘅十字，假嘅地點有一座六十呎高嘅紀念碑。呢個對比本身就係好料。"
+]},
+line:"「英國宗教改革唔係喺倫敦決定嘅。係喺呢條溝入面，1555 年 10 月一個朝早。你哋而家企緊嗰塊石，就係嗰個位。」",
+prac:{t:"10 分鐘",w:"Broad Street 西端，近 Balliol",tip:"呢站要放慢，靜一靜。前後兩站都輕鬆，呢站係全程情緒最重嗰個點。"}
+},
+
+{
+c:1, n:9, id:"balliol", name:"Balliol College", en:"Balliol College, c.1263",
+tags:["college"], badges:[["收費","paid"],["學院","view"]],
+scene:"gate", cap:"最古老學院之爭 · 三選一",
+hook:"呢間學院之所以存在，係因為一個貴族欺負咗一個主教，主教罰佢做善事。",
+history:[
+"John de Balliol 係十三世紀嘅北方大貴族，同 Durham 主教起咗衝突，據講仲派人騷擾主教嘅隨從。主教向教會告狀，Balliol 被判要公開苦行贖罪——除咗喺 Durham 大教堂門口捱鞭，仲要長期資助一批窮學生喺牛津讀書。大約 1263 年，佢喺牛津租咗屋畀學生住。呢個就係 Balliol 嘅起點。",
+"1268 年 John 死後，佢個老婆 Dervorguilla of Galloway 將呢件事變成永久制度：1282 年頒佈章程、設立永久基金。所以真正令 Balliol 成為一間「學院」嘅，係佢老婆。佢哋個仔後來做咗蘇格蘭王。",
+"牛津最古老學院有三個競爭者：University College（1249 年獲遺贈）、Balliol（約 1263 年開始運作）、Merton（1264 年章程）。三間各有理由話自己最老，睇你點定義「成立」：出錢、收生、定係有章程。呢個爭議冇答案，亦冇人真係想解決。",
+"Balliol 十九、二十世紀出咗大量政界人物，出名到有一句講法：Balliol 人有一種「毫不費力嘅優越感」。校友包括 Adam Smith（佢喺度讀得極唔開心，鬧牛津啲教授收錢唔教書）、Aldous Huxley、Graham Greene、Harold Macmillan、Boris Johnson，以及五位英國首相。"
+],
+see:[
+"前方庭同飯堂。Balliol 嘅建築大部分係十九世紀重建，唔好期待中世紀感——佢嘅價值喺人，唔喺石。",
+"由 Broad Street 望入去嗰道大門，同外牆上嘅殉道者紀念牌。",
+"後方庭（Garden Quad）比前方庭靚好多，好多遊客唔行到入去。"
+],
+myth:{t:"冷知識 · Adam Smith 嘅怨氣", b:[
+"《國富論》作者 Adam Smith 1740 至 1746 年喺 Balliol 讀書，六年入面極度唔滿意。佢後來喺書入面寫，牛津啲教授「早就完全放棄咗教書呢件事嘅任何偽裝」。",
+"佢嘅論點好經濟學：教授嘅收入同佢教得好唔好完全脫鈎，咁自然冇人肯用心教。呢個批評，二百五十年後仍然有大學攞出嚟討論。",
+"講呢個故事嘅時候可以問團友一句：如果佢當年讀得開心，我哋今日仲有冇《國富論》？"
+]},
+line:"「一個貴族欺負人，被罰要供窮學生讀書。七百六十年後，呢間『罰款』開出咗五個英國首相。」",
+prac:{t:"20–30 分鐘",w:"Broad Street, OX1 3BJ",tip:"通常下午開放，收費。喺 Broad Street 講完殉道者之後入，情緒接得好順。"}
+},
+
+{
+c:1, n:10, id:"blackwells", name:"Blackwell's 書店與 Norrington Room", en:"Blackwell's & the Norrington Room, 1879 / 1966",
+tags:["free","story"], badges:[["免費","free"]],
+scene:"books", cap:"三英里書架 · 挖到 Trinity College 地底",
+hook:"由出面睇，呢間書店細細哋一間舖。行落地庫，你會發現你企緊喺隔籬間學院嘅草地底下。",
+history:[
+"1879 年 1 月 1 日，Benjamin Henry Blackwell 喺 Broad Street 50 號租咗一間十二呎見方嘅細舖開書店。佢老豆係牛津第一任市立圖書館館長；佢自己十三歲輟學做書店學徒。開張嗰年，愛迪生啱啱發明電燈膽。",
+"書店逐間逐間吞併隔籬嘅樓，橫向擴張。到咗六十年代，橫向已經冇位。Julian Blackwell 決定向下挖——挖去 Trinity College 東南角嘅地底下。",
+"1966 年，Norrington Room 開幕，以當時 Trinity 院長 Sir Arthur Norrington 命名。近三英里書架，十六萬冊書，一萬平方呎。開幕當時入咗《健力士世界紀錄大全》，係全世界最大嘅單一售書房間。",
+"Blackwell's 1995 年成為全英國第一間可以網上訂書嘅書店，1999 年收購咗劍橋嘅 Heffers。近年業務已由 Waterstones 接手。"
+],
+see:[
+"由地面書店行落樓梯入 Norrington Room。個空間係階梯式落落去嘅，站喺入口望落去，個透視感好震撼。呢個係全牛津最容易俾人忽略嘅「景點」。",
+"諗一諗你頭頂：你而家喺 Trinity College 草地底下。",
+"門口街口就係殉道者十字——由火刑地點行三十步入到全世界最大嘅書房，呢個對比值得講。"
+],
+myth:{t:"冷知識", b:[
+"完全免費，唔使消費，可以坐可以行可以留成個鐘。落雨天帶團，呢度係最好嘅避雨點，而且氣氛比咖啡店好。",
+"1879 年開張嗰間舖仔只有十二呎闊。而今日單係地庫一間房就一萬平方呎。呢個係一個好用嘅「複利」故事。"
+]},
+line:"「一個十三歲輟學嘅書店學徒，租咗一間十二呎嘅舖。八十七年後，佢個孫向下挖到隔籬學院嘅草地底，做出全世界最大嘅書房。」",
+prac:{t:"15 分鐘",w:"48–51 Broad Street, OX1 3BQ",tip:"免費、有廁所、有咖啡店、落雨天神器。團友想買手信，呢度好過紀念品舖。"}
+},
+
+{
+c:1, n:11, id:"hsm", name:"科學史博物館（舊 Ashmolean）", en:"History of Science Museum, 1683",
+tags:["free","museum"], badges:[["免費","free"],["博物館","view"]],
+scene:"museum", cap:"世界第一間公眾博物館的原址",
+hook:"呢座樓係全世界第一間對公眾開放嘅博物館。而入面而家放住愛因斯坦寫過嘅一塊黑板。",
+history:[
+"1683 年，Elias Ashmole 將佢嘅收藏捐俾牛津大學，條件係大學要起一座專門嘅樓收藏同展示。呢座樓 1678 至 1683 年建成，5 月 24 日開幕，博物學家 Robert Plot 做第一任館長。",
+"最革命性嘅一點：佢由開幕第一日就容許公眾入場。喺十七世紀，呢件事極具爭議——收藏品向來係貴族嘅私人玩意，俾普通人睇係失禮嘅。",
+"Ashmole 嘅設計指示好明確：一樓做收藏室，地下做自然史講堂，地庫做化學實驗室同解剖室。呢座樓由第一日開始就係一部教學機器，唔係一個陳列櫃。",
+"十九世紀藏品搬去 Beaumont Street 嘅新 Ashmolean 之後，呢座樓一度做過《牛津英語詞典》嘅編輯部辦公室。今日佢係科學史博物館。"
+],
+see:[
+"全世界最大嘅星盤（astrolabe）收藏。",
+"愛因斯坦 1931 年喺牛津演講用過嘅黑板，上面仲有佢寫嘅方程式，冇抹。",
+"門口前面嗰四個「皇帝頭像」——同 Sheldonian 嗰十三個一組，1683 年加建呢座樓嘅時候補上。",
+"入場免費。"
+],
+myth:{t:"冷知識 · 渡渡鳥去咗邊", b:[
+"Ashmole 最初嘅收藏來自 Tradescant 家族，入面包括一隻渡渡鳥標本。1656 年嘅目錄有記載：「Dodar，來自模里西斯島；因為太大，唔識飛。」",
+"呢隻鳥今日淨低一個頭同一隻腳，收喺自然史博物館（第 29 站）。佢係全世界唯一保存到軟組織嘅渡渡鳥。",
+"呢兩間博物館嘅關係，本身就係牛津博物館史嘅縮影：一個收藏太大，最後裂成幾間館。"
+]},
+line:"「1683 年，呢度做咗一件當時好離經叛道嘅事——開門，俾任何人入嚟睇。今日全世界嘅公共博物館，都係由呢道門開始。」",
+prac:{t:"20–30 分鐘",w:"Broad Street, OX1 3AZ",tip:"免費入場。細間、唔逼、通常一個鐘內搞掂。落雨天第二個避雨點。"}
+},
+
+{
+c:1, n:12, id:"martyrs", name:"殉道者紀念碑", en:"Martyrs' Memorial, 1841–1843",
+tags:["free","story"], badges:[["免費","free"]],
+scene:"memorial", cap:"St Giles · George Gilbert Scott",
+hook:"有一個講法：牛津導遊會同啱啱嚟到嘅遊客講，呢座紀念碑其實係一座教堂嘅尖頂，成座教堂埋喺地底，你可以買飛落去參觀。有人真係去咗問路。",
+history:[
+"呢座碑 1841 年開始公開募捐，1843 年落成，紀念 1555 至 1556 年被燒死嘅三位殉道者。設計者係 Sir George Gilbert Scott，仿照十三世紀嘅 Eleanor Cross。",
+"要留意嘅係：碑起喺事件發生近三百年之後。佢講嘅唔止係 1550 年代嘅宗教鬥爭，更加係 1840 年代嘅。當時牛津正值 Oxford Movement（牛津運動），一批學者主張英國國教應該回歸更接近天主教嘅傳統，引起極大爭議。呢座碑係反對派嘅回應——一座用石頭寫成嘅論戰文章。",
+"三個人像嘅朝向係有安排嘅：Cranmer 面向北，手拎聖經；Ridley 面向東；Latimer 面向西，雙手交叉抱胸。",
+"本來想起喺 Broad Street 真正嘅行刑地，但買唔到地，最後退咗兩百米，喺 St Giles 南端一個交通島上落成。"
+],
+see:[
+"三個人像嘅方向同手勢。",
+"由呢度望向北邊 St Giles 大道——呢條係牛津最闊嘅街，兩旁嘅平房、教堂同 St John's College 排開，係全城最舒服嘅街景之一。",
+"對面就係 Ashmolean 博物館（下一站）。"
+],
+myth:{t:"冷知識 · 埋喺地底嘅尖頂", b:[
+"「成座教堂喺地底」係牛津流傳最耐嘅一個惡作劇，通常由學長玩新生。有紀錄顯示，真係有人去 Tourist Information 問過落地底參觀嘅入口喺邊。",
+"導賞用法：唔好一開始拆穿。先當真咁講，望住團友嘅反應，等有人開始懷疑先講。呢個係練習「講故事節奏」最好嘅一站。"
+]},
+line:"「一座紀念三百年前死者嘅碑，講嘅其實係起碑嗰一代人自己嘅爭拗。紀念碑從來唔止係關於過去。」",
+prac:{t:"8 分鐘",w:"St Giles / Magdalen Street 交界",tip:"喺交通島上，唔好帶團企出馬路。企喺 St Mary Magdalen 教堂邊講最安全。"}
+},
+
+{
+c:1, n:13, id:"ashmolean", name:"Ashmolean 博物館", en:"The Ashmolean Museum",
+tags:["free","museum","story"], badges:[["免費","free"],["博物館","view"]],
+scene:"portico", cap:"Beaumont Street · Cockerell, 1845",
+hook:"入面有一盞燈籠。1605 年 11 月 5 日凌晨，有人喺西敏宮地窖手拎住佢，準備點著三十六桶火藥。",
+history:[
+"Ashmolean 嘅奠基收藏其實唔係 Ashmole 嘅，係 Tradescant 家族嘅。John Tradescant 父子係十七世紀嘅園丁兼收藏家，喺倫敦 Lambeth 開咗一間叫 The Ark 嘅私人博物館。當時有訪客寫低一句好精彩嘅評語：喺呢度一日睇到嘅奇珍，多過你用一世人去旅行見到嘅。",
+"Elias Ashmole 由 Tradescant 細仔手上得到呢批收藏（過程有法律爭議），1677 年連同自己嘅藏書、錢幣、手稿一併捐俾牛津大學。1683 年博物館喺 Broad Street 開幕。",
+"藏品後來愈嚟愈多，1841 至 1845 年由建築師 Charles Robert Cockerell 喺 Beaumont Street 起咗今日呢座希臘復興式新館。",
+"今日嘅 Ashmolean 收藏跨越五十萬年，由史前石器去到二十世紀藝術。全館免費入場。"
+],
+see:[
+"Guy Fawkes 嘅燈籠——1605 年火藥陰謀被捕嗰晚佢手上拎住嗰盞。",
+"Alfred Jewel：1693 年喺 Somerset 出土，九世紀盎格魯撒克遜黃金琺瑯工藝，上面刻住古英文「AELFRED MEC HEHT GEWYRCAN」（阿爾弗雷德命人造我）。1718 年入館。",
+"Powhatan's Mantle：四張白尾鹿皮縫成、貝殼串珠裝飾，傳統上認為屬於 Pocahontas 嘅父親 Powhatan。",
+"Stradivari 嘅「Messiah」小提琴——全世界保存得最完好嘅史特拉迪瓦里，幾乎冇被拉奏過。",
+"天台餐廳嘅露台，係全城少數望到尖塔嘅高處。",
+],
+myth:{t:"冷知識 · 一句最好用嘅開場", b:[
+"「世界第一間公眾博物館」呢個講法，嚴格嚟講指嘅係 1683 年 Broad Street 嗰座（第 11 站），唔係眼前呢座。喺牛津講嘢要分得清「機構」同「建築物」。",
+"Ashmolean 一年超過一百萬人次入場，全部免費。呢個係英國博物館免費入場政策嘅最好示範。"
+]},
+line:"「一個園丁收埋一世人嘅奇珍，一個律師接手咗，一間大學收咗落嚟，然後決定俾任何人免費入嚟睇。三百四十年後，你哋今日行入去，一蚊都唔使畀。」",
+prac:{t:"45–90 分鐘",w:"Beaumont Street, OX1 2PH",tip:"免費。太大，一定要揀三至四件展品講，唔好由頭行到尾。天台餐廳要訂位。"}
+},
+
+{
+c:1, n:14, id:"eagle", name:"The Eagle and Child（鳥與嬰）", en:"The Eagle and Child, c.1650",
+tags:["free","story"], badges:[["外觀免費","free"]],
+scene:"inn", cap:"49 St Giles · Inklings 的兔子房",
+hook:"由三十年代到六十年代，每個星期二朝早，兩個中年男人喺呢間酒吧後面一間細房度，讀啲冇人睇好嘅稿俾對方聽。其中一個寫緊霍比特人。",
+history:[
+"呢間酒吧十七世紀中已經存在，1650 年代做客棧。個名嚟自 Derby 伯爵家族嘅紋章：一隻鷹抓住一個嬰兒。牛津人一律叫佢做 the Bird and Baby。",
+"1930 年代起，一班牛津學者開始喺呢度定期聚會，自稱 the Inklings。核心成員包括 C. S. Lewis、J. R. R. Tolkien、Lewis 個細佬 Warnie、Hugo Dyson、Charles Williams。佢哋通常星期二中午聚，坐喺後面一間叫 the Rabbit Room 嘅細房。",
+"聚會嘅內容好簡單：讀自己寫緊嘅稿，然後被人批評。《魔戒》嘅章節就係喺呢度一段段讀出嚟嘅。Tolkien 讀得慢，有成員嫌佢啲精靈語太多。",
+"1962 年之後，因為酒吧改裝，佢哋轉去對面嘅 Lamb and Flag。",
+"2020 年 3 月，Eagle and Child 因疫情停業，之後一直冇重開。2023 年業權由 St John's College 轉去 Ellison Institute of Technology。2025 年 10 月，由 Foster + Partners 主理嘅修復方案獲批：Rabbit Room 同大部分維多利亞時期內裝會保留修復，加建餐飲空間、麵包房同花園，樓上做研究人員空間。重開日期未定。"
+],
+see:[
+"門外嘅招牌同紀念牌。而家入唔到去，但企喺門口講故事效果一樣好。",
+"對面嘅 Lamb and Flag——Inklings 後期嘅聚會地，仲營業緊。落雨或者團友想坐低，可以過對面。",
+"望住 St Giles 呢條闊路：Tolkien 同 Lewis 每星期都行過呢度。"
+],
+myth:{t:"冷知識 · 出團前要 check", b:[
+"呢站嘅狀態係流動嘅。修復工程已批但重開日期未公佈，而且方案講明樓上會做研究機構空間，只有地下對公眾開放。帶團之前上網 check 一次最穩陣。",
+"如果團友係 Tolkien 迷，仲有兩個延伸點：Wolvercote Cemetery 嘅 Tolkien 夫婦墓（墓碑刻住 Beren 同 Lúthien），同埋 Merton College——Tolkien 1945 至 1959 年喺度做英國語文教授。"
+]},
+line:"「兩個中年學者，每星期二讀啲當時冇出版社睇好嘅稿俾對方聽。今日佢哋寫嘅嘢賣咗幾億本。呢個就係為咗有人肯聽你讀。」",
+prac:{t:"8 分鐘",w:"49 St Giles', OX1 3LU",tip:"目前唔對外開放，只可外觀。對面 Lamb and Flag 有開。"}
+},
+
+/* ══════════════ 第三章 ══════════════ */
+{
+c:2, n:15, id:"stmary", name:"聖母瑪利亞大學教堂", en:"University Church of St Mary the Virgin",
+tags:["free","view","story"], badges:[["入內免費","free"],["登塔收費·最佳全景","view"]],
+scene:"spiretower", cap:"127 級 · 全城最好嘅塔頂景",
+hook:"入去之後，唔好望祭壇。望左手邊第二條石柱。有人喺上面鑿走咗一嚿石——五百年前，為咗搭一個平台，等一個人企上去認錯。",
+history:[
+"呢間教堂係牛津大學嘅起點。十三世紀大學未有任何自己嘅建築物之前，議事、考試、頒授學位全部喺呢度舉行。佢係「大學」呢個機構喺物理世界上第一個地址。",
+"1555 至 1556 年，Cranmer、Ridley、Latimer 三人喺呢度受審。1556 年 3 月 21 日，Cranmer 被押返呢度公開宣讀悔過書。當時為咗俾佢企高啲、俾全場睇到，工人喺一條中殿石柱上鑿走一塊，搭一個木平台。",
+"當日 Cranmer 冇照劇本讀。佢當眾撤回自己嘅悔過書，宣佈自己嘅右手因為簽咗虛假嘅悔過書，應該最先受罰。之後佢被拖出去燒死。",
+"1733 年，教堂喺 High Street 一面加建咗一個巴洛克門廊，上面有一尊聖母抱耶穌像。呢尊像喺 1640 年代已經引起爭議——清教徒認為佢係偶像崇拜，仲成為當時大主教 William Laud 被控叛國嘅罪證之一。內戰期間有人開槍射過佢。",
+"十九世紀，John Henry Newman 做呢間教堂嘅牧師，喺講壇上啟動咗 Oxford Movement。呢場運動最後令佢改宗天主教，後來做咗樞機，2019 年封聖。"
+],
+see:[
+"中殿被鑿走一角嘅石柱（Cranmer's Pillar）。旁邊有解說牌。",
+"門廊上被清教徒視為眼中釘嘅聖母像，同柱上嘅彈痕。",
+"塔頂：127 級狹窄中世紀螺旋梯，上到去係全城最好嘅平台——正俯瞰 Radcliffe Camera、All Souls 雙塔、Bodleian、Sheldonian 同 Christ Church 嘅 Tom Tower。呢個係唯一一個「由上面睇 Radcliffe Camera」嘅角度。"
+],
+myth:{t:"冷知識", b:[
+"教堂本身免費入。登塔要飛（幾鎊），值得。呢個係我會建議收費景點入面最抵嗰個。",
+"樓梯極窄，單向通行，有幽閉恐懼或者行動不便嘅團友唔好上。上面平台細，大團要分批。",
+"塔頂係全城少數可以同時見到「Radcliffe Camera 圓頂 + All Souls 雙尖塔」嘅位。呢個構圖係無數牛津明信片嘅來源。"
+]},
+line:"「大學未有課室嘅時候，喺呢度上堂。大學要判人異端嘅時候，喺呢度審。同一個地方，出過知識同出過火刑。」",
+prac:{t:"20–40 分鐘",w:"High Street, OX1 4BJ",tip:"塔頂位少，大團要分批上。館內有 Vaults & Garden 咖啡店，望正 Radcliffe Camera。"}
+},
+
+{
+c:2, n:16, id:"allsouls", name:"All Souls College", en:"All Souls College, 1438",
+tags:["free","college","story"], badges:[["限時免費開放","free"],["學院","view"]],
+scene:"twintower", cap:"Hawksmoor 雙塔 · 全世界最難考的學院",
+hook:"呢間學院冇本科生。冇研究生。得四十幾個院士。而佢哋每一百年會舉行一次儀式：抬住一隻假鴨，攞住火把，喺學院入面遊行。",
+history:[
+"1438 年由坎特伯雷大主教 Henry Chichele 同亨利六世創辦，宗旨係紀念百年戰爭嘅陣亡者——「All Souls」即係為所有亡魂祈禱。原章程規定一位院長同四十位院士，全部要領聖職：二十四人讀文學同神學，十六人讀民法或教會法。",
+"佢係全世界極少數完全冇學生嘅學院。今日純粹係研究機構。每年公開考試招收兩名左右嘅 Examination Fellow，被稱為全世界最難考嘅學術考試之一。",
+"其中最傳奇嘅一份卷叫 the Essay Paper：試卷上淨係印一個字，例如「Water」、「Innocence」、「Miracles」，考生要用三個鐘寫一篇文。呢份卷 2010 年被廢除。",
+"1716 至 1735 年間，Nicholas Hawksmoor 設計咗北方庭同嗰對哥德復興式雙塔。呢對塔係牛津天際線上最容易認出嘅剪影之一。Hawksmoor 係 Wren 嘅學徒，佢喺牛津留低嘅嘢，論戲劇性甚至超過師傅。"
+],
+see:[
+"由 Radcliffe Square 望入去嘅雙塔。呢個係全城最上鏡嘅剪影之一，尤其黃昏。",
+"Codrington Library（1751 年落成）——一條長廊式嘅圖書館，藏書十幾萬冊，喺牛津圖書館入面美學排名極高。",
+"下午限時免費開放（通常平日下午），唔使買票。時間好短，要 check 官網。"
+],
+myth:{t:"冷知識 · 百年一次嘅獵鴨", b:[
+"傳說 1437 年掘地基嗰陣，一隻巨大嘅野鴨由地下水道飛咗出嚟。院士由此開始一個儀式：每一百年一次，院士著上禮服、攞住火把，抬住一位「Lord Mallard」坐喺椅上，喺學院遊行，唱《Mallard Song》，跟住一支綁住鴨嘅長竿。",
+"鴨嘅演變本身好抵死：最初係活鴨，1901 年變咗死鴨，2001 年變咗一隻木雕。",
+"1901 年嘅 Lord Mallard 係 Cosmo Lang（後來嘅坎特伯雷大主教）；2001 年係古典學者 Martin Litchfield West。下一次係 2101 年。",
+"1901 年 Lang 嘅傳記入面有一句好抵死嘅辯解，大意係：荷馬都有打瞌睡嘅時候，All Souls 嘅院士一百年扮一次傻，應該可以獲准。",
+"仲有：鴨喺成間學院無處不在——common room 有鴨模型、大堂十九世紀嘅椅上刻住鴨、圖書館附近有一部鴨形電話。"
+]},
+line:"「全世界最聰明嘅一班人，一百年一次，攞住火把追住一隻木鴨喺學院跑。你可以話呢個好荒謬。我會話：一個機構要撐得住幾百年，就需要有啲完全冇用、但只屬於自己嘅嘢。」",
+prac:{t:"20 分鐘",w:"High Street / Radcliffe Square",tip:"開放時間極短，通常平日下午，出團前一定要 check。就算入唔到，喺 Radcliffe Square 講呢個鴨嘅故事已經夠。"}
+},
+
+{
+c:2, n:17, id:"market", name:"Covered Market（有蓋市場）", en:"The Covered Market, 1774",
+tags:["free"], badges:[["免費","free"]],
+scene:"market", cap:"1774 年 · 為咗趕啲攤檔離開街道",
+hook:"呢個市場之所以存在，係因為十八世紀嘅牛津議會覺得——街上啲賣肉檔太核突。",
+history:[
+"十八世紀嘅牛津 High Street 兩旁擺滿肉檔、菜檔，血水同垃圾直接倒落街。1771 年市政議會通過法案要「整理」市容，1774 年 11 月 1 日，Covered Market 開幕，將攤檔全部搬入室內。設計者係 John Gwynn，佢同時設計咗牛津嘅 Magdalen Bridge。",
+"最初二十個檔口全部係肉檔。今日入面仲有幾間老牌肉檔、芝士舖、花店、裁縫、麵包店同咖啡店。",
+"Ben's Cookies 1984 年喺呢個市場開第一間舖，之後開遍全世界。Frank Cooper 嘅「Oxford Marmalade」都係源自附近 High Street 一間雜貨舖——1902 年斯科特船長去南極，行李入面有 Cooper 嘅果醬。",
+"市場入面 Alice's Shop 系列同 Lewis Carroll 有關嘅商店唔喺呢度，但 Covered Market 對面 St Aldate's 有一間「Alice's Shop」，就係《鏡中奇緣》入面 Alice 買糖嗰間綿羊舖嘅原型。"
+],
+see:[
+"老牌肉檔門口吊住嘅野味同肉——非常維多利亞，好多人第一次見會嚇一跳。",
+"Ben's Cookies 第一間舖嘅位置。",
+"市場上面就係 The Varsity Club 天台酒吧，係全城少數免費（消費）睇到尖塔嘅高處。"
+],
+myth:{t:"冷知識 · 一個好用嘅落雨備案", b:[
+"Covered Market 完全免費、有蓋、有廁所、有食物、有得坐。牛津落雨係常態，呢度係第一避雨點。",
+"帶團技巧：如果團程超過兩個鐘，喺呢度插一段十五分鐘自由時間。團友會記得食過乜，多過記得聽過乜。"
+]},
+line:"「二百五十年前，呢個城市決定將混亂搬入室內。結果混亂冇消失——佢變咗做風味。」",
+prac:{t:"15–20 分鐘",w:"Market Street / High Street 入口，OX1 3DZ",tip:"星期日部分檔口唔開。避雨、上廁所、買手信一站解決。"}
+},
+
+{
+c:2, n:18, id:"carfax", name:"Carfax Tower 與 Cornmarket", en:"Carfax Tower · St Martin's",
+tags:["free","view"], badges:[["外觀免費","free"],["登塔收費","view"]],
+scene:"carfax", cap:"城市的正中心 · 一場死了 63 人的暴動",
+hook:"呢個十字路口係成個牛津嘅原點。1355 年，兩個學生喺呢度嫌啲酒難飲，之後嘅三日，六十三個人死咗。",
+history:[
+"Carfax 個名來自法文 carrefour（十字路口）或者拉丁文 quadrifurcus（四叉）。呢度係東西南北四條古道嘅交匯點，係撒克遜時期牛津嘅正中心。",
+"1355 年 2 月 10 日，St Scholastica's Day。兩個牛津學生喺 Carfax 嘅 Swindlestock Tavern 投訴啲酒難飲，同老闆嗌交，跟手掟酒杯落佢個頭。事情迅速升級成全城暴動：市民同學生打足三日，最後大約六十三個學生同三十個市民死亡。",
+"國王最後判市方敗訴。之後每年 St Scholastica's Day，市長同六十三名市民要遊行到 St Mary 教堂，為六十三個死者各交一便士罰款，並宣誓效忠大學。呢個儀式做足六百年，1825 年市方拒絕再做，1955 年——事件六百週年——市長同副校長正式和解。",
+"呢座塔係 St Martin 教堂僅存嘅部分，教堂 1896 年為咗擴闊路口而拆。塔高七十四呎，牛津有一條不成文規矩：市中心唔可以有建築物高過 Carfax Tower。"
+],
+see:[
+"塔上嘅 quarterboys——兩個機械小人，每十五分鐘敲鐘一次。",
+"塔頂（收費）：位置正中，四面可見。冇 St Mary 教堂塔咁高，但係唯一一個可以「四面睇齊」嘅點。",
+"由 Carfax 望落 Cornmarket Street、High Street、St Aldate's、Queen Street 四個方向——你會即刻明白呢個城市嘅骨架。"
+],
+myth:{t:"冷知識 · Town vs Gown", b:[
+"St Scholastica's Day 暴動係「town vs gown」（市民對大學）矛盾嘅經典案例。呢個張力喺牛津歷史入面貫穿七百年，今日仍然以樓價、旅遊、交通嘅形式存在。",
+"講呢個故事嘅時候可以問團友：一杯難飲嘅酒，點解會死六十三個人？答案唔喺杯酒度，喺累積咗二百年嘅特權同怨氣度。"
+]},
+line:"「一杯難飲嘅酒，燒咗三日，死咗六十三個人，罰咗六百年。歷史入面最大嘅火，通常由最細嘅火柴點著。」",
+prac:{t:"10 分鐘（登塔另加 20 分鐘）",w:"Carfax, OX1 1ET",tip:"塔冬季開放時間短，收費。路口極多人同巴士，帶團要企埋一邊。"}
+},
+
+{
+c:2, n:19, id:"christchurch", name:"Christ Church", en:"Christ Church, 1524 / 1546",
+tags:["college","story","view"], badges:[["收費","paid"],["學院","view"]],
+scene:"tomtower", cap:"Tom Tower · 每晚 9:05 敲 101 下",
+hook:"每晚九點零五分，呢座塔上面嘅鐘會響一百零一下。點解係九點零五分？因為呢間學院，一百七十年嚟拒絕接受格林威治標準時間。",
+history:[
+"1524 年，紅衣主教 Thomas Wolsey——亨利八世最有權勢嘅大臣——解散咗 St Frideswide 修道院，喺原址起一間叫 Cardinal College 嘅超級學院。佢嘅野心巨大：全牛津最大嘅方庭、最大嘅飯堂。",
+"1529 年 Wolsey 因為搞唔掂亨利八世同 Catherine of Aragon 嘅離婚案而倒台，工程停擺，方庭南邊一直冇起完。亨利八世 1532 年接手，1546 年重新命名為 Christ Church，並且做咗一件全世界獨一無二嘅安排：將學院嘅禮拜堂同時定為牛津教區嘅主教座堂。",
+"所以 Christ Church Cathedral 係全世界唯一一座同時係大學學院禮拜堂、又係教區主教座堂嘅建築。佢亦係英格蘭最細嘅主教座堂。",
+"1642 至 1646 年英國內戰期間，查理一世將牛津定為首都，自己住喺 Christ Church 嘅院長宅邸，喺大飯堂召開佢自己嘅「牛津議會」。",
+"Tom Tower 1681 至 1682 年由 Christopher Wren 完成，加喺 Wolsey 未完成嘅門樓上面。裏面嘅 Great Tom 大鐘更古老——本來屬於 Osney Abbey，解散修道院之後輾轉搬入嚟。",
+"Christ Church 出咗十三位英國首相，比任何一間牛津劍橋學院都多。"
+],
+see:[
+"Tom Quad——全牛津最大嘅方庭。中間水池同 Mercury 像唔係純裝飾：最初嘅功能係火災時嘅水源，因為十七世紀中期迴廊附近曾經燒毀一位教士嘅住所。",
+"大飯堂（Great Hall）：Harry Potter 嘅 Hogwarts 飯堂設計靈感來源（電影實際上喺片場搭景重建）。牆上掛住 Gainsborough、Reynolds 嘅畫，同一幅 Lewis Carroll 嘅畫像。",
+"主教座堂入面 Burne-Jones 嘅彩繪玻璃，九成遊客趕住去飯堂，直接行過。",
+"樓梯間嘅扇形拱頂（1640 年）——由飯堂落嚟嗰條樓梯，係全牛津最靚嘅單一空間之一。"
+],
+myth:{t:"冷知識 · 101 下同牛津時間", b:[
+"Great Tom 每晚 9:05 敲一百零一下。一百下代表亨利八世創校時嘅一百名學者，第一百零一下係 1663 年一筆遺贈加設嘅一個學額。",
+"點解 9:05？因為牛津本地平時（local mean time）比格林威治慢五分鐘。1852 年鐵路時刻表逼全國統一用 GMT，但 Christ Church 拒絕跟，堅持用「牛津時間」。所以 9:05 GMT 就係 9:00 牛津時間。",
+"呢個時差有一個文學副產品：Lewis Carroll 喺 Christ Church 做數學講師三十幾年，《Alice》入面永遠遲到嘅白兔，一般認為同「牛津時間」有關。",
+"Alice Liddell 係當時院長 Henry Liddell 嘅二女。1862 年 7 月 4 日，Charles Dodgson（Carroll 本名）帶三姊妹由 Folly Bridge 撐艇上 Godstow，途中即興講咗一個故事——就係《愛麗絲夢遊仙境》。",
+"另一個 Alice 彩蛋：飯堂壁爐旁邊有長頸嘅銅製柴架（firedogs），有人認為就係 Alice 個頸變長嘅靈感來源。"
+]},
+line:"「全國喺 1852 年統一咗時間。呢間學院冇跟。一百七十四年之後嘅今晚九點零五分，個鐘仲會照響。牛津唔係唔識變——係佢決定咗邊啲嘢唔變。」",
+prac:{t:"60–90 分鐘",w:"St Aldate's, OX1 1DP",tip:"全牛津最貴、最多人嘅學院，一定要網上預先訂飛，有時段。飯堂喺午膳時間閉館。"}
+},
+
+{
+c:2, n:20, id:"ccmeadow", name:"Christ Church Meadow", en:"Christ Church Meadow",
+tags:["free","view"], badges:[["免費","free"],["觀景","view"]],
+scene:"meadow", cap:"長角牛 · 兩條河的交匯",
+hook:"喺全英國樓價最貴嘅市中心，你行三分鐘就會見到牛。唔係公園入面嘅裝飾牛——係真係喺度食草嘅牛。",
+history:[
+"呢片草地由 Christ Church 擁有，幾百年嚟一直冇起樓。日出到黃昏免費開放。",
+"草地上養緊嘅係英國長角牛（English Longhorn），一個古老品種。呢個唔係景觀設計——係持續咗幾百年嘅放牧管理。",
+"Broad Walk 同 New Walk 兩條林蔭道係十八至十九世紀鋪嘅。行到盡頭就係 Isis（泰晤士河喺牛津段嘅名）同 Cherwell 河嘅交匯點。",
+"河邊一排係各學院嘅船庫（boathouses）。牛津嘅賽艇傳統叫 bumps racing：因為河太窄唔夠位並排，啲艇排成一直線出發，鬥追撞前面嗰隻。撞到就叫 bump，第二日兩隻艇調位。呢個係全世界最古怪嘅賽艇制度之一。",
+"1960 年代曾經有一個計劃，要喺呢片草地起一條馬路解決牛津塞車問題。反對運動打咗幾十年，最後計劃胎死腹中。今日你行緊嘅呢條路，本來會係一條四線公路。"
+],
+see:[
+"Broad Walk 上望返 Christ Church 主教座堂同 Tom Tower——呢個係全城最靚嘅「後面」。",
+"長角牛。留意佢哋嘅角形，同一般肉牛完全唔同。",
+"兩河交匯點同一排船庫。春季（Torpids）同夏季（Summer Eights）有比賽，河邊會好熱鬧。",
+"Merton College 嘅後牆同 Merton Field——由呢個角度望 Merton 嘅塔，係 Tolkien 每日返工見到嘅景。"
+],
+myth:{t:"冷知識", b:[
+"完全免費，日出開到黃昏（冬天大約四點半就閂）。閂門時間會變，唔好行到太入而唔留意時間。",
+"呢站係全程最好嘅「呼吸位」。Christ Church 入面人逼人，行出草地即刻靜。行程編排上，重景點之後一定要跟一個空曠嘅點。"
+]},
+line:"「六十年代有人想喺呢度起條公路。反對咗成廿年。今日你行緊呢條泥路——係有人打過一場仗，先至仲喺度。」",
+prac:{t:"30–45 分鐘",w:"入口：St Aldate's、Merton Street、Rose Lane",tip:"落雨後好泥濘。冬天四點半左右閂門，冇路燈。"}
+},
+
+{
+c:2, n:21, id:"merton", name:"Merton College", en:"Merton College, 1264",
+tags:["college","story"], badges:[["收費","paid"],["學院","view"]],
+scene:"mobquad", cap:"Mob Quad · 全世界仍在運作最老的學術圖書館",
+hook:"每年夏令時間結束嗰晚凌晨兩點，呢間學院嘅學生會著晒禮服，喺方庭度手挽手倒後行一個鐘。目的：維持時空連續體嘅穩定。",
+history:[
+"1264 年，英格蘭大法官 Walter de Merton 頒佈章程。佢做嘅事係革命性嘅：以前學者要靠修會供養，Merton 設立咗一筆獨立於教會嘅永久地產基金，令學者可以唔使入修會都讀到書。呢個「自治法人 + 永久基金」嘅模式，就係今日「College」呢個概念嘅原型，之後被牛津劍橋全盤複製。",
+"Mob Quad（1288–1378）一般被認為係牛津最古老嘅方庭。裏面嘅 Merton College Library 建於 1373 年，係全世界仍然運作緊、最古老嘅學術圖書館。",
+"內戰期間，Merton 係唯一一間企喺國會一方嘅牛津學院——但佢啲樓照樣被保皇黨徵用。查理一世個法國老婆 Henrietta Maria 王后就住喺前方庭同 Fellows' Quad 之間拱門上面嗰間房。",
+"J. R. R. Tolkien 1945 至 1959 年喺 Merton 做 Merton Professor of English Language and Literature。《魔戒》大部分嘅出版工作喺呢段時間完成。"
+],
+see:[
+"Mob Quad——細、樸素、唔起眼。正正因為咁，佢係全牛津最接近十四世紀原貌嘅空間。",
+"Fellows' Quad（十七世紀初）南面嘅四柱式塔樓（Tower of the Four Orders）。",
+"飯堂嘅門——中世紀鐵飾仍在。",
+"由 Merton Street 望過去——呢條係牛津僅存嘅完整鵝卵石街道之一，兩旁冇任何現代店舖。全城最「無時代感」嘅一段路。"
+],
+myth:{t:"冷知識 · 時間儀式（Time Ceremony）", b:[
+"每年十月最後一個星期日凌晨，時鐘由 BST 2:00 撥返 GMT 2:00 嗰個「多出嚟嘅一個鐘」，Merton 學生會著全套 sub fusc（學袍、領結）喺 Fellows' Quad 手挽手倒後行足一個鐘，四個角落轉圈，手上攞住砵酒。",
+"官方說法：呢樣嘢係為咗「喺 BST 轉 GMT 期間維持時空連續體嘅完整性」。詳細理論仲有講：倒行會製造一個「時間凹陷」，周圍嘅自然時間會流入去填補，令全國嘅時差喺廿四小時內拉平。",
+"儀式 1971 年開始——即係英國結束全年使用夏令時間試驗之後嗰年。發起人只有五個學生。今日成間學院都參與，仲要鎖門防止外人潛入。",
+"參加者嘅心得包括：唔好攞住成杯砵酒行，會濺到手上，隻手會凍。呢種一本正經嘅荒謬，非常牛津。"
+]},
+line:"「一班全世界最聰明嘅人，每年有一晚，認真咁倒後行一個鐘去修補時間。你笑得，但你要記住——正正係呢種人，發明咗你手機入面嘅嘢。」",
+prac:{t:"30 分鐘",w:"Merton Street, OX1 4JD",tip:"通常下午開放，收費。行 Merton Street 條鵝卵石路本身已經值得，免費。"}
+},
+
+/* ══════════════ 第四章 ══════════════ */
+{
+c:3, n:22, id:"magdalen", name:"Magdalen College 與 Addison's Walk", en:"Magdalen College, 1458",
+tags:["college","story","view"], badges:[["收費","paid"],["學院","view"]],
+scene:"magdalentower", cap:"鹿園 · 172 級 · 每年 5 月 1 日早上六點",
+hook:"每年五月一日朝早六點，呢座塔頂會有一隊唱詩班唱一首拉丁文歌。下面條街同條橋，會企滿幾千人，其中一半通宵冇瞓。",
+history:[
+"1458 年由溫徹斯特主教 William Waynflete 創辦。佢曾經係 New College 嘅院士，亦做過 Eton 校長，之後做英格蘭大法官。Magdalen 嘅財力同土地令佢由一開始就係牛津最富有嘅學院之一。",
+"個名讀法係一個陷阱：串 Magdalen，讀 MAUDLIN。呢個係辨認「識唔識牛津」嘅第一道測驗。",
+"Great Tower（1492–1509）高一百四十四呎，係牛津最高嘅學院建築。爬上去有 172 級。",
+"May Morning：每年 5 月 1 日早上六點，Magdalen College Choir 喺塔頂唱《Hymnus Eucharisticus》。呢首歌由 Magdalen 院士 Benjamin Rogers 譜曲，樂譜上嘅日期係 1673 年。唱完之後係一首牧歌《Now Is the Month of Maying》，然後全城 morris dancing、酒吧六點開門。呢個傳統據講已有五百年。",
+"C. S. Lewis 1925 至 1954 年喺 Magdalen 做英國文學院士。1931 年 9 月 19 日晚上，佢請咗 Tolkien 同 Hugo Dyson 喺自己房食飯，飯後三個人沿住 Addison's Walk 散步，傾隱喻同神話。傾到途中突然起風，樹葉唰一聲落晒落嚟，三個人以為落雨。Tolkien 凌晨三點走，Dyson 四點走。九日之後，Lewis 寫信俾老朋友 Arthur Greeves：我啱啱由相信神，變成相信基督。",
+"Oscar Wilde 亦係 Magdalen 校友，1874 至 1878 年喺度讀古典學。"
+],
+see:[
+"鹿園（Deer Park）：學院自十八世紀起養鹿至今，通常有六十幾隻黇鹿。喺市中心行三分鐘見到鹿群，係牛津最超現實嘅畫面之一。",
+"Addison's Walk：一條環繞水草地嘅林蔭小徑，沿 Cherwell 河支流。春天有蛇頭貝母（snake's head fritillary）開花。呢條路免費（隨學院門票）。",
+"Cloisters 上面嘅怪誕石雕（grotesques）——一組十六世紀嘅怪獸同人像。有講法話佢哋啟發咗 Narnia 入面嘅生物。",
+"禮拜堂嘅晚禱（Evensong）——學期內幾乎每日都有，免費入。呢個係全牛津最容易得到、最少人知嘅高級體驗。"
+],
+myth:{t:"冷知識 · May Morning 嘅真相", b:[
+"塔頂唱歌其實好細聲。下面幾千人根本聽唔清，近年要用擴音。但冇人介意——重點唔係聽到，係企喺度。",
+"以前有傳統係喺 May Morning 由 Magdalen Bridge 跳落 Cherwell 河。2005 年有大量人跳落去受傷之後，橋每年會封。唔好叫團友跳。",
+"如果你五月一日帶團：四點半就要到位，High Street 同 Magdalen Bridge 五點左右已經企滿人。之後全城酒吧六點開門食早餐。呢日係全年最值得帶團嘅日子。"
+]},
+line:"「1931 年 9 月 19 日晚上，三個中年學者喺呢條路上散步傾偈，傾到凌晨三點。九日之後，其中一個嘅信仰改變咗，而世界後來有咗《Narnia》。有時改變一個人嘅唔係一本書——係一次散步。」",
+prac:{t:"45–60 分鐘",w:"High Street, OX1 4AU",tip:"收費。Addison's Walk 同鹿園值回票價。晚禱免費，學期內留意時間。"}
+},
+
+{
+c:3, n:23, id:"magdbridge", name:"Magdalen Bridge 與撐艇", en:"Magdalen Bridge & Punting",
+tags:["free","view"], badges:[["望免費","free"],["觀景","view"]],
+scene:"punt", cap:"Cherwell 河 · 一支竿同一個決定",
+hook:"撐艇有一條鐵律：如果條竿插住咗喺河底，你要放手。唔放手，你就會留喺竿上面，隻艇會走咗。",
+history:[
+"Punt（平底方頭船）本來係泰晤士河嘅貨船，用嚟喺淺水運貨。維多利亞後期變成消閒活動，牛津同劍橋各自發展出自己嘅撐法。",
+"牛津同劍橋撐法唔同，而且雙方都認為對方係錯：牛津人企喺船嘅底板（在船身內），劍橋人企喺尾部平台（till）上面。呢個爭議冇答案，但係一個好用嘅笑位。",
+"Magdalen Bridge 現貌由 John Gwynn 設計，1772 至 1790 年建成，就係設計 Covered Market 嗰位。呢度自古就係由東面入牛津嘅門戶。",
+"橋下 Magdalen Bridge Boathouse 係全城最出名嘅租艇點，通常 3 月至 10 月營業。"
+],
+see:[
+"由橋上向北望 Cherwell 河同 Magdalen 鹿園——呢個角度全免費。",
+"望住撐艇嘅人。十五分鐘之內一定會有人跌落水或者轉圈轉唔返出嚟。呢個係免費娛樂。",
+"Magdalen Tower 由橋上望係最完整嘅角度。"
+],
+myth:{t:"冷知識 · 教團友撐艇嘅三句", b:[
+"一：竿唔係槳，係舵。插落水之後推，然後用竿喺水入面拖尾轉向。",
+"二：竿卡住咗就放手。追返隻艇，好過留喺竿上面俾人影相。",
+"三：唔好企喺船邊。企中間。",
+"如果團友要撐：兩個人一隻艇最好，三個人已經開始嘈交。"
+]},
+line:"「呢條河上面，最重要嘅技術唔係點推，係幾時放手。」",
+prac:{t:"15 分鐘（撐艇另計 1–2 小時）",w:"Magdalen Bridge, OX1 4AU",tip:"租艇要按金。5 月 1 日 May Morning 橋會封。冬天唔營業。"}
+},
+
+{
+c:3, n:24, id:"botanic", name:"植物園與 Lyra 的長椅", en:"Oxford Botanic Garden, 1621",
+tags:["story","view"], badges:[["園內收費","paid"],["外圍免費","free"]],
+scene:"garden", cap:"英國最古老植物園 · 《黑暗元素》最後一頁",
+hook:"呢度有一張長椅。全世界有讀者專登飛嚟英國，就係為咗喺每年七月某一日，坐喺呢張椅上面。",
+history:[
+"1621 年由 Henry Danvers 伯爵捐資成立，原名 Physic Garden，目的係種藥用植物俾醫科學生研究。佢係英國最古老嘅植物園，全世界最古老嘅科學植物園之一。",
+"選址係一個舊猶太人墓地——1290 年愛德華一世驅逐猶太人之後空置。開園前要運入四千車泥去墊高地面防洪。",
+"最初嘅四千鎊捐款用晒喺圍牆同大門度，冇錢請人打理。第一任園丁 Jacob Bobart 1642 年上任，一做四十年。",
+"園內最老嘅樹係一棵 1645 年種嘅英國紫杉。",
+"文學上：Philip Pullman 嘅《His Dark Materials》三部曲以牛津為背景（Lyra 嘅牛津係平行世界）。系列最後一幕，Lyra 同 Will 分隔喺兩個世界，約定每年仲夏日中午，各自坐喺自己世界嘅同一張長椅上。呢張椅就喺呢個植物園。"
+],
+see:[
+"Lyra 同 Will 嘅長椅——喺園嘅南面近河嘅位置。今日已經係非官方朝聖點，園方有標示。",
+"1645 年嘅紫杉。",
+"1621 年嘅原始石牆同 Danby Gate。",
+"隔籬 Magdalen College 嘅塔——由園內望過去係最經典嘅構圖。",
+"如果唔想入場：沿 Rose Lane 同 High Street 交界外望，同河邊步道，都可以睇到圍牆同大門，免費。"
+],
+myth:{t:"冷知識 · 牛津文學地圖", b:[
+"牛津係全世界文學密度最高嘅城市之一：Lewis Carroll（Christ Church）、Tolkien（Exeter → Merton）、C. S. Lewis（Magdalen）、Philip Pullman（Exeter）、Oscar Wilde（Magdalen）、Colin Dexter 嘅《Inspector Morse》、Dorothy L. Sayers 嘅《Gaudy Night》。",
+"Pullman 嘅 Jordan College 一般認為以 Exeter College 為原型——佢自己嘅母校。",
+"帶文學團嘅路線建議：Christ Church（Alice）→ Botanic Garden（Pullman）→ Magdalen Addison's Walk（Lewis）→ Merton（Tolkien）→ Eagle and Child（Inklings）。"
+]},
+line:"「兩個角色被永遠分開，只可以每年坐喺各自世界嘅同一張椅上面。而作者揀咗一張真實存在嘅椅。所以每年今日，真係有人嚟坐。」",
+prac:{t:"30–45 分鐘",w:"Rose Lane, OX1 4AZ",tip:"收費（同 Harcourt Arboretum 有聯票）。外圍同大門免費睇。"}
+},
+
+{
+c:3, n:25, id:"southpark", name:"South Park", en:"South Park, Headington Hill",
+tags:["free","view"], badges:[["免費","free"],["最佳全景","view"]],
+scene:"skyline", cap:"全城最經典的天際線 · 完全免費",
+hook:"如果我只可以帶你去一個地方，唔係任何一間學院。係呢個山坡。而佢一蚊都唔使。",
+history:[
+"South Park 喺市中心以東嘅 Headington Hill 上，五十英畝，日夜開放，免費。",
+"呢度係牛津市議會官方認定嘅「景觀錐」（view cone）之一。牛津有一套自 1962 年開始、2015 年正式成文嘅高度限制政策，明文保護十條由指定地點望向市中心嘅視線走廊。任何新建築嘅高度都要放入呢十條視線入面測試。",
+"官方保護嘅十條視線包括西面山丘（Raleigh Park、Boars Hill、Hinksey Hill）、東面山丘（Doris Field Memorial Park、Headington Hill Allotments、South Park），以及東南面嘅 Crescent Road 同 Rose Hill。",
+"換句話講：你企喺呢個山坡見到嘅呢幅畫面，係受法律保護嘅。牛津之所以冇高樓，唔係因為冇人想起，係因為有人打過官司。"
+],
+see:[
+"由山坡上望西：由左至右可以認出 Magdalen Tower、Merton、St Mary 教堂尖塔、Radcliffe Camera 圓頂、All Souls 雙塔、Tom Tower、Nuffield College 尖塔。",
+"日落：太陽由天際線後面落，成排尖塔變成剪影。呢個時間全公園都係人喺度坐住飲嘢。",
+"日出：東面光打正落所有石面，全部變金色。人少好多。",
+"沿山坡步行三分鐘就到 Headington（下一站嘅鯊魚）。"
+],
+myth:{t:"冷知識 · 「Dreaming Spires」出處", b:[
+"「城市與夢中尖塔」呢個講法出自維多利亞詩人 Matthew Arnold 1865 年嘅輓歌《Thyrsis》——為紀念好友 Arthur Hugh Clough 而寫。",
+"Arnold 望嘅角度一般認為係 Boars Hill（第 30 站），唔係 South Park。但 South Park 交通方便好多，畫面亦更集中。",
+"J. M. W. Turner 同牛津本地畫家 William Turner 都畫過呢條天際線。你今日影嘅相，同兩百年前嘅油畫係同一個構圖。"
+]},
+line:"「你面前呢幅畫面係受法律保護嘅。牛津冇高樓，唔係天意——係有人喺一九六幾年開始，逐棟樓去反對。你今日免費見到嘅，係人爭返嚟嘅。」",
+prac:{t:"30 分鐘",w:"Headington Road / Morrell Avenue, OX3",tip:"由市中心行路約 25–30 分鐘，或者搭巴士。落雨後極泥濘，要著返對好鞋。日出日落最靚。"}
+},
+
+{
+c:3, n:26, id:"shark", name:"Headington Shark（鯊魚屋）", en:"Untitled 1986, 2 New High Street",
+tags:["free","story","view"], badges:[["免費","free"],["奇景","view"]],
+scene:"shark", cap:"1986 年 8 月 9 日 · 長崎原爆 41 週年",
+hook:"1986 年 8 月 9 日凌晨，一架吊臂車喺呢條普通住宅街出現，將一條二十五呎長嘅玻璃纖維鯊魚，插入一間排屋嘅屋頂。冇申請過任何許可。",
+history:[
+"屋主叫 Bill Heine，美國人，本來喺 Georgetown 讀美國外交史，為咗避兵役去咗 Peace Corps，之後嚟牛津 Balliol 讀法律，讀完就留低。佢喺牛津開過兩間另類戲院。",
+"1986 年佢搵咗雕塑家 John Buckley 做咗呢件作品，正式名稱係《Untitled 1986》。安裝日期揀咗 8 月 9 日——長崎原爆四十一週年。",
+"Heine 自己嘅解釋：呢件作品係關於一種完全無力嘅感覺，一個人憤怒、絕望到要喺自己屋頂扯開一個窿。佢講到 CND（核裁軍運動）、核電、切爾諾貝爾、長崎。",
+"市議會即刻出手。第一招：話佢危險。工程師上去驗過特別加裝嘅屋頂鋼樑，判定安全。第二招：話佢未申請規劃許可，屬於違例發展。1990 年補交申請被拒。1991 年 Heine 上訴至環境大臣。",
+"1992 年，中央政府裁定鯊魚可以留低。規劃督察嘅裁決理由寫得極好，大意係：任何管制制度都必須為突發嘅、意料之外嘅、甚至係古靈精怪嘅嘢，留一個位。",
+"Bill Heine 2019 年因白血病去世。佢個仔 Magnus Hanson-Heine 2016 年買咗間屋保育。2022 年市議會將鯊魚列入本地文化遺產名冊——而佢個仔強烈反對，理由妙絕：用規劃制度去保育一件反抗規劃制度嘅作品，本身就荒謬。"
+],
+see:[
+"由 Headington 主街轉入 New High Street，行幾十米就見到。免費、24 小時、企喺街上望就得。",
+"留意：呢條係一條完全普通嘅英式排屋街。正正因為周圍咁普通，隻鯊魚先咁震撼。",
+"門口鐵閘上寫住作品名《Untitled 1986》。"
+],
+myth:{t:"冷知識 · 呢個故事點講先最勁", b:[
+"呢站係全程最好嘅「反高潮」。行完幾百年石頭同拉丁文，突然嚟一條鯊魚。團友會笑，會影相，會記得。",
+"講法建議：先唔好講背景，行到轉角先叫佢哋抬頭。等佢哋笑完，先講長崎、核裁軍、六年官司同嗰句裁決。個落差就係故事嘅力量。",
+"呢間屋一度做 Airbnb，2023 年市議會拒絕改變用途申請，2024 年 12 月上訴失敗，2025 年 3 月停止出租。所以你唔可以瞓喺入面。"
+]},
+line:"「牛津用八百年建立咗一套規矩。1986 年有個人，用一條鯊魚問咗一句：咁規矩之外呢？政府用咗六年先答佢——答案係：留返個位。」",
+prac:{t:"15 分鐘",w:"2 New High Street, Headington, OX3 7AL",tip:"完全免費，街上觀看。由 South Park 行過去約 15 分鐘，順路。私人住宅，唔好按鐘。"}
+},
+
+/* ══════════════ 第五章 ══════════════ */
+{
+c:4, n:27, id:"castle", name:"Oxford Castle 與城堡土丘", en:"Oxford Castle & Mound, 1071",
+tags:["free","story","view"], badges:[["外圍免費","free"],["內部收費","paid"]],
+scene:"castle", cap:"1142 年 12 月 · 一件白斗篷",
+hook:"1142 年 12 月一個落雪嘅夜晚，一個女人由呢座塔嘅牆上被繩吊落嚟。佢著住一件白色斗篷。三個月圍城，佢就係咁行咗出去。",
+history:[
+"1071 年，諾曼人 Robert D'Oyly 喺呢度起城堡。今日仲企住嘅 St George's Tower 一般認為係全牛津最古老嘅建築物，比大學仲早一百年。",
+"1135 年亨利一世死後，英格蘭陷入內戰，史稱 the Anarchy（無政府時期）。爭位嘅係亨利一世個女 Empress Matilda 同佢表哥 Stephen。",
+"1142 年，Stephen 圍攻牛津城堡。根據《Gesta Stephani》記載，佢渡過泰晤士河突襲，攻入城市、燒屋、殺人，將 Matilda 逼入城堡。圍城持續三個月，守軍陷入極度飢餓。",
+"十二月接近聖誕嘅一晚，Matilda 帶住三個騎士出逃。編年史家 Henry of Huntingdon 寫低：女皇著住白衣，反射並融入雪色，騙過圍城者嘅眼睛。佢哋喺結冰嘅河面上行過，穿越 Stephen 嘅營地，步行六英里到 Abingdon，再去 Wallingford。",
+"翌日城堡投降。但 Matilda 逃脫改變咗戰局：戰爭再打十一年，最後和解方案係 Stephen 保留王位，但由 Matilda 個仔繼位——就係亨利二世，金雀花王朝嘅開創者。",
+"呢個逃脫嘅細節版本唔一致：有講佢由 St George's Tower 用繩吊落，有講佢由後門（postern）出。連敵對嘅編年史家都讚佢夠膽。",
+"城堡後來做咗監獄，一直用到 1996 年。今日部分做咗酒店（Malmaison），部分做咗博物館。"
+],
+see:[
+"St George's Tower（1074）——爬上去要飛，但企喺下面望已經好震撼。留意佢下闊上窄嘅收分，係典型諾曼防禦工法。",
+"Castle Mound（城堡土丘）——免費行上去，五分鐘，頂上有景。呢個土丘上面本來有座石造主樓。",
+"Castle Mill Stream——Matilda 當年行過嘅結冰水面，就係呢條。",
+"整個 Castle Quarter 廣場免費開放，有餐廳同市集。"
+],
+myth:{t:"冷知識", b:[
+"Matilda 唔止逃過一次。內戰早期佢喺 Devizes 城堡被圍，據講扮死屍、俾人用裹屍布包住抬出去。",
+"佢從來冇正式加冕做女王。1141 年最接近——佢被宣佈為「Lady of the English」，倫敦準備緊加冕禮，但倫敦市民起義將佢趕走。",
+"最後坐上王位嘅係佢個仔。英國歷史上好多轉折，都係由一個「失敗者」開出嚟。"
+]},
+line:"「三個月圍城，冇糧、冇援兵、對面係國王嘅大軍。佢做嘅唔係投降，係著咗件白衫，行咗出去。而佢個仔，最後做咗王。」",
+prac:{t:"20 分鐘（外圍）／90 分鐘（博物館）",w:"44–46 New Road, OX1 1AY",tip:"廣場同土丘免費。St George's Tower 同監獄導賞要飛。"}
+},
+
+{
+c:4, n:28, id:"portmeadow", name:"Port Meadow 與 Godstow 修道院", en:"Port Meadow & Godstow Abbey",
+tags:["free","view","story"], badges:[["免費","free"],["觀景","view"]],
+scene:"portmeadow", cap:"從未被犁過的土地 · 1086 年寫入《末日審判書》",
+hook:"呢片草地，三千年嚟未被犁過。唔係因為保育——係因為佢年年水浸，種唔到嘢。佢因為冇用，所以留低咗。",
+history:[
+"傳說牛津嘅自由民（Freemen）因為協助抵抗丹麥人入侵，獲阿爾弗雷德大帝賜予呢三百英畝河邊牧地。呢個傳說時間上對唔上（阿爾弗雷德九世紀已死），但佢哋嘅集體免費放牧權的確喺 1086 年《末日審判書》有記載，而且行使至今，從未中斷。",
+"「Port Meadow」個名可能來自 Portman，即係自由民嘅舊稱。",
+"呢片地嘅生態價值極高：因為千年不斷放牧、從未耕種，形成獨特植被。佢係「特殊科學價值地點」（SSSI），入面有 178 種開花植物，包括匍匐棱子芹（creeping marshwort）——一種直到近年為止全英國只喺呢度生長嘅紅皮書物種。",
+"地面上仍然睇得到青銅器時代嘅墓塚、鐵器時代嘅居住痕跡、內戰時期國會軍圍城工事嘅土壘，同十七、十八世紀賽馬跑道嘅石橋。",
+"今日大約有四十匹馬全年住喺草地上，二百五十頭牛住到深秋。每年由市 Sheriff 主持一次黎明「趕牛」點算。",
+"往北行二十分鐘，係 Godstow Abbey（1142 年建立嘅本篤會女修院）嘅無頂石牆遺跡。亨利二世嘅情婦「美人羅莎蒙德」（Fair Rosamund）葬喺呢度。對面就係 The Trout Inn。",
+"1862 年 7 月 4 日，Charles Dodgson 同 Robinson Duckworth 帶 Liddell 三姊妹由 Folly Bridge 撐艇上 Godstow，途中經過呢片草地。Alice 要求佢講故事，佢即興講咗一個「有啲無稽嘢」嘅故事——就係《愛麗絲夢遊仙境》嘅起點。"
+],
+see:[
+"日落。呢度係全牛津最開闊嘅西望角度，成片水面反射尖塔。",
+"冬季水浸期：草地變成一面淺鏡，反射成個天空同天際線。呢個係全年最靚嘅畫面，但要著水鞋。",
+"馬同牛。佢哋唔怕人，但唔好餵、唔好摸。",
+"Godstow Abbey 遺跡同 The Trout Inn。行到呢度，全程約一小時來回。"
+],
+myth:{t:"冷知識 · 「因為冇用，所以留低」", b:[
+"呢片地保存到今日嘅真正原因，係佢種唔到嘢。年年水浸，開發唔到、耕種唔到，所以千年嚟冇人打佢主意。",
+"呢個係一個好用嘅思考題：我哋今日保護嘅嘢，有幾多係因為佢珍貴，有幾多係因為佢啱好冇人要？",
+"另外：自由民嘅集體權利保護咗呢片地免於發展。共有產權（commons）喺英國歷史上絕大部分都被圈地運動消滅咗，Port Meadow 係少數幸存者。"
+]},
+line:"「三千年冇人犁過。唔係因為神聖，係因為每年浸水。有時最好嘅保育，就係一件嘢啱啱好冇人要。」",
+prac:{t:"1–2 小時",w:"入口：Walton Well Road（Jericho）或 Godstow Road（Wolvercote）",tip:"完全免費、24 小時開放。冬天水浸要水鞋。夏天有人游水。"}
+},
+
+{
+c:4, n:29, id:"nhm", name:"自然史博物館與 Pitt Rivers", en:"Museum of Natural History & Pitt Rivers",
+tags:["free","museum","story"], badges:[["免費","free"],["博物館","view"]],
+scene:"nhm", cap:"牛津渡渡鳥 · 1860 年那場辯論",
+hook:"全世界唯一一件仲有軟組織嘅渡渡鳥標本，喺呢度。而佢係《愛麗絲》入面隻渡渡鳥嘅原型。",
+history:[
+"博物館 1855 至 1860 年建成，係新哥德式嘅代表作。中庭嘅鑄鐵同玻璃屋頂由 Benjamin Woodward 設計，Ruskin 有份參與。柱身用咗全英國各地唔同嘅岩石，本身就係一套地質教材。",
+"1860 年 6 月 30 日，達爾文《物種起源》出版後七個月，呢個中庭發生咗科學史上最出名嘅一場辯論：Thomas Huxley 對牛津主教 Samuel Wilberforce。傳說 Wilberforce 問 Huxley 佢係經祖父定祖母嗰邊由猴子傳落嚟，Huxley 回應大意係：與其做一個把天賦用嚟掩蓋真相嘅人嘅後代，佢寧願做猴子嘅後代。現場記錄互相矛盾，但呢場辯論成為科學與宗教衝突嘅象徵。",
+"牛津渡渡鳥：來自 Tradescant 收藏，1656 年目錄已有記載，1683 年隨 Ashmole 捐贈入牛津。今日僅存頭骨連左側皮膚、眼球鞏膜環、一隻腳嘅骨、一段股骨、一條 1986 年取下嘅羽毛，同歷年取樣嘅組織。",
+"呢個係全世界唯一保存到渡渡鳥軟組織、可以提取 DNA 嘅標本。2018 年華威大學用 CT 掃描發現：呢隻鳥係被人由後腦同頸部開槍打死嘅，而且鉛彈冇打穿佢個頭骨——原來渡渡鳥嘅頭骨好厚。",
+"Lewis Carroll 帶 Alice Liddell 嚟過呢間博物館。《愛麗絲》入面隻渡渡鳥，一般認為就係基於呢件標本同館藏 Jan Savery 1651 年嘅渡渡鳥油畫。Tenniel 畫插圖嗰陣參考嘅亦係呢幅畫。",
+"後面接住嘅 Pitt Rivers Museum 1884 年成立，收藏五十幾萬件人類學物件。佢嘅陳列方式獨一無二：唔按地區或年代分，而係按「類型」分——所有樂器放一齊、所有船放一齊、所有鎖放一齊，等你直接比較唔同文化點解決同一個問題。館內刻意保持昏暗、用手電筒睇，係原始維多利亞展示方式嘅活化石。"
+],
+see:[
+"渡渡鳥展櫃（展出嘅係複製品，真品保存喺庫房）同 Jan Savery 1651 年嘅油畫。",
+"Megalosaurus——世界上第一種被科學命名嘅恐龍，1824 年由牛津嘅 William Buckland 描述。模式標本喺呢度。",
+"中庭嘅鑄鐵柱同石柱。逐條望，每條石都嚟自英國唔同地方。",
+"Pitt Rivers 嘅「類型陳列」。留意：館方 2020 年將人類遺骸（包括著名嘅縮頭）由展廳移除，並改寫殖民背景嘅解說。呢個轉變本身值得同團友講。",
+"兩間館全部免費。"
+],
+myth:{t:"冷知識 · 一隻鳥點樣變成一個符號", b:[
+"渡渡鳥 1598 年被荷蘭水手首次記錄，不足一百年滅絕。今日全世界只有二十幾件標本，牛津呢件係唯一有軟組織嘅。",
+"「As dead as a dodo」呢句英文成語，就係由呢個滅絕故事嚟。而令佢家傳戶曉嘅，係 Lewis Carroll——一個口吃嘅數學講師，據講自我介紹嘅時候會講成 Do-do-dodgson，所以將自己畫咗入書入面做隻渡渡鳥。",
+"呢個係全程最完整嘅一個故事圈：一隻鳥由模里西斯被殺 → 入咗 Tradescant 嘅私人收藏 → 入咗全世界第一間公眾博物館 → 變成一本童書嘅角色 → 變成滅絕嘅全球符號 → 今日俾 CT 掃描還原死因。"
+]},
+line:"「一隻鳥，喺一個島上被人打死。三百年後，佢喺呢度變成全人類講『滅絕』嗰陣，腦入面浮現嘅嗰隻鳥。」",
+prac:{t:"60–90 分鐘（兩館）",w:"Parks Road, OX1 3PW",tip:"完全免費。Pitt Rivers 由自然史博物館後面直入。落雨天最佳選擇，帶細路一流。"}
+},
+
+{
+c:4, n:30, id:"boars", name:"Boars Hill（與 Raleigh Park）", en:"Boars Hill · 'Dreaming Spires' 的原點",
+tags:["free","view","story"], badges:[["免費","free"],["終極觀景","view"]],
+scene:"hill", cap:"1865 年 · Matthew Arnold 的那一句",
+hook:"「夢中尖塔」呢個講法，係一個詩人喺呢個山坡上，為咗紀念一個死去嘅朋友而寫嘅。而佢寫嗰陣，冇諗過會變成一個城市嘅品牌。",
+history:[
+"Boars Hill 喺牛津西南面，出咗環城公路，過咗 Chilswell 同 Bagley Wood。",
+"1841 年，詩人 Arthur Hugh Clough 帶佢嘅朋友 Matthew Arnold 上呢個山。當時山上仲未有樹，係開闊嘅酸性荒地，農民喺度放牧，四面視野極廣。",
+"Arnold 之後寫咗兩首以呢一帶為背景嘅詩：《The Scholar Gipsy》同《Thyrsis》。Clough 1861 年去世，Arnold 1865 年寫《Thyrsis》悼念佢，入面出現咗「那座甜美城市與她夢中的尖塔」呢一句。呢句之後成為牛津最廣為人知嘅形容。",
+"Arnold 出名之後，呢個山變成文人聚居地：Robert Bridges（桂冠詩人）、John Masefield（桂冠詩人）、Robert Graves、Edmund Blunden、Elizabeth Daryush 都住過。",
+"1920 年代末，Oxford Preservation Trust 第一塊買落嘅地就係喺 Boars Hill。佢哋之後持續收購、開放呢一帶嘅土地，目的就係保住呢條視線。"
+],
+see:[
+"由 Jarn Mound 或者 Chilswell 附近嘅步道望向東北——成個牛津天際線攤開喺山谷入面。",
+"如果唔想走咁遠：市西邊嘅 Raleigh Park（North Hinksey）都係官方保護嘅視線點之一，交通方便好多，同樣免費。J. M. W. Turner 畫過呢個角度。",
+"要有心理準備：山上而家長咗好多樹，視野比 Arnold 嗰陣窄好多。有幾個特定位置先開到。"
+],
+myth:{t:"冷知識 · 一句詩點樣變成一盤生意", b:[
+"「City of Dreaming Spires」今日印喺明信片、T 恤、旅遊局文宣上面。但佢本來係一首輓歌入面嘅一句，寫嘅係失去。",
+"牛津十條受保護嘅「景觀錐」入面，西面山丘嗰組（Raleigh Park、Boars Hill、Hinksey Hill）就係為咗保住 Arnold 呢個角度。即係話：一句詩，最後變成咗規劃法規。",
+"導賞收尾建議：呢站適合放喺全程最後。行完三十站石頭、火刑、鴨、鯊魚，最後企喺山上遠望——由外面睇返你行過嘅所有嘢。"
+]},
+line:"「Arnold 寫呢句嘅時候，唔係喺讚呢個城市靚。佢喺度悼念一個死咗嘅朋友。一百六十年之後，佢嘅悲傷變成咗一個城市嘅名。呢個就係語言嘅力量——亦係我哋做導遊嘅工作。」",
+prac:{t:"2–3 小時（連交通）／Raleigh Park 約 1 小時",w:"Boars Hill, OX1 5 / Raleigh Park, North Hinksey OX2",tip:"Boars Hill 冇公共交通直達，要駕車或者行山。Raleigh Park 由市中心行 30 分鐘可達，係實際好多嘅替代方案。"}
+}
+
+];
+
+/* ═══════════════════════════════════════════════════════════════
+   插圖引擎 — 用一套建築部件砌出每一站嘅版畫
+   ═══════════════════════════════════════════════════════════════ */
+const C = {far:'var(--flood)', mid:'#5A7893', near:'var(--oxford)', land:'var(--lichen)', hot:'var(--ribbon)', pale:'#CFD9DC'};
+
+const P = {
+  tower(x,b,w,h,o={}){
+    let s = `<rect x="${x}" y="${b-h}" width="${w}" height="${h}"/>`;
+    if(o.spire) s += `<path d="M${x-2} ${b-h} L${x+w/2} ${b-h-o.spire} L${x+w+2} ${b-h} Z"/>`;
+    if(o.crenel){ for(let i=0;i<4;i++) s += `<rect x="${x+i*(w/4)}" y="${b-h-5}" width="${w/7.5}" height="6"/>`; }
+    if(o.pinn){ [x-1,x+w/3-1,x+2*w/3-1,x+w-3].forEach(px=>{ s += `<path d="M${px} ${b-h} l2 -13 l2 13 Z"/>`; }); }
+    if(o.win){ for(let i=0;i<o.win;i++) s += `<rect x="${x+w*0.3}" y="${b-h+14+i*15}" width="${w*0.4}" height="9" fill="rgba(255,255,255,.28)"/>`; }
+    return s;
+  },
+  dome(x,b,w,h){
+    const cx=x+w/2, dr=w/2;
+    return `<rect x="${x}" y="${b-h*0.52}" width="${w}" height="${h*0.52}"/>`
+      + `<path d="M${x-4} ${b-h*0.52} Q${cx} ${b-h*1.06} ${x+w+4} ${b-h*0.52} Z"/>`
+      + `<rect x="${cx-6}" y="${b-h*1.16}" width="12" height="14"/>`
+      + `<path d="M${cx-8} ${b-h*1.16} L${cx} ${b-h*1.30} L${cx+8} ${b-h*1.16} Z"/>`
+      + `<circle cx="${cx}" cy="${b-h*1.35}" r="2.6"/>`;
+  },
+  range(x,b,w,h,n=4){
+    let s = `<rect x="${x}" y="${b-h}" width="${w}" height="${h}"/>`;
+    s += `<path d="M${x-3} ${b-h} L${x+w/2} ${b-h-h*0.34} L${x+w+3} ${b-h} Z"/>`;
+    for(let i=0;i<n;i++){ const ww=w/(n*2.1); const px=x+w*0.09+i*(w*0.82/n);
+      s += `<path d="M${px} ${b-4} L${px} ${b-h*0.46} q${ww/2} -${ww*0.85} ${ww} 0 L${px+ww} ${b-4} Z" fill="rgba(255,255,255,.26)"/>`; }
+    return s;
+  },
+  arcade(x,b,w,h,n=5){
+    let s = `<rect x="${x}" y="${b-h}" width="${w}" height="${h*0.30}"/>`;
+    for(let i=0;i<n;i++){ const aw=w/n, px=x+i*aw;
+      s += `<path d="M${px+3} ${b} L${px+3} ${b-h*0.48} q${aw/2-3} -${aw*0.55} ${aw-6} 0 L${px+aw-3} ${b} Z" fill="${C.near}" opacity=".93"/>`;
+      s += `<path d="M${px+7} ${b} L${px+7} ${b-h*0.44} q${aw/2-7} -${aw*0.44} ${aw-14} 0 L${px+aw-7} ${b} Z" fill="rgba(255,255,255,.20)"/>`; }
+    return s;
+  },
+  tree(x,b,r){ return `<path d="M${x-2} ${b} l0 -${r*0.7} l4 0 l0 ${r*0.7} Z"/><circle cx="${x}" cy="${b-r*1.25}" r="${r*0.78}"/><circle cx="${x-r*0.55}" cy="${b-r*0.95}" r="${r*0.55}"/><circle cx="${x+r*0.55}" cy="${b-r*1.0}" r="${r*0.5}"/>`; },
+  cow(x,b,s=1){ return `<g transform="translate(${x},${b}) scale(${s})"><path d="M0 0 l0 -7 l-2 0 l0 7 M13 0 l0 -7 l2 0 l0 7 M-3 -7 q9 -6 20 0 q3 1 3 4 q0 3 -4 3 l-19 0 q-3 0 -3 -3.5 Z"/><path d="M-3 -10 q-4 0 -5 3 q0 3 4 3"/></g>`; },
+  horse(x,b,s=1){ return `<g transform="translate(${x},${b}) scale(${s})"><path d="M0 0 l1 -9 M6 0 l0 -9 M15 0 l1 -9 M20 0 l0 -9 M-1 -9 q10 -5 21 0 q4 0 5 -6 q1 -5 5 -6 q1 3 -1 5 q-2 2 -2 6 q0 4 -5 5 Z"/></g>`; },
+  deer(x,b,s=1){ return `<g transform="translate(${x},${b}) scale(${s})"><path d="M0 0 l1 -7 M5 0 l0 -7 M11 0 l1 -7 M15 0 l0 -7 M0 -7 q8 -4 16 0 q3 0 4 -5 q0 -3 3 -4 M23 -16 l-2 -5 M23 -16 l3 -4 M20 -16 l-4 -3"/></g>`; },
+  punt(x,b,s=1){ return `<g transform="translate(${x},${b}) scale(${s})"><path d="M0 0 q22 7 44 0 l-3 -6 l-38 0 Z"/><path d="M28 -6 l6 -34" stroke-width="2.2" stroke="currentColor"/><path d="M25 -6 l1 -13 l4 0 l1 13 Z"/></g>`; },
+  water(y,h){ return `<rect x="0" y="${y}" width="400" height="${h}"/>`; },
+  ripples(y){ let s=''; for(let i=0;i<7;i++){ const yy=y+6+i*7, w=40+((i*57)%120); const x=15+((i*83)%260);
+      s += `<path d="M${x} ${yy} q10 -3 20 0 q10 3 20 0" fill="none" stroke="rgba(255,255,255,.42)" stroke-width="1.4"/>`; } return s; },
+  fig(x,b,s=1){ return `<g transform="translate(${x},${b}) scale(${s})"><circle cx="0" cy="-17" r="3.4"/><path d="M0 -13 l0 8 M0 -5 l-3.5 6 M0 -5 l3.5 6 M0 -11 l-4 5 M0 -11 l4 5"/></g>`; }
+};
+
+function SCENE(kind){
+  const g=(f,inner,o)=>`<g fill="${f}"${o?` opacity="${o}"`:''}>${inner}</g>`;
+  const sky = `<defs><linearGradient id="sk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D6DFE3"/><stop offset="1" stop-color="var(--card-2)"/></linearGradient></defs>
+      <rect width="400" height="280" fill="url(#sk)"/>`;
+  const ground=(y,f)=>`<rect x="0" y="${y}" width="400" height="${280-y}" fill="${f||C.land}" opacity=".9"/>`;
+  const skylineFar = g(C.far, P.tower(20,200,16,44,{spire:20})+P.range(48,200,54,30,3)+P.tower(112,200,14,38,{spire:16})
+      +P.range(136,200,46,26,3)+P.tower(196,200,18,50,{pinn:1})+P.range(226,200,60,32,4)
+      +P.tower(298,200,15,42,{spire:18})+P.range(322,200,58,28,4), .55);
+
+  let s = sky;
+  switch(kind){
+
+  case 'dome':
+    s += skylineFar + ground(214);
+    s += g(C.mid, P.range(0,214,90,52,4)+P.range(318,214,82,48,4), .8);
+    s += g(C.near, P.dome(146,214,108,116));
+    s += g(C.near, P.tower(112,214,20,52,{crenel:1})+P.tower(266,214,20,52,{crenel:1}), .9);
+    s += g('rgba(255,255,255,.22)', `<rect x="160" y="176" width="12" height="24" rx="6"/><rect x="192" y="176" width="12" height="24" rx="6"/><rect x="224" y="176" width="12" height="24" rx="6"/>`);
+    s += g(C.near, P.fig(60,272,1.1)+P.fig(338,270,1.0), .35);
+    break;
+
+  case 'quad':
+    s += ground(220,'#B9C3B2');
+    s += g(C.mid, P.range(0,220,120,66,5)+P.range(280,220,120,66,5), .75);
+    s += g(C.near, P.tower(158,220,84,150,{crenel:1,win:4}));
+    s += g('rgba(255,255,255,.20)', `<rect x="176" y="106" width="48" height="4"/><rect x="176" y="132" width="48" height="4"/><rect x="176" y="158" width="48" height="4"/><rect x="176" y="184" width="48" height="4"/>`);
+    s += g(C.near, P.fig(90,268,1.2)+P.fig(112,266,1.05)+P.fig(300,270,1.15), .38);
+    break;
+
+  case 'theatre':
+    s += skylineFar + ground(212);
+    s += g(C.near, `<path d="M96 212 L96 150 Q200 92 304 150 L304 212 Z"/><rect x="176" y="96" width="48" height="30"/><path d="M170 96 L200 68 L230 96 Z"/>`);
+    s += g('rgba(255,255,255,.20)', `<rect x="120" y="160" width="18" height="34" rx="9"/><rect x="162" y="150" width="18" height="44" rx="9"/><rect x="220" y="150" width="18" height="44" rx="9"/><rect x="262" y="160" width="18" height="34" rx="9"/>`);
+    for(let i=0;i<6;i++){ const x=34+i*68;
+      s += g(C.near, `<rect x="${x}" y="238" width="14" height="42"/><circle cx="${x+7}" cy="232" r="11"/><path d="M${x-1} 240 q8 -9 16 0 Z" fill="${C.hot}" opacity=".8"/>`); }
+    break;
+
+  case 'bridge':
+    s += ground(230,'#AEB9B4');
+    s += g(C.mid, `<rect x="0" y="40" width="118" height="190"/><rect x="282" y="40" width="118" height="190"/>`, .82);
+    s += g(C.near, `<path d="M118 168 L118 118 L282 118 L282 168 Z"/><path d="M112 118 L200 76 L288 118 Z"/><path d="M118 168 q82 46 164 0 l0 -8 q-82 44 -164 0 Z"/>`);
+    s += g('rgba(255,255,255,.24)', `<rect x="140" y="130" width="20" height="34" rx="10"/><rect x="190" y="126" width="20" height="38" rx="10"/><rect x="240" y="130" width="20" height="34" rx="10"/>`);
+    s += g(C.near, P.fig(196,278,1.5), .3);
+    break;
+
+  case 'lane':
+    s += ground(240,'#A9B4AF');
+    s += g(C.mid, `<path d="M0 0 L128 0 L108 240 L0 240 Z"/>`, .9);
+    s += g(C.near, `<path d="M400 0 L268 0 L292 240 L400 240 Z"/>`);
+    s += g('rgba(255,255,255,.18)', `<rect x="34" y="70" width="30" height="46" rx="4"/><rect x="30" y="146" width="30" height="46" rx="4"/><rect x="322" y="62" width="32" height="48" rx="4"/><rect x="330" y="140" width="32" height="48" rx="4"/>`);
+    s += g(C.near, `<rect x="300" y="46" width="26" height="20" rx="3" fill="${C.hot}" opacity=".85"/>`);
+    s += g(C.far, `<circle cx="200" cy="60" r="26"/>`, .5);
+    s += g(C.near, P.fig(186,264,1.5)+P.fig(212,262,1.35), .42);
+    break;
+
+  case 'pub':
+    s += ground(226,'#A9B4AF');
+    s += g(C.mid, `<rect x="0" y="0" width="96" height="226"/>`, .85);
+    s += g(C.near, P.range(112,226,190,120,4));
+    s += g('rgba(255,255,255,.9)', `<rect x="150" y="152" width="34" height="30" rx="2" opacity=".55"/><rect x="230" y="152" width="34" height="30" rx="2" opacity=".55"/><rect x="188" y="166" width="38" height="60" rx="2" opacity=".3"/>`);
+    s += g(C.hot, `<rect x="126" y="118" width="60" height="26" rx="2" opacity=".85"/><rect x="154" y="144" width="3" height="14"/>`);
+    s += g(C.near, P.tree(340,226,32)+P.fig(96,262,1.3)+P.fig(118,260,1.15), .5);
+    break;
+
+  case 'cloister':
+    s += ground(232,'#AFBBAE');
+    s += g(C.mid, P.range(0,232,80,90,3)+P.range(320,232,80,90,3), .7);
+    s += g(C.near, P.arcade(64,232,272,110,6));
+    s += g(C.land, P.tree(200,246,54));
+    s += g(C.near, P.fig(120,272,1.2)+P.fig(288,270,1.1), .38);
+    break;
+
+  case 'street':
+    s += skylineFar + ground(206,'#9FAAA4');
+    s += g(C.mid, P.range(0,206,150,74,5), .78);
+    s += g(C.near, P.range(250,206,150,80,5));
+    s += g('rgba(255,255,255,.1)', `<rect x="0" y="206" width="400" height="74"/>`);
+    s += g(C.hot, `<rect x="176" y="242" width="52" height="9" rx="1"/><rect x="196" y="222" width="10" height="50" rx="1"/>`);
+    s += g(C.near, P.fig(120,272,1.2)+P.fig(300,274,1.25), .3);
+    break;
+
+  case 'gate':
+    s += ground(236,'#AFBBAE');
+    s += g(C.mid, P.range(0,236,116,96,4)+P.range(284,236,116,96,4), .74);
+    s += g(C.near, `<rect x="130" y="90" width="140" height="146"/><path d="M124 90 L200 48 L276 90 Z"/>`);
+    s += g('rgba(255,255,255,.9)', `<path d="M170 236 L170 156 q30 -34 60 0 l0 80 Z" fill="${C.near}"/>`);
+    s += g('rgba(255,255,255,.2)', `<path d="M178 236 L178 158 q22 -26 44 0 l0 78 Z"/>`);
+    s += g('rgba(255,255,255,.24)', `<rect x="146" y="106" width="16" height="26" rx="8"/><rect x="238" y="106" width="16" height="26" rx="8"/>`);
+    break;
+
+  case 'books':
+    s += `<rect width="400" height="280" fill="#3B4A57"/>`;
+    for(let r=0;r<7;r++){ const y=26+r*36;
+      s += `<rect x="14" y="${y+24}" width="372" height="5" fill="rgba(255,255,255,.14)"/>`;
+      let x=18; let i=0;
+      while(x<380){ const w=6+((i*13+r*7)%12), h=16+((i*29+r*11)%9);
+        const cols=['#C7B28B','#8FA9A0','#B98A7E','#8899B4','#A8B58C','#CBBFA4'];
+        s += `<rect x="${x}" y="${y+24-h}" width="${w}" height="${h}" fill="${cols[(i+r)%6]}" opacity=".92"/>`;
+        x+=w+2; i++; } }
+    s += g('rgba(0,0,0,.30)', `<rect x="0" y="0" width="400" height="280"/>`);
+    s += g('#F4F0E5', P.fig(200,254,1.8), .9);
+    break;
+
+  case 'memorial':
+    s += skylineFar + ground(224);
+    s += g(C.near, `<rect x="176" y="120" width="48" height="104"/><rect x="164" y="150" width="72" height="14"/><rect x="168" y="106" width="64" height="16"/><path d="M186 106 L200 40 L214 106 Z"/><rect x="160" y="224" width="80" height="12"/><rect x="150" y="236" width="100" height="10"/>`);
+    s += g('rgba(255,255,255,.26)', `<rect x="182" y="168" width="10" height="24" rx="5"/><rect x="208" y="168" width="10" height="24" rx="5"/><rect x="195" y="126" width="10" height="20" rx="5"/>`);
+    s += g(C.land, P.tree(66,232,44)+P.tree(340,230,38));
+    break;
+
+  case 'museum':
+  case 'portico':
+    s += ground(226,'#AFBBAE');
+    s += g(C.near, `<rect x="46" y="140" width="308" height="86"/><path d="M40 140 L200 74 L360 140 Z"/>`);
+    for(let i=0;i<7;i++){ const x=64+i*40;
+      s += g('rgba(255,255,255,.26)', `<rect x="${x}" y="152" width="18" height="74"/>`); }
+    s += g('rgba(255,255,255,.16)', `<path d="M70 138 L200 84 L330 138 Z"/>`);
+    s += g(C.near, `<rect x="30" y="226" width="340" height="9"/><rect x="18" y="235" width="364" height="8"/>`);
+    s += g(C.near, P.fig(110,266,1.3)+P.fig(280,268,1.25), .35);
+    break;
+
+  case 'inn':
+    s += ground(230,'#A9B4AF');
+    s += g(C.mid, `<rect x="300" y="20" width="100" height="210"/>`, .8);
+    s += g(C.near, P.range(40,230,230,132,4));
+    s += g('rgba(255,255,255,.5)', `<rect x="76" y="150" width="36" height="32" rx="2" opacity=".5"/><rect x="200" y="150" width="36" height="32" rx="2" opacity=".5"/><rect x="132" y="164" width="46" height="66" rx="2" opacity=".32"/>`);
+    s += g(C.near, `<rect x="272" y="96" width="6" height="60"/><rect x="230" y="94" width="52" height="4"/>`);
+    s += g(C.hot, `<rect x="234" y="98" width="44" height="30" rx="2" opacity=".88"/>`);
+    s += g(C.land, P.tree(340,254,34));
+    break;
+
+  case 'spiretower':
+    s += skylineFar + ground(214);
+    s += g(C.mid, P.range(0,214,96,58,4)+P.range(310,214,90,54,4), .72);
+    s += g(C.near, `<rect x="160" y="112" width="80" height="102"/>`+P.tower(160,112,80,0));
+    s += g(C.near, `<path d="M154 112 L200 18 L246 112 Z"/>`);
+    [156,166,234,244].forEach(px=> s += g(C.near, `<path d="M${px} 116 l4 -30 l4 30 Z"/>`));
+    s += g('rgba(255,255,255,.24)', `<rect x="176" y="136" width="14" height="34" rx="7"/><rect x="210" y="136" width="14" height="34" rx="7"/>`);
+    s += g('rgba(255,255,255,.9)', `<circle cx="200" cy="192" r="11" opacity=".28"/>`);
+    break;
+
+  case 'twintower':
+    s += skylineFar + ground(216);
+    s += g(C.mid, P.range(0,216,88,50,3)+P.range(316,216,84,48,3), .7);
+    s += g(C.near, `<rect x="112" y="216" width="176" height="46"/>`);
+    s += g(C.near, P.tower(112,216,54,158,{pinn:1,win:3})+P.tower(234,216,54,158,{pinn:1,win:3}));
+    s += g('rgba(255,255,255,.2)', `<rect x="176" y="188" width="48" height="28" rx="4"/>`);
+    s += g('#F4F0E5', `<g transform="translate(186,252) scale(1.5)"><path d="M0 0 q6 -8 14 -3 q6 -5 8 1 q2 5 -6 7 q-10 2 -16 -5 Z"/><circle cx="20" cy="-4" r="1.2" fill="${C.near}"/></g>`, .85);
+    break;
+
+  case 'market':
+    s += `<rect width="400" height="280" fill="#4A5A63"/>`;
+    s += g('#6C808B', `<rect x="0" y="0" width="400" height="46"/>`);
+    for(let i=0;i<8;i++) s += g('rgba(255,255,255,.10)', `<rect x="${8+i*50}" y="0" width="34" height="46" rx="4"/>`);
+    s += g('#8E9AA0', `<path d="M40 46 L40 280 M360 46 L360 280" stroke="#8E9AA0" stroke-width="8"/>`);
+    s += g('#F4F0E5', `<rect x="52" y="120" width="120" height="76" rx="2" opacity=".9"/><rect x="228" y="120" width="120" height="76" rx="2" opacity=".9"/>`);
+    s += g(C.hot, `<rect x="52" y="106" width="120" height="16" opacity=".85"/><rect x="228" y="106" width="120" height="16" opacity=".85"/>`);
+    for(let i=0;i<5;i++){ s += g('#B98A7E', `<circle cx="${68+i*24}" cy="150" r="9"/>`); s += g('#A8B58C', `<circle cx="${244+i*24}" cy="150" r="9"/>`); }
+    s += g('#F4F0E5', P.fig(200,254,1.9), .95);
+    break;
+
+  case 'carfax':
+    s += skylineFar + ground(220,'#9FAAA4');
+    s += g(C.near, P.tower(158,220,84,152,{crenel:1,win:3}));
+    s += g('rgba(255,255,255,.9)', `<circle cx="200" cy="132" r="21" opacity=".85"/>`);
+    s += g(C.near, `<path d="M200 132 L200 120 M200 132 L209 137" stroke="${C.near}" stroke-width="2.6" fill="none"/>`);
+    s += g(C.hot, `<rect x="146" y="122" width="9" height="20" rx="2"/><rect x="245" y="122" width="9" height="20" rx="2"/>`);
+    s += g(C.mid, P.range(0,220,140,60,4)+P.range(260,220,140,60,4), .74);
+    s += g('rgba(255,255,255,.12)', `<path d="M0 250 L400 250" stroke="#fff" stroke-width="3" stroke-dasharray="14 12"/>`);
+    break;
+
+  case 'tomtower':
+    s += skylineFar + ground(218);
+    s += g(C.mid, P.range(0,218,110,58,4)+P.range(300,218,100,54,4), .72);
+    s += g(C.near, `<rect x="140" y="218" width="120" height="52"/>`);
+    s += g(C.near, P.tower(150,166,100,72,{crenel:1}));
+    s += g(C.near, `<rect x="164" y="86" width="72" height="82"/>`);
+    s += g(C.near, `<path d="M158 86 q42 -46 84 0 Z"/><rect x="192" y="30" width="16" height="18"/><path d="M186 30 L200 12 L214 30 Z"/>`);
+    s += g('rgba(255,255,255,.85)', `<circle cx="200" cy="122" r="18" opacity=".9"/>`);
+    s += g(C.near, `<path d="M200 122 L200 110 M200 122 L208 128" stroke="${C.near}" stroke-width="2.4" fill="none"/>`);
+    s += g('rgba(255,255,255,.2)', `<path d="M172 218 L172 178 q28 -30 56 0 l0 40 Z"/>`);
+    break;
+
+  case 'meadow':
+    s += skylineFar + `<rect x="0" y="200" width="400" height="80" fill="${C.land}" opacity=".85"/>`;
+    s += `<rect x="0" y="228" width="400" height="52" fill="#79904F" opacity=".8"/>`;
+    s += g(C.near, P.cow(74,250,1.5)+P.cow(160,262,1.75)+P.cow(268,246,1.35)+P.cow(330,266,1.6), .82);
+    s += g(C.land, P.tree(28,214,30)+P.tree(372,212,26));
+    break;
+
+  case 'mobquad':
+    s += ground(224,'#A9B4AF');
+    s += g(C.mid, P.range(0,224,104,96,4)+P.range(296,224,104,96,4), .72);
+    s += g(C.near, P.range(112,224,176,110,5));
+    s += g(C.near, P.tower(178,114,44,66,{pinn:1}));
+    s += g('rgba(255,255,255,.18)', `<rect x="0" y="238" width="400" height="42"/>`);
+    for(let i=0;i<9;i++) s += g('rgba(255,255,255,.10)', `<circle cx="${22+i*44}" cy="${252+((i*13)%16)}" r="7"/>`);
+    break;
+
+  case 'magdalentower':
+    s += skylineFar + ground(212);
+    s += g(C.near, P.tower(158,212,84,178,{pinn:1,win:4}));
+    s += g('rgba(255,255,255,.22)', `<rect x="176" y="66" width="48" height="4"/><rect x="176" y="86" width="48" height="4"/>`);
+    s += g(C.mid, P.range(0,212,120,52,4)+P.range(292,212,108,48,4), .68);
+    s += `<rect x="0" y="234" width="400" height="46" fill="#79904F" opacity=".82"/>`;
+    s += g(C.near, `<g stroke="${C.near}" stroke-width="1.6" fill="none">${P.deer(48,266,1.5)}${P.deer(316,262,1.3)}</g>`, .8);
+    s += g(C.land, P.tree(376,246,30));
+    break;
+
+  case 'punt':
+    s += skylineFar;
+    s += g(C.land, P.tree(30,206,42)+P.tree(368,204,38));
+    s += `<rect x="0" y="200" width="400" height="80" fill="#6F8A98" opacity=".92"/>`;
+    s += P.ripples(206);
+    s += g(C.near, `<g stroke="${C.near}">${P.punt(148,248,1.5)}</g>`, .92);
+    s += g(C.near, P.fig(180,232,1.15), .95);
+    break;
+
+  case 'garden':
+    s += ground(196,'#8FAA56');
+    s += `<rect x="0" y="196" width="400" height="84" fill="#7C9553" opacity=".85"/>`;
+    s += g(C.mid, `<rect x="0" y="150" width="400" height="46"/>`, .55);
+    s += g(C.near, `<rect x="150" y="94" width="100" height="102"/><path d="M144 94 q56 -50 112 0 Z"/>`);
+    s += g('rgba(255,255,255,.22)', `<path d="M172 196 L172 136 q28 -30 56 0 l0 60 Z"/>`);
+    s += g(C.land, P.tree(50,206,46)+P.tree(352,204,42));
+    s += g(C.near, `<rect x="150" y="238" width="100" height="8" rx="2"/><rect x="150" y="222" width="100" height="7" rx="2"/><rect x="154" y="246" width="7" height="22"/><rect x="239" y="246" width="7" height="22"/><rect x="154" y="226" width="6" height="16"/><rect x="240" y="226" width="6" height="16"/>`);
+    break;
+
+  case 'skyline':
+    s = `<defs><linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5C7690"/><stop offset=".62" stop-color="#C9B291"/><stop offset="1" stop-color="#E0CDAB"/></linearGradient></defs>`
+      + `<rect width="400" height="280" fill="url(#dusk)"/>`;
+    s += `<circle cx="112" cy="164" r="26" fill="#F0DCB4" opacity=".85"/>`;
+    s += g(C.near, P.tower(14,196,14,54,{spire:24})+P.range(36,196,44,26,3)+P.tower(88,196,16,46,{pinn:1})
+        +P.dome(118,196,54,58)+P.tower(184,196,13,40,{spire:20})+P.range(204,196,40,24,3)
+        +P.tower(252,196,20,58,{crenel:1})+P.tower(280,196,20,58,{crenel:1})+P.range(310,196,46,28,3)
+        +P.tower(362,196,14,44,{spire:22}), .97);
+    s += `<rect x="0" y="196" width="400" height="84" fill="#6E8451" opacity=".92"/>`;
+    s += g('#3D4A34', P.fig(60,264,1.6)+P.fig(84,268,1.4)+P.fig(320,266,1.5), .6);
+    break;
+
+  case 'shark':
+    s += ground(228,'#A9B4AF');
+    s += g(C.mid, `<rect x="0" y="120" width="86" height="108"/><rect x="314" y="120" width="86" height="108"/>`, .7);
+    s += g(C.near, `<rect x="96" y="140" width="208" height="88"/><path d="M90 140 L200 84 L310 140 Z"/>`);
+    s += g('rgba(255,255,255,.5)', `<rect x="120" y="164" width="34" height="30" rx="2" opacity=".5"/><rect x="246" y="164" width="34" height="30" rx="2" opacity=".5"/><rect x="182" y="176" width="36" height="52" rx="2" opacity=".34"/>`);
+    s += g('#2B3742', `<path d="M186 118 q10 -74 22 -102 q10 30 30 52 q-8 -4 -18 -2 q16 22 14 44 q-10 -12 -22 -16 q6 20 -2 34 Z"/>`);
+    s += g('#1A222A', `<path d="M170 128 q30 -14 62 0 q-30 12 -62 0 Z"/>`);
+    break;
+
+  case 'castle':
+    s += skylineFar + ground(218,'#93A78E');
+    s += g(C.near, P.tower(56,218,86,168,{crenel:1,win:4}));
+    s += g('rgba(255,255,255,.2)', `<rect x="86" y="196" width="26" height="22" rx="3"/>`);
+    s += g('#7E9077', `<path d="M212 218 q64 -74 130 0 Z"/>`);
+    s += g(C.near, `<rect x="266" y="152" width="22" height="18"/>`, .5);
+    s += `<rect x="0" y="252" width="400" height="28" fill="#8FA6B0" opacity=".9"/>`;
+    s += g('#F4F0E5', P.fig(176,250,1.5), .9);
+    break;
+
+  case 'portmeadow':
+    s += skylineFar;
+    s += `<rect x="0" y="200" width="400" height="34" fill="#7C9455" opacity=".88"/>`;
+    s += `<rect x="0" y="234" width="400" height="46" fill="#8CA3AE" opacity=".95"/>`;
+    s += P.ripples(238);
+    s += g(C.near, `<g stroke="${C.near}" stroke-width="1.5" fill="none">${P.horse(48,232,1.5)}${P.horse(300,230,1.3)}</g>`, .85);
+    s += g(C.near, P.cow(170,230,1.3)+P.cow(226,228,1.15), .7);
+    s += g(C.far, `<ellipse cx="112" cy="252" rx="30" ry="5" fill="rgba(255,255,255,.3)"/><ellipse cx="286" cy="262" rx="40" ry="6" fill="rgba(255,255,255,.25)"/>`);
+    break;
+
+  case 'nhm':
+    s += `<rect width="400" height="280" fill="#3E4E58"/>`;
+    s += g('#6E8592', `<path d="M0 96 L200 20 L400 96 Z"/>`, .9);
+    for(let i=0;i<11;i++){ const x=i*40;
+      s += `<path d="M${x} 96 L200 20" stroke="rgba(255,255,255,.22)" stroke-width="1.6" fill="none"/>`; }
+    s += g('rgba(255,255,255,.10)', `<rect x="0" y="96" width="400" height="184"/>`);
+    for(let i=0;i<6;i++) s += g('#8E9FA8', `<rect x="${24+i*68}" y="96" width="13" height="120"/><circle cx="${30+i*68}" cy="92" r="9"/>`);
+    s += g('#DFD3B8', `<g transform="translate(150,238) scale(2.1)"><path d="M0 0 q-4 -14 8 -20 q14 -7 22 2 q10 -10 14 -2 q3 6 -6 8 q4 12 -6 16 q-14 5 -22 -1 Z"/><path d="M6 0 l1 8 M20 1 l1 8" stroke="#DFD3B8" stroke-width="2"/><circle cx="34" cy="-16" r="1.6" fill="#3E4E58"/></g>`, .95);
+    break;
+
+  case 'hill':
+    s += `<defs><linearGradient id="hz" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FA7BC"/><stop offset="1" stop-color="#D9D3BC"/></linearGradient></defs><rect width="400" height="280" fill="url(#hz)"/>`;
+    s += g('#8895A0', P.tower(96,164,10,34,{spire:16})+P.dome(132,164,34,36)+P.tower(180,164,9,28,{spire:14})
+        +P.tower(214,164,14,38,{crenel:1})+P.tower(234,164,14,38,{crenel:1})+P.range(258,164,34,20,3)+P.tower(300,164,10,30,{spire:15}), .85);
+    s += `<path d="M0 164 L400 164 L400 176 L0 176 Z" fill="#9FA98F" opacity=".55"/>`;
+    s += `<path d="M0 196 Q200 156 400 196 L400 280 L0 280 Z" fill="#7E9455" opacity=".95"/>`;
+    s += `<path d="M60 262 L124 168 M60 262 L336 172" stroke="rgba(255,255,255,.45)" stroke-width="1.6" fill="none" stroke-dasharray="6 5"/>`;
+    s += g('#3D4A34', P.fig(58,264,1.7), .8);
+    s += g('#5E7040', P.tree(356,266,40)+P.tree(20,270,34), .9);
+    break;
+
+  default:
+    s += skylineFar + ground(210);
+  }
+  return `<svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" stroke="none">${s}</svg>`;
+}
+
+/* ═══════════════ 渲染 ═══════════════ */
+const main = document.getElementById('main');
+const chapnav = document.getElementById('chapnav');
+
+CHAPTERS.forEach((ch,ci)=>{
+  const sec = document.createElement('section');
+  sec.className='chapter'; sec.id='ch'+ci;
+  sec.innerHTML = `<div class="chapter-head">
+      <div class="chapter-num">${ch.n}</div>
+      <h2>${ch.t}</h2>
+      <div class="sub">${ch.sub}</div>
+    </div>`;
+  STOPS.filter(s=>s.c===ci).forEach(st=>{
+    const el = document.createElement('article');
+    el.className='stop'; el.id=st.id; el.dataset.tags = st.tags.join(' ');
+    const media = st.photo
+      ? `<img src="${st.photo}" alt="${st.name}">`
+      : SCENE(st.scene);
+    el.innerHTML = `
+      <div class="plate">${media}<div class="platecap">${st.cap}</div></div>
+      <div class="body">
+        <div class="tagrow">
+          <span class="no">${String(st.n).padStart(2,'0')}</span>
+          ${st.badges.map(b=>`<span class="tag ${b[1]}">${b[0]}</span>`).join('')}
+        </div>
+        <h3>${st.name}</h3>
+        <p class="en">${st.en}</p>
+        <div class="hook">${st.hook}</div>
+        <div class="sec"><h4>History</h4>${st.history.map(p=>`<p>${p}</p>`).join('')}</div>
+        <div class="sec"><h4>要望邊度 · What to look at</h4><ul>${st.see.map(p=>`<li>${p}</li>`).join('')}</ul></div>
+        <div class="myth"><h4>${st.myth.t}</h4>${st.myth.b.map(p=>`<p>${p}</p>`).join('')}</div>
+        <div class="line">${st.line}</div>
+        <div class="prac">
+          <div><b>Time</b>${st.prac.t}</div>
+          <div><b>Where</b>${st.prac.w}</div>
+          <div style="flex:1;min-width:200px"><b>Guide's note</b>${st.prac.tip}</div>
+        </div>
+      </div>`;
+    sec.appendChild(el);
+  });
+  main.appendChild(sec);
+  const a=document.createElement('a'); a.href='#ch'+ci; a.textContent=ch.n+' · '+ch.short; chapnav.appendChild(a);
+});
+
+/* 篩選 */
+const countEl=document.getElementById('count');
+function applyFilter(f){
+  let n=0;
+  document.querySelectorAll('.stop').forEach(el=>{
+    const ok = f==='all' || el.dataset.tags.split(' ').includes(f);
+    el.classList.toggle('hide',!ok); if(ok) n++;
+  });
+  document.querySelectorAll('.chapter').forEach(c=>{
+    const any = c.querySelectorAll('.stop:not(.hide)').length;
+    c.style.display = any ? '' : 'none';
+  });
+  countEl.textContent = n + ' / ' + STOPS.length + ' 站';
+}
+document.querySelectorAll('.fbtn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on'); applyFilter(b.dataset.f);
+  });
+});
+applyFilter('all');
+
+/* 背誦模式 */
+const rb=document.getElementById('rehearseBtn');
+rb.addEventListener('click',()=>{
+  document.body.classList.toggle('rehearsing');
+  const on=document.body.classList.contains('rehearsing');
+  rb.classList.toggle('on',on);
+  rb.textContent = on ? '完整模式' : '背誦模式';
+});
+
+/* 封面天際線 */
+(function(){
+  const sv=document.querySelector('.hero-sky'); if(!sv) return;
+  const parts=[
+    P.tower(30,150,16,52,{spire:26}), P.range(58,150,60,32,4), P.tower(132,150,14,42,{spire:22}),
+    P.range(158,150,52,28,3), P.dome(228,150,66,70), P.tower(316,150,20,64,{crenel:1}),
+    P.tower(342,150,20,64,{crenel:1}), P.range(376,150,58,32,4), P.tower(448,150,16,50,{pinn:1}),
+    P.range(476,150,64,34,4), P.tower(556,150,14,44,{spire:24}), P.range(580,150,50,26,3),
+    P.tower(646,150,22,70,{crenel:1}), P.range(680,150,60,30,4), P.tower(756,150,15,46,{spire:22}),
+    P.range(782,150,56,30,4), P.dome(856,150,54,56), P.tower(928,150,16,48,{pinn:1}),
+    P.range(956,150,62,32,4), P.tower(1034,150,13,40,{spire:20}), P.range(1058,150,58,28,4)
+  ];
+  sv.innerHTML = `<g fill="rgba(157,176,184,.34)" transform="translate(0,-16) scale(1,.82)">${parts.join('')}</g>`
+    + `<g fill="rgba(157,176,184,.9)">${parts.join('')}</g>`
+    + `<rect x="0" y="150" width="1140" height="40" fill="rgba(255,255,255,.06)"/>`;
+})();
+</script>
+
+<footer class="foot">
+  <div class="foot-in">
+    <h3>帶團前的最後五件事</h3>
+    <div class="foot-grid">
+      <div>
+        <h5>01 · 節奏</h5>
+        <p>重景點之後一定要跟一個空曠嘅點。Christ Church 之後行草地，Broad Street 講完火刑之後入書店。情緒需要透氣位，唔好連續三站都係高潮。</p>
+      </div>
+      <div>
+        <h5>02 · 三段式</h5>
+        <p>先講一個人，再講佢做咗乜，最後叫團友望一樣實物。年份記唔入腦，一個人同一樣睇得見嘅嘢就記得住。</p>
+      </div>
+      <div>
+        <h5>03 · 拆傳說</h5>
+        <p>先當真咁講個傳說，講到最靚嗰句，停一停，先講事實。團友會得到雙重滿足：一個好故事，加一個「我知道真相」嘅優越感。</p>
+      </div>
+      <div>
+        <h5>04 · 落雨備案</h5>
+        <p>Blackwell's、Covered Market、Ashmolean、自然史博物館、科學史博物館——全部免費、有蓋、有廁所。牛津落雨係常態，唔係例外。</p>
+      </div>
+      <div>
+        <h5>05 · 出團前 check</h5>
+        <p>學院開放時間隨學期、考試、婚禮改動，收費逐年加。Eagle and Child 仍然閉門。All Souls 開放時段極短。前一晚上官網逐間確認。</p>
+      </div>
+    </div>
+
+    <div class="foot-grid" style="margin-top:38px">
+      <div>
+        <h5>免費全景點（不收分文）</h5>
+        <ul>
+          <li>South Park — 最經典，最方便</li>
+          <li>Port Meadow — 最開闊，冬季水浸最靚</li>
+          <li>Boars Hill / Raleigh Park — 「dreaming spires」原點</li>
+          <li>Christ Church Meadow — 望教堂背面</li>
+          <li>Radcliffe Square — 最強框景</li>
+          <li>Magdalen Bridge — 望塔同鹿園</li>
+        </ul>
+      </div>
+      <div>
+        <h5>全免費室內點</h5>
+        <ul>
+          <li>Ashmolean Museum</li>
+          <li>自然史博物館 + Pitt Rivers</li>
+          <li>科學史博物館（舊 Ashmolean）</li>
+          <li>Blackwell's Norrington Room</li>
+          <li>Covered Market</li>
+          <li>St Mary the Virgin 教堂（入內；登塔收費）</li>
+          <li>Bodleian 舊書院方庭（室內收費）</li>
+          <li>All Souls（限時開放）</li>
+        </ul>
+      </div>
+      <div>
+        <h5>特別日子</h5>
+        <ul>
+          <li><b>5 月 1 日</b> May Morning — Magdalen 塔頂六點唱詩，全年最值得帶團嘅一日</li>
+          <li><b>10 月最後一個星期日</b> Merton 時間儀式（外人入唔到，但可以講）</li>
+          <li><b>10 月 16 日</b> 殉道者忌辰</li>
+          <li><b>2 月 10 日</b> St Scholastica's Day 暴動紀念</li>
+          <li><b>2101 年 1 月</b> All Souls 獵鴨（暫時未使準備）</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="note">
+      呢份手冊嘅歷史資料綜合自各學院同博物館官網、Oxford City Council、Oxford Preservation Trust、大學圖書館與博物館出版物，以及公開嘅歷史記錄。凡有爭議嘅說法（最古老學院之爭、New College 橡木樑、Bob Hawke 紀錄、Balliol 燒過嘅門）都已標明。入場費、開放時間與 Eagle and Child 嘅重開進度會變動，出團前請自行核實。
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
