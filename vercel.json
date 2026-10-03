@@ -25,5 +25,15 @@
       "destination": "/guide.html",
       "permanent": false
     }
+  ],
+  "rewrites": [
+    { "source": "/events", "destination": "/events.html" },
+    { "source": "/resources", "destination": "/resources.html" },
+    { "source": "/about-oxfordshire", "destination": "/about-oxfordshire.html" },
+    { "source": "/membership", "destination": "/membership.html" },
+    { "source": "/benefits", "destination": "/benefits.html" },
+    { "source": "/walking-tours", "destination": "/walking-tours.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/terms", "destination": "/terms.html" }
   ]
 }
